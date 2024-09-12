@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Vendor Info",
+  "description": "Schema for vendor info.json files",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "A friendly name for the vendor, as people understand the brand.",
+      "minLength": 1
+    },
+    "official_name": {
+      "type": "string",
+      "description": "The official name of the vendor, including company designations.",
+      "minLength": 1
+    },
+    "blurb": {
+      "type": "string",
+      "description": "A 1-3 sentence blurb describing the brand in a neutral fashion.",
+      "minLength": 10,
+      "maxLength": 500
+    },
+    "logo": {
+      "type": "string",
+      "description": "The filename of the logo. Conventionally, this should be 'logo.png' and placed next to the info.json file.",
+      "pattern": "^.*\\.(png)$",
+      "minLength": 5
+    }
+  },
+  "required": ["name", "official_name", "blurb"],
+  "additionalProperties": false
+}

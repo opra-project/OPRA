@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product Info",
+  "description": "Schema for product info.json files",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the product, as it appears in the product's marketing materials.",
+      "minLength": 1
+    },
+    "blurb": {
+      "type": "string",
+      "description": "A 1-3 sentence description of the product.",
+      "minLength": 10,
+      "maxLength": 500
+    },
+    "photo": {
+      "type": "string",
+      "description": "A photo of the product. Conventionally, this should be a .jpg file.",
+      "pattern": "^.*\\.(jpg|jpeg)$",
+      "minLength": 5
+    },
+    "line_art": {
+      "type": "string",
+      "description": "An SVG line art image of the product.",
+      "pattern": "^.*\\.(svg)$",
+      "minLength": 5
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of product.",
+      "enum": ["headphones"],
+      "default": "headphones"
+    },
+    "subtype": {
+      "type": "string",
+      "description": "The subtype of the headphones.",
+      "enum": ["over-the-ear", "on-the-ear", "in-ear"]
+    }
+  },
+  "required": ["name", "blurb", "type", "subtype"],
+  "additionalProperties": false
+}
+

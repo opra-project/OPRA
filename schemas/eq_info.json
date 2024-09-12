@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EQ Info",
+  "description": "Schema for EQ info.json files",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the EQ curve.",
+      "minLength": 1
+    },
+    "author": {
+      "type": "string",
+      "description": "The author of the EQ curve. Please keep this consistent across the author's output.",
+      "minLength": 1
+    },
+    "link": {
+      "type": "string",
+      "description": "A link to the source, if applicable.",
+      "format": "uri"
+    },
+    "blurb": {
+      "type": "string",
+      "description": "A 1-3 sentence description of the EQ curve.",
+      "minLength": 10,
+      "maxLength": 500
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the EQ. Currently, only 'parametric_eq' is supported.",
+      "enum": ["parametric_eq"],
+      "default": "parametric_eq"
+    },
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "gain_db": {
+          "type": "number",
+          "description": "An overall gain adjustment to apply as part of equalization.",
+          "default": 0.0
+        },
+        "bands": {
+          "type": "array",
+          "description": "The parametric EQ bands, sorted by priority. Software that supports a limited number of bands should truncate the list.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The equalizer element type.",
+                "enum": [
+                  "peak_dip", "high_shelf", "low_shelf", 
+                  "low_pass", "high_pass", "band_pass", "band_stop"
+                ]
+              },
+              "frequency": {
+                "type": "number",
+                "description": "The center frequency of the filter in Hz."
+              },
+              "gain_db": {
+                "type": "number",
+                "description": "The gain at the center frequency, in dB.",
+                "default": 0.0
+              },
+              "q": {
+                "type": "number",
+                "description": "The Q value for the band, which determines the width of the filter in the frequency domain.",
+                "minimum": 0.1
+              },
+              "slope": {
+                "type": "number",
+                "description": "The slope of the filter in dB/Octave, used for low_pass and high_pass filters.",
+                "enum": [6, 12, 18, 24, 30, 36],
+                "default": 12
+              }
+            },
+            "required": ["type", "frequency"],
+            "oneOf": [
+              {
+                "properties": {
+                  "type": { "enum": ["low_pass", "high_pass"] },
+                  "slope": { "type": "number" }
+                },
+                "required": ["slope"]
+              },
+              {
+                "properties": {
+                  "type": { "enum": ["peak_dip", "high_shelf", "low_shelf", "band_pass", "band_stop"] },
+                  "q": { "type": "number" }
+                },
+                "required": ["q"]
+              }
+            ]
+          }
+        }
+      },
+      "required": ["gain_db", "bands"]
+    }
+  },
+  "required": ["name", "author", "blurb", "type", "parameters"],
+  "additionalProperties": false
+}
+
