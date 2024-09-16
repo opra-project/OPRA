@@ -83,7 +83,7 @@ _See also, [../schemas/vendor_info.json](schemas/vendor_info.json) for the JSON 
     "photo": "photo.jpg",
     "line_art": "line_art.svg",
     "type": "headphones",
-    "subtype": "over-the-ear",
+    "subtype": "over_the_ear",
 }
 ```
 
