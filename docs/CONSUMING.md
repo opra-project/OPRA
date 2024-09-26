@@ -2,6 +2,16 @@
 
 The database is automatically generated in the `dist/` subfolder after every commit. 
 
+## How to access the database
+
+In order to minimize traffic to github, we have some guidelines for consuming the database:
+
+ - For commercial products, please mirror or cache `dist/` folder on your own infrastructure. We have published sample code for proxying this database using the Cloudflare workers platform in `tools/rohdb-proxy`, and you are free to modify and deploy this as you see fit.
+ - For open source, non-commercial, and personal use, feel free to fetch assets from `http://rohdb.roonlabs.net/database_v1.jsonl,assets/...`. This mirror is maintained by Roon Labs, served and cached globally by Cloudflare, and is no more than 5 minutes stale.
+ - Access github directly only if you truly need up-to-the-minute results, for example for iterative development, debugging, or reviewing recently added data.
+
+Thank you for following these guidelines, it helps us maintain availability of the database for all.
+
 ## Database Format
 
 Start by downloading `database_v1.jsonl`. This contains a dump of all of the products, vendors, and EQs in JSONL format, with one entry per line. We 
@@ -29,12 +39,3 @@ can be found at
     REPOSITORY_ROOT/dist/assets/31/13/31138e0c49d86b1c4b81c074b0b8157b8662512b1a9a92c814a4808e9060d65f.svg
 
 
-## How to download the database
-
-In order to minimize traffic to github, we have some guidelines for consuming the database:
-
- - For commercial products, please mirror or cache `dist/` folder on your own infrastructure. We have published sample code for proxying this database using the Cloudflare workers platform in `tools/rohdb-proxy`, and you are free to modify and deploy this as you see fit.
- - For open source, non-commercial, and personal use, feel free to fetch assets from `http://rohdb.roonlabs.net/database_v1.jsonl,assets/...`. This mirror is maintained by Roon Labs, served and cached globally by Cloudflare, and is no more than 5 minutes stale.
- - Access github directly only if you truly need up-to-the-minute results, for example for iterative development, debugging, or reviewing recently added data.
-
-Thank you for following these guidelines, it helps us maintain availability of the database for all.
