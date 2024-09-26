@@ -62,7 +62,7 @@ Slugs are scoped to their folder, for example: `vendor_slug=sennheiser, product_
 }
 ```
 
-_See also, [../schemas/vendor_info.json](schemas/vendor_info.json) for the JSON schema that is used for validation._
+_See also, [schemas/vendor_info.json](../schemas/vendor_info.json) for the JSON schema that is used for validation._
 
 #### Fields
 
@@ -87,7 +87,7 @@ _See also, [../schemas/vendor_info.json](schemas/vendor_info.json) for the JSON 
 }
 ```
 
-_See also, [../schemas/product_info.json](schemas/product_info.json) for the JSON schema that is used for validation._
+_See also, [schemas/product_info.json](../schemas/product_info.json) for the JSON schema that is used for validation._
 
 #### Fields:
 
@@ -122,7 +122,7 @@ _See also, [../schemas/product_info.json](schemas/product_info.json) for the JSO
 }
 ```
 
-_See also, [../schemas/eq_info.json](schemas/eq_info.json) for the JSON schema that is used for validation._
+_See also, [schemas/eq_info.json](../schemas/eq_info.json) for the JSON schema that is used for validation._
 
 #### Fields
 
