@@ -9,10 +9,10 @@ expect this to contain 5,000-50,000 entries, so it should be practical for most 
 
 The JSONL file is formatted as follows, with one JSON object per line, newline delimited:
 
-  {"type":"vendor","id":"sennheiser","data":{...}}
-  {"type":"product","id":"sennheiser_hd650","data":{...}}
-  {"type":"eq","id":"sennheiser_hd650_brians_hd650","data":{...}}
-  ...
+    {"type":"vendor","id":"sennheiser","data":{...}}
+    {"type":"product","id":"sennheiser_hd650","data":{...}}
+    {"type":"eq","id":"sennheiser_hd650_brians_hd650","data":{...}}
+    ...
 
 The `data` property on each entry follows the following schemas:
 
