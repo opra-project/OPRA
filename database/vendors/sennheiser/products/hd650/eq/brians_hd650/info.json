@@ -1,8 +1,7 @@
 {
-    "name": "Brian's HD650 EQ",
     "author": "Brian Luczkiewicz",
     "link": "http://roonlabs.com",
-    "blurb": "A good starting point for improving the HD650s",
+    "details": "Flat Target • Bass Boost",
     "type": "parametric_eq",
     "parameters": {
       "gain_db": 0.0,

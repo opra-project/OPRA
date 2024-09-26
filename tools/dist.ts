@@ -27,6 +27,13 @@ Options:
 
 const validateOnly = args["validate-only"] || false;
 
+// Log Tags
+const ERROR      =         red("ERROR      ");
+const GENERATING = brightGreen("GENERATING ");
+const COPYING    = brightGreen("COPYING    ");
+const SKIPPED    =        gray("SKIPPED    ");
+const INDENT     =             "            ";
+
 // Directories
 const SCHEMAS_DIR = "schemas";
 const DATABASE_DIR = "database";
@@ -112,11 +119,11 @@ async function processImageAsset(filePath: string): Promise<string> {
   const height = parseInt(heightStr, 10);
 
   if (format !== "PNG") {
-    console.error(`Error: Image ${filePath} is not a PNG file.`);
+    console.error(ERROR, `Image ${filePath} is not a PNG file.`);
     Deno.exit(1);
   }
   if (width !== 1024 || height !== 1024) {
-    console.error(`Error: Image ${filePath} must be 1024x1024 pixels.`);
+    console.error(ERROR, `Image ${filePath} must be 1024x1024 pixels.`);
     Deno.exit(1);
   }
 
@@ -124,14 +131,14 @@ async function processImageAsset(filePath: string): Promise<string> {
 
   try {
     await Deno.stat(assetPath);
-    console.log(gray(`[SKIPPED] Image ${filePath} already exists at ${assetPath}`));
+    console.log(SKIPPED, `Image ${filePath}\n${INDENT}  (already exists at ${assetPath})`);
   } catch {
     if (!validateOnly) {
-      console.log(brightGreen(`[PROCESSING] Copying image ${filePath} to ${assetPath}`));
+      console.log(COPYING, `${filePath} => ${assetPath}`);
       await ensureDirForFile(assetPath);
       await Deno.copyFile(filePath, assetPath);
     } else {
-      console.log(`[PROCESSING] Would copy image ${filePath} to ${assetPath}`);
+      console.log(COPYING, `Would copy image ${filePath} to ${assetPath}`);
     }
   }
 
@@ -150,14 +157,14 @@ async function processSvgAsset(filePath: string): Promise<string> {
 
   try {
     await Deno.stat(assetPath);
-    console.log(gray(`[SKIPPED] SVG ${filePath} already exists at ${assetPath}`));
+    console.log(SKIPPED, `SVG ${filePath}\n${INDENT}  (already exists at ${assetPath})`);
   } catch {
     if (!validateOnly) {
-      console.log(brightGreen(`[PROCESSING] Copying SVG ${filePath} to ${assetPath}`));
+      console.log(COPYING,`${filePath} => ${assetPath}`);
       await ensureDirForFile(assetPath);
       await Deno.copyFile(filePath, assetPath);
     } else {
-      console.log(brightGreen(`[PROCESSING] Would copy SVG ${filePath} to ${assetPath}`));
+      console.log(COPYING, `Would copy SVG ${filePath} to ${assetPath}`);
     }
   }
 
@@ -180,11 +187,11 @@ async function generatePngFromSvg(svgPath: string, width: number, height: number
 
   try {
     await Deno.stat(assetPath);
-    console.log(gray(`[SKIPPED] PNG for SVG ${svgPath} already exists at ${assetPath}`));
+    console.log(SKIPPED, `PNG for SVG ${svgPath}\n${INDENT}  (already exists at ${assetPath})`);
   } catch {
     if (!validateOnly) {
       // Check if file already exists
-      console.log(brightGreen(`[PROCESSING] Generating PNG from SVG ${svgPath} to ${assetPath}`));
+      console.log(GENERATING, `${svgPath} => ${assetPath}`);
       // File does not exist, generate it
       await ensureDirForFile(assetPath);
       const cmd = [
@@ -204,11 +211,11 @@ async function generatePngFromSvg(svgPath: string, width: number, height: number
 
       if (!status.success) {
         const errorString = new TextDecoder().decode(stderr);
-        console.error(red(`[ERROR] Failed to generate PNG from SVG ${svgPath}. Details: ${errorString}`));
+        console.error(ERROR, `Failed to generate PNG from SVG ${svgPath}. Details: ${errorString}`);
         Deno.exit(1);
       }
     } else {
-      console.log(brightGreen(`[PROCESSING] Would generate PNG from SVG ${svgPath} to ${assetPath}`));
+      console.log(GENERATING, `${svgPath} => ${assetPath}`);
     }
   }
 
@@ -229,7 +236,7 @@ async function processEntries() {
     try {
       data = JSON.parse(await Deno.readTextFile(entry.path));
     } catch (e) {
-      console.error(red(`[ERROR] Failed to parse JSON in ${entry.path}: ${e}`));
+      console.error(ERROR, `Failed to parse JSON in ${entry.path}: ${e}`);
       Deno.exit(1);
     }
 
@@ -243,7 +250,7 @@ async function processEntries() {
       // Validate
       const valid = validateVendorInfo(data);
       if (!valid) {
-        console.error(red(`[ERROR] Validation error in ${entry.path}:`, validateVendorInfo.errors));
+        console.error(red(`[ERROR]`), `Validation error in ${entry.path}:`, validateVendorInfo.errors);
         Deno.exit(1);
       }
 
@@ -272,7 +279,7 @@ async function processEntries() {
       // Validate
       const valid = validateProductInfo(data);
       if (!valid) {
-        console.error(red(`[ERROR] Validation error in ${entry.path}:`, validateProductInfo.errors));
+        console.error(ERROR, `Validation error in ${entry.path}:`, validateProductInfo.errors);
         Deno.exit(1);
       }
 
@@ -310,7 +317,7 @@ async function processEntries() {
       // Validate
       const valid = validateEqInfo(data);
       if (!valid) {
-        console.error(red(`[ERROR] Validation error in ${entry.path}:`, validateEqInfo.errors));
+        console.error(ERROR, `Validation error in ${entry.path}:`, validateEqInfo.errors);
         Deno.exit(1);
       }
 
@@ -328,7 +335,7 @@ async function writeDatabaseFile() {
   let entryCount = processedEntries.length;
   if (!validateOnly) {
     const jsonlPath = join(DIST_DIR, "database_v1.jsonl");
-    console.log(brightGreen(`[PROCESSING] Writing database_v1.jsonl with ${entryCount} entries.`));
+    console.log(GENERATING, `Writing database_v1.jsonl with ${entryCount} entries.`);
     await ensureDirForFile(jsonlPath);
     const file = await Deno.open(jsonlPath, {
       create: true,
@@ -343,7 +350,7 @@ async function writeDatabaseFile() {
 
     file.close();
   } else {
-    console.log(brightGreen(`[PROCESSING] Would write database_v1.jsonl with ${entryCount} entries.`));
+    console.log(GENERATING, `Would write database_v1.jsonl with ${entryCount} entries.`);
   }
 }
 
