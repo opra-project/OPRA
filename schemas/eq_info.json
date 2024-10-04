@@ -4,6 +4,10 @@
   "description": "Schema for EQ info.json files",
   "type": "object",
   "properties": {
+    "product_id": {
+      "type": "string",
+      "description": "The product ID. This is present in data dumps, but not in the database structure that humans maintain in github"
+    },
     "author": {
       "type": "string",
       "description": "The author of the EQ curve. Please keep this consistent across the author's output.",
@@ -28,10 +32,6 @@
     "parameters": {
       "type": "object",
       "properties": {
-        "product_id": {
-          "type": "string",
-          "description": "The product ID. This is present in data dumps, but not in the database structure that humans maintain in github"
-        },
         "gain_db": {
           "type": "number",
           "description": "An overall gain adjustment to apply as part of equalization.",
