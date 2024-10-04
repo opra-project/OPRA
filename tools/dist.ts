@@ -243,9 +243,12 @@ async function processEntries() {
     const relativePath = relative(DATABASE_DIR, entry.path);
     const parts = relativePath.split("/");
 
+    let lastVendorId = "";
+    let lastProductId = "";
+
     if (parts[0] === "vendors" && parts.length === 3 && parts[2] === "info.json") {
       // Vendor info
-      const vendorName = parts[1];
+      const vendorId = parts[1];
 
       // Validate
       const valid = validateVendorInfo(data);
@@ -262,7 +265,7 @@ async function processEntries() {
 
       processedEntries.push({
         type: "vendor",
-        id: vendorName,
+        id: vendorId,
         data: data,
       });
     } else if (
@@ -272,9 +275,9 @@ async function processEntries() {
       parts[4] === "info.json"
     ) {
       // Product info
-      const vendorName = parts[1];
+      const vendorId = parts[1];
       const productName = parts[3];
-      const productId = `${vendorName}_${productName}`;
+      const productId = `${vendorId}_${productName}`;
 
       // Validate
       const valid = validateProductInfo(data);
@@ -282,6 +285,8 @@ async function processEntries() {
         console.error(ERROR, `Validation error in ${entry.path}:`, validateProductInfo.errors);
         Deno.exit(1);
       }
+
+      data.vendor_id = vendorId;
 
       // Process photo
       if (data.photo) {
@@ -309,10 +314,11 @@ async function processEntries() {
       parts.length === 7 &&
       parts[4] === "eq") {
       // EQ info
-      const vendorName = parts[1];
+      const vendorId = parts[1];
       const productName = parts[3];
       const eqName = parts[5];
-      const eqId = `${vendorName}_${productName}_${eqName}`;
+      const eqId = `${vendorId}_${productName}_${eqName}`;
+      const productId = `${vendorId}_${productName}`;
 
       // Validate
       const valid = validateEqInfo(data);
@@ -320,6 +326,8 @@ async function processEntries() {
         console.error(ERROR, `Validation error in ${entry.path}:`, validateEqInfo.errors);
         Deno.exit(1);
       }
+
+      data.product_id = productId;
 
       processedEntries.push({
         type: "eq",

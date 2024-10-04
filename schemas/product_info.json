@@ -4,6 +4,10 @@
   "description": "Schema for product info.json files",
   "type": "object",
   "properties": {
+    "vendor_id": {
+      "type": "string",
+      "description": "The vendor ID. This is present in database dumps, but not in the database structure that humans maintain in github"
+    },
     "name": {
       "type": "string",
       "description": "The name of the product, as it appears in the product's marketing materials.",
