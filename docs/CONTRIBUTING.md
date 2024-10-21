@@ -163,3 +163,35 @@ _See also, [schemas/eq_info.json](../schemas/eq_info.json) for the JSON schema t
 - `band_stop`
   - `frequency`: The center frequency of the filter in Hz.
   - `q`: The "q value" for the band, which determines the width of the filter in the frequency domain.
+
+### Product line art
+
+For headphone icons, the goal is a simple and recognizable representations of a product in SVG format:
+
+1. Format: SVG (Scalable Vector Graphics)
+2. Style: Line art with distinguishing details of the product
+3. Angle: Device should be at an angle, looking head-on, with headphones open where possible
+4. Stroke Weight: Use 1pt stroke weight
+5. Content: Only include the device being submitted (no text or additional graphics)
+6. Dimensions: Artboard should be 480px (width) x 320px (height)
+
+Please look at other entries in the database as examples before contributing graphics of your own.
+
+If you are not prepared to create line art (or aren't interested), that's fine. Feel free to contribute
+headphones without line art, and the team at Roon will help fill in the gaps.
+
+### Vendor Logos
+
+For vendor logos we are looking for a square PNG file that depicts the company logo on a white background:
+
+1. Format:  PNG format
+2. Dimensions:  1024x1024 pixels 
+3. Background:  White background
+5. Quality:  Please ensure the logo is clear and legible
+
+Please look at other entries in the database as examples before contributing graphics of your own.
+
+If you are not prepared to contribute a logo (or aren't interested), that's fine. Feel free to contribute
+vendors without logos, and the team at Roon will help fill in the gaps.
+
+
