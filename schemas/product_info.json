@@ -40,7 +40,7 @@
     "subtype": {
       "type": "string",
       "description": "The subtype of the headphones.",
-      "enum": ["over_the_ear", "on_ear", "in_ear"]
+      "enum": ["over_the_ear", "on_ear", "in_ear", "earbuds" ]
     }
   },
   "required": ["name", "blurb", "type", "subtype" ],

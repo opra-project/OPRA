@@ -96,7 +96,7 @@ _See also, [schemas/product_info.json](../schemas/product_info.json) for the JSO
 - `photo`: A photo of the product. (TODO: spec from B2)
 - `line_art`: An SVG line art image (TODO: spec from B2)
 - `type`: "headphones"
-- `subtype`: `over-the-ear`, `on-the-ear`, `in-ear`
+- `subtype`: `over_the_ear`, `on_the_ear`, `in-ear`, `earbuds`
 
 ### EQ `info.json`
 

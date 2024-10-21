@@ -295,13 +295,27 @@ async function processEntries() {
       }
 
       // Process line art SVG
+      let svgPath 
       if (data.line_art_svg) {
-        const svgPath = join(dirname(entry.path), data.line_art_svg);
-        data.line_art_svg = await processSvgAsset(svgPath);
-
-        // Generate PNG-ified version at 96x64
-        data.line_art_96x64_png = await generatePngFromSvg(svgPath, 96, 64);
+        svgPath = join(dirname(entry.path), data.line_art_svg);
+      } else {
+        if (data.subtype) {
+          // get default from assets/<subtype>.svg if it exists
+          const placeholderPath = `assets/${data.subtype}.svg`;
+          if (Deno.stat(placeholderPath)) {
+            svgPath = placeholderPath;
+            //console.log(`Using placeholder line art for ${productId} from ${placeholderPath}`);
+          }
+        } 
+        if (!svgPath) {
+          svgPath = `assets/default.svg`;
+          //console.log(`Using default line art for ${productId} from ${svgPath}`);
+        }
       }
+      // update based in the actually used image
+      data.line_art_svg = await processSvgAsset(svgPath);
+      // Generate PNG-ified version at 96x64
+      data.line_art_96x64_png = await generatePngFromSvg(svgPath, 96, 64);
 
       processedEntries.push({
         type: "product",
