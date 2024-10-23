@@ -2,6 +2,7 @@
 
 import { join, basename, extname, dirname } from "https://deno.land/std@0.203.0/path/mod.ts";
 import { walk } from "https://deno.land/std@0.203.0/fs/walk.ts";
+import { sleep } from "https://deno.land/x/sleep/mod.ts";
 
 // Define Interfaces based on schemas
 
@@ -110,12 +111,15 @@ async function splitVendorModel(productName: string): Promise<string> {
         } else {
           console.error(`Failed to extract vendor and product names: ${data}`);
           retries--;
+          await sleep(5);
+
           temp += 0.05;
         }
       } catch (error) {
         console.error(`Failed to extract vendor and product names: ${error}`);
         retries--;
         temp += 0.05;
+        await sleep(5);
         continue;
       }
     }

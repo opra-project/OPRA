@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Hi End Portable",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.9,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 402,
+        "gain_db": 7.6,
+        "q": 0.29
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 64,
+        "gain_db": -13.5,
+        "q": 0.23
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10000,
+        "gain_db": -13.5,
+        "q": 0.24
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6465,
+        "gain_db": 15.8,
+        "q": 1.03
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 0,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 185,
+        "gain_db": 0.5,
+        "q": 2.65
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 104,
+        "gain_db": -0.4,
+        "q": 1.94
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 50,
+        "gain_db": 0.2,
+        "q": 1.29
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 819,
+        "gain_db": 0.4,
+        "q": 3.32
+      }
+    ]
+  }
+}
