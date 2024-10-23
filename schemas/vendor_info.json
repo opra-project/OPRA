@@ -27,6 +27,6 @@
       "minLength": 5
     }
   },
-  "required": ["name", "official_name", "blurb"],
+  "required": ["name" ],
   "additionalProperties": false
 }

@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Ted's Squig Hoard",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.9,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -1.1,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4076,
+        "gain_db": 5,
+        "q": 2.11
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1501,
+        "gain_db": -1.4,
+        "q": 2.13
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 65,
+        "gain_db": 2.5,
+        "q": 1.04
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 197,
+        "gain_db": -1.1,
+        "q": 1.52
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -9.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5740,
+        "gain_db": 2.1,
+        "q": 4.44
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 731,
+        "gain_db": 0.6,
+        "q": 1.66
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2446,
+        "gain_db": 0.9,
+        "q": 5.56
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1153,
+        "gain_db": -0.8,
+        "q": 5.69
+      }
+    ]
+  }
+}

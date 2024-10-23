@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Bakkwatan",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -0.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 166,
+        "gain_db": -5.8,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4941,
+        "gain_db": 5.1,
+        "q": 0.57
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8815,
+        "gain_db": -4.8,
+        "q": 2.19
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1352,
+        "gain_db": 0.8,
+        "q": 0.18
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -2.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6159,
+        "gain_db": 2.4,
+        "q": 5.92
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1250,
+        "gain_db": -1,
+        "q": 3.33
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1739,
+        "gain_db": 1,
+        "q": 4.01
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5263,
+        "gain_db": -1.7,
+        "q": 6
+      }
+    ]
+  }
+}

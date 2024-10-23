@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by crinacle",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.4,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 3.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 241,
+        "gain_db": -6,
+        "q": 0.31
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2951,
+        "gain_db": 6,
+        "q": 0.38
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10000,
+        "gain_db": 3.7,
+        "q": 0.69
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1552,
+        "gain_db": -4.7,
+        "q": 1.65
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -4.2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9247,
+        "gain_db": 2.2,
+        "q": 3.64
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3266,
+        "gain_db": 0.3,
+        "q": 2.66
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 933,
+        "gain_db": 0.4,
+        "q": 4.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 39,
+        "gain_db": -0.4,
+        "q": 3.41
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Kazi",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2.9,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -1.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 175,
+        "gain_db": -2.1,
+        "q": 1.29
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 692,
+        "gain_db": 2.1,
+        "q": 1.26
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6285,
+        "gain_db": 3.3,
+        "q": 4.67
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4659,
+        "gain_db": -1.6,
+        "q": 4.14
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -2.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 63,
+        "gain_db": 0.5,
+        "q": 1.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2999,
+        "gain_db": 0.9,
+        "q": 3.61
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1759,
+        "gain_db": -0.3,
+        "q": 1.43
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 28,
+        "gain_db": -0.5,
+        "q": 2.39
+      }
+    ]
+  }
+}

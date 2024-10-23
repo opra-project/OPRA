@@ -34,12 +34,9 @@ Tools, scripts, and other resources are in the `tools/` directory. Tools should 
 ├── database/vendors/
 │   ├── <vendor_slug>/               Unique identifier for the vendor, e.g. "senheiser" or "audeze"
 │   │   ├── info.json                      Information about the vendor
-│   │   ├── logo.png                       Square logo, 1024x1024 with transparent background
 │   │   ├── products/                      Sub-folder where products are kept
 │   │   │   ├── <product_slug>/            Unique identifier for the product among these vendor's products, e.g. "hd600" or "lcd_5"
 │   │   │   │   ├── info.json              Information about the product
-│   │   │   │   ├── photo.png              Square product photo, 1024x1024 PNG
-│   │   │   │   ├── line_art.svg           Line art SVG for the product
 │   │   │   │   ├── eq/
 │   │   │   │   │   ├── <eq_slug>/
 │   │   │   │   │   │   ├── info.json

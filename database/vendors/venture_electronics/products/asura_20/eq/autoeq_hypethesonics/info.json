@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by HypetheSonics",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.7,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 6.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 141,
+        "gain_db": -12.5,
+        "q": 0.38
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3644,
+        "gain_db": 6.9,
+        "q": 0.21
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 986,
+        "gain_db": -6,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 62,
+        "gain_db": 7,
+        "q": 0.75
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 3.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1991,
+        "gain_db": 2.2,
+        "q": 3.66
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1463,
+        "gain_db": -1.5,
+        "q": 3.93
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 431,
+        "gain_db": -0.9,
+        "q": 2.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 261,
+        "gain_db": 1.2,
+        "q": 3.64
+      }
+    ]
+  }
+}

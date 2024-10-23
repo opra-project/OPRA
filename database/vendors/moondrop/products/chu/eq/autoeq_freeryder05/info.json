@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by freeryder05",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 1.1,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 664,
+        "gain_db": 1.4,
+        "q": 1.46
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 193,
+        "gain_db": -1.1,
+        "q": 1.83
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 63,
+        "gain_db": 1.3,
+        "q": 1.33
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6312,
+        "gain_db": -0.8,
+        "q": 2.86
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -5.2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8637,
+        "gain_db": 2.5,
+        "q": 3.57
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1339,
+        "gain_db": -0.6,
+        "q": 2.34
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2790,
+        "gain_db": 0.4,
+        "q": 1.14
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 894,
+        "gain_db": 0.3,
+        "q": 3.47
+      }
+    ]
+  }
+}

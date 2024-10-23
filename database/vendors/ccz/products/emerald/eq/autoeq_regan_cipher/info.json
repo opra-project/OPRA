@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Regan Cipher",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.3,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 15.1,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 51,
+        "gain_db": -14.8,
+        "q": 0.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 755,
+        "gain_db": 4,
+        "q": 0.75
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7090,
+        "gain_db": 5,
+        "q": 1.12
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5305,
+        "gain_db": -5.4,
+        "q": 2.8
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 0.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1798,
+        "gain_db": 1,
+        "q": 2.59
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2715,
+        "gain_db": -1.4,
+        "q": 3.81
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1205,
+        "gain_db": -0.6,
+        "q": 3.04
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3610,
+        "gain_db": 0.8,
+        "q": 4.89
+      }
+    ]
+  }
+}

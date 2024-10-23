@@ -43,6 +43,6 @@
       "enum": ["over_the_ear", "on_ear", "in_ear", "earbuds" ]
     }
   },
-  "required": ["name", "blurb", "type", "subtype" ],
+  "required": ["name", "type", "subtype" ],
   "additionalProperties": false
 }

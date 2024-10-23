@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by oratory1990",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2997,
+        "gain_db": 5.7,
+        "q": 1.48
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 75,
+        "gain_db": -4.1,
+        "q": 0.38
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1267,
+        "gain_db": -0.8,
+        "q": 2.09
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 261,
+        "gain_db": -1.1,
+        "q": 1.7
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -3.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9787,
+        "gain_db": -3.3,
+        "q": 1.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4341,
+        "gain_db": 1.1,
+        "q": 3.77
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6644,
+        "gain_db": 2.1,
+        "q": 5.97
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7958,
+        "gain_db": -1.2,
+        "q": 5.41
+      }
+    ]
+  }
+}

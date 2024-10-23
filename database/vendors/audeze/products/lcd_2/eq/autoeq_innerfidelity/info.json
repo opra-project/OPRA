@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Innerfidelity",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 4.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": -2.6,
+        "q": 0.45
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2088,
+        "gain_db": 3.3,
+        "q": 2.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4411,
+        "gain_db": 4.6,
+        "q": 3.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 797,
+        "gain_db": -2.4,
+        "q": 3.05
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -6.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9690,
+        "gain_db": 5.6,
+        "q": 3.14
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7168,
+        "gain_db": 2.8,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9863,
+        "gain_db": -0.7,
+        "q": 5.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 138,
+        "gain_db": 0.3,
+        "q": 2.21
+      }
+    ]
+  }
+}

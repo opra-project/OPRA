@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Filk",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.1,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1542,
+        "gain_db": -6.3,
+        "q": 0.28
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 164,
+        "gain_db": 6,
+        "q": 1.32
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3597,
+        "gain_db": 7.2,
+        "q": 2.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5926,
+        "gain_db": 6.8,
+        "q": 0.96
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8034,
+        "gain_db": -3.2,
+        "q": 3.85
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 278,
+        "gain_db": 0.1,
+        "q": 2.24
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3688,
+        "gain_db": 0.4,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6780,
+        "gain_db": 0.7,
+        "q": 6
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Kuulokenurkka",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 590,
+        "gain_db": 4.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 172,
+        "gain_db": -6.2,
+        "q": 0.95
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4322,
+        "gain_db": 5.7,
+        "q": 2.97
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2807,
+        "gain_db": -5.2,
+        "q": 3.08
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 5.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9316,
+        "gain_db": -5.1,
+        "q": 3.33
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 56,
+        "gain_db": -0.9,
+        "q": 2.28
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1718,
+        "gain_db": -0.9,
+        "q": 3.81
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9284,
+        "gain_db": -0.1,
+        "q": 3.87
+      }
+    ]
+  }
+}

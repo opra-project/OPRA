@@ -1,4 +1,4 @@
-#!/usr/bin/env -S deno run --allow-read --allow-write --allow-run
+#!/usr/bin/env -S deno run --allow-read --allow-write --allow-run --allow-import
 
 import { parse } from "https://deno.land/std@0.118.0/flags/mod.ts";
 import { join, dirname, extname, relative } from "https://deno.land/std@0.118.0/path/mod.ts";

@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Fahryst",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 0.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 163,
+        "gain_db": -3.3,
+        "q": 0.79
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6299,
+        "gain_db": 4,
+        "q": 4.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 723,
+        "gain_db": 2.2,
+        "q": 1.47
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8799,
+        "gain_db": 3.5,
+        "q": 2.55
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 0.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3349,
+        "gain_db": 1.9,
+        "q": 2.95
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1998,
+        "gain_db": -1.9,
+        "q": 2.81
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4630,
+        "gain_db": -3,
+        "q": 5.13
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2848,
+        "gain_db": 0.7,
+        "q": 2.07
+      }
+    ]
+  }
+}
