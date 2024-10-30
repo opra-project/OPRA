@@ -277,7 +277,7 @@ async function processEntries() {
       // Product info
       const vendorId = parts[1];
       const productName = parts[3];
-      const productId = `${vendorId}_${productName}`;
+      const productId = `${vendorId}::${productName}`;
 
       // Validate
       const valid = validateProductInfo(data);
@@ -331,8 +331,8 @@ async function processEntries() {
       const vendorId = parts[1];
       const productName = parts[3];
       const eqName = parts[5];
-      const eqId = `${vendorId}_${productName}_${eqName}`;
-      const productId = `${vendorId}_${productName}`;
+      const eqId = `${vendorId}:${productName}::${eqName}`;
+      const productId = `${vendorId}::${productName}`;
 
       // Validate
       const valid = validateEqInfo(data);
