@@ -1,20 +1,25 @@
-# Roon Open Headphones Database
+# OPRA
 
 <img src="logo.png" alt="My Logo" width="512" />
 
 ## About
 
-The Roon Open Headphones Database is a comprehensive and standardized dataset
-of headphone product information and EQ parameters, designed to improve the
-experience of the headphones community.
+
+OPRA is an open, community-maintained directory of product information and EQ compensation 
+curves that optimize a wide range of headphone models. 
 
 This open dataset is intended to be a resource that anyone can use, whether for
 personal projects, open-source contributions, or commercial applications, with
 minimal restrictions.
 
+The OPRA project started at Roon Labs, makers of the [Roon](https://roon.app) music 
+management software, but our intent is to for this this to be community-driven project. 
+Roon will assist on an ongoing basis with ingesting and cleaning data and generating
+graphics assets for brands and headphones.
+
 ## How do I contribute to the database?
 
-In short, follow our file and directory structure, and submit a PR with your changes.
+Follow our file and directory structure, and submit a PR with your changes.
 
 See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for more detailed documentation.
 
@@ -37,7 +42,8 @@ ensures that derivative works remain available to the community.
 
 If your project incorporates data from this repository, you must display a link
 to this repository in a location that is visible to the user when interacting
-with this data. Please give credit to the "Roon Open Headphones Database".
+with this data. Please give credit to the "OPRA from Roon" as well as the author 
+of the headphone preset.
 
 <<TODO: example screenshot from Roon showing proper attribution>>
 

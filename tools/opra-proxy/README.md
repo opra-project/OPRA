@@ -1,6 +1,6 @@
-# Roon Open Headphones Database Proxy
+# OPRA Database Proxy
 
-This is a proxy for the Roon Open Headphones database to avoid excessive traffic 
+This is a proxy for the OPRA database to avoid excessive traffic 
 to github.com, which bills by the gigabyte.
 
 This is built to run on the Cloudflare Workers platform, which is a serverless

@@ -6,8 +6,8 @@ The database is automatically generated in the `dist/` subfolder after every com
 
 In order to minimize traffic to github, we have some guidelines for consuming the database:
 
- - **For commercial products**, please mirror or cache `dist/` folder on your own infrastructure. We have published sample code for proxying this database using the Cloudflare workers platform in `tools/rohdb-proxy`, and you are free to modify and deploy this as you see fit, or come up with your own solution.
- - **For open source, non-commercial, and personal use**, please fetch the database from `http://rohdb.roonlabs.net/database_v1.jsonl,assets/...`. This mirror is maintained by Roon Labs, served and cached globally by Cloudflare, and is no more than 5 minutes stale.
+ - **For commercial products**, please mirror or cache `dist/` folder on your own infrastructure. We have published sample code for proxying this database using the Cloudflare workers platform in `tools/opra-proxy`, and you are free to modify and deploy this as you see fit, or come up with your own solution.
+ - **For open source, non-commercial, and personal use**, please fetch the database from `http://opra.roonlabs.net/database_v1.jsonl,assets/...`. This mirror is maintained by Roon Labs, served and cached globally by Cloudflare, and is no more than 5 minutes stale.
  - **Access github directly only if you truly need up-to-the-minute results**, for example for iterative development, debugging, or reviewing recently added data.
 
 Thank you for following these guidelines, it helps us maintain availability of the database for all.

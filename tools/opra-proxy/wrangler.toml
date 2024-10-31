@@ -1,8 +1,8 @@
-name = "rohdb-proxy"
+name = "opra-proxy"
 main = "src/index.js"
 compatibility_date = "2023-10-10"
 account_id = "REPLACE_WITH_ACCOUNT_ID"
 workers_dev = false
 
 [env.prd]
-route = "rohdb.yourdomain.com/*"
+route = "opra.yourdomain.com/*"
