@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Harpo",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -2.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5731,
+        "gain_db": 5.7,
+        "q": 0.98
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1592,
+        "gain_db": -3.5,
+        "q": 1.06
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 206,
+        "gain_db": -3,
+        "q": 0.91
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9475,
+        "gain_db": 3.9,
+        "q": 1.64
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 1,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 71,
+        "gain_db": 0.8,
+        "q": 1.83
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 133,
+        "gain_db": -0.6,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3911,
+        "gain_db": -1.1,
+        "q": 5.45
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3130,
+        "gain_db": 0.9,
+        "q": 4.63
+      }
+    ]
+  }
+}

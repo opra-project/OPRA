@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by ToneDeafMonk",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -0.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 149,
+        "gain_db": -2.9,
+        "q": 0.82
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3207,
+        "gain_db": 3.7,
+        "q": 2.21
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6725,
+        "gain_db": 3.7,
+        "q": 5.19
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 65,
+        "gain_db": 0.4,
+        "q": 1.68
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1235,
+        "gain_db": -0.8,
+        "q": 2.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 769,
+        "gain_db": 0.4,
+        "q": 1.92
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2285,
+        "gain_db": 0.3,
+        "q": 2.93
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5407,
+        "gain_db": 0.6,
+        "q": 6
+      }
+    ]
+  }
+}

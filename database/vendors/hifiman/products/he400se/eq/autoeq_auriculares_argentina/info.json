@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Auriculares Argentina",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 6.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1940,
+        "gain_db": 4,
+        "q": 2.17
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 751,
+        "gain_db": -1.4,
+        "q": 1.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 213,
+        "gain_db": -1.6,
+        "q": 0.43
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 70,
+        "gain_db": -1.6,
+        "q": 1.54
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -4.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1260,
+        "gain_db": -1.8,
+        "q": 5.69
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7014,
+        "gain_db": 2.2,
+        "q": 5.61
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 969,
+        "gain_db": 0.8,
+        "q": 4.95
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1533,
+        "gain_db": 1.1,
+        "q": 6
+      }
+    ]
+  }
+}

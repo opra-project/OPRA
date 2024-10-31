@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Headphone.com Legacy",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 6.2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 347,
+        "gain_db": -3.2,
+        "q": 1.39
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 868,
+        "gain_db": -0.8,
+        "q": 1.64
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 109,
+        "gain_db": -2.8,
+        "q": 2.86
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 229,
+        "gain_db": 1.4,
+        "q": 2.8
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -2.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9382,
+        "gain_db": -2.4,
+        "q": 2.14
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2702,
+        "gain_db": 1.8,
+        "q": 3.99
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3532,
+        "gain_db": -3.2,
+        "q": 5.85
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4331,
+        "gain_db": 2.4,
+        "q": 6
+      }
+    ]
+  }
+}
