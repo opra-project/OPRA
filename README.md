@@ -1,4 +1,4 @@
-<img src="logo.png" alt="My Logo" width="512" />
+<p align='center'><img src="logo.png" alt="My Logo" width="512" /></p>
 
 ## About
 
@@ -6,7 +6,7 @@ OPRA is an open, community-maintained directory of product information and EQ co
 curves that optimize a wide range of headphone models. 
 
 This open dataset is intended to be a resource that anyone can use, whether for
-personal projects, open-source contributions, or commercial applications, with
+personal projects, open-source applications, or commercial applications, with
 minimal restrictions.
 
 The OPRA project started at Roon Labs, makers of the [Roon](https://roon.app) music 
