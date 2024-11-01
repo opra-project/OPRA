@@ -1,4 +1,4 @@
-<p align='center'><img src="logo.png" alt="My Logo" width="512" /></p>
+<p align='center'><img src="images/logo.png" alt="My Logo" width="512" /></p>
 
 ## About
 
@@ -35,12 +35,16 @@ Manufacturer, product, and EQ data is licensed under [CC BY-SA 4.0](https://crea
 manner to Wikipedia. This license allows both commercial and non-commercial use and
 ensures that derivative works remain available to the community.
 
-If your project incorporates data from this repository, you must display a link
-to this repository in a location that is visible to the user when interacting
-with this data. Please give credit to the "OPRA from Roon" as well as the author 
-of the headphone preset.
+Attribution is required at two levels. If you are presenting a browser for the 
+OPRA database, please include the logo, as well as a brief description of what the 
+project is all about and a link to the repository. For example:
 
-<<TODO: example screenshot from Roon showing proper attribution>>
+<img src="images/opra_attribution_sample.png" alt="OPRA attribution sample" width="512" />
+
+When attributing presets, it is important to credit the preset creator as well 
+as the database itself. For example:
+
+<img src="images/preset_attribution_sample.png" alt="Preset attribution sample" width="512" />
 
 ### Why is Roon Labs doing this?
 
