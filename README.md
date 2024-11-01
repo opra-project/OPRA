@@ -56,10 +56,15 @@ project is all about and a link to the repository. For example:
 <img src="images/opra_attribution_sample.png" alt="OPRA attribution sample" />
 
 When attributing presets, it is important to credit the preset creator as well 
-as the database itself. If you have the optionl make the preset creator attribution
-more visually prominent in these contexts. For example:
+as the database itself. If possible, make the preset creator attribution more 
+visually prominent in these contexts. For example:
 
 <img src="images/preset_attribution_sample.png" alt="Preset attribution sample" />
+
+### Who is Roon Labs?
+
+Roon Labs is the team that makes the Roon music management software. For more 
+information about Roon, see https://roon.app.
 
 ### Why is Roon Labs doing this?
 
@@ -98,14 +103,14 @@ interested in contributing data may not be in a position to produce high quality
 
 ### Where is the data coming from?
 
-This repository is intended to aggregate the major creators of EQ curves from
-the headphones communities. We have kicked things off by ingesting and cleaning data 
+This repository is intended to aggregate the output of major creators of EQ curves from
+the headphones communities. We have kicked things off by ingesting and cleaning the data 
 from [the AutoEQ project](https://github.com/jaakkopasanen/AutoEq), as it is already 
-released under a sufficiently permissive license. 
+released under a permissive license. 
 
 We hope that over time other major creators of EQ compensation curves will choose to be 
-a part of this, and we look forward to learning where the community wants this project
-to go next.
+a part of this effort, and we look forward to collaborating with the community to see
+where you want to take it next.
 
 ### Who can use this data?
 
