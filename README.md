@@ -3,15 +3,29 @@
 ## About
 
 OPRA is an open, community-maintained directory of product information and EQ compensation 
-curves that optimize a wide range of headphone models. 
+curves that optimize a wide range of headphone models. Our mission is to make it simpler 
+to unlock the full potential of your headphones regardless of your level of experience, 
+which software you choose to use, or the price point of your gear. 
 
-This open dataset is intended to be a resource that anyone can use, whether for
+There is headphone EQ information spread across the internet in forums, subreddits, and Discord
+channels. It is all out there, but is not very accessible. At the same time, there are pricey 
+commercial headphone correction products, but they only work in certain software and with certain 
+headphones. We believe that community is doing a better job measuring headphones and developing EQ curves, 
+but their work is fragmented, not easily accessed in software, and difficult for people to use. 
+
+We have seen how efforts like [Wikipedia](https://wikipedia.com), [MusicBrainz](https://musicbrainz.org), and
+the [Open Source Seed Initiative](https://osseeds.org) successfully disrupt commercial
+spaces with open products, and we see an opportunity to do the same. 
+
+OPRA collects, organizes, and distributes this information in a way that makes it easy for 
+the software you are already using to benefit from the work that headphone communities are 
+already doing. This open dataset is intended to be a resource that anyone can use, whether for
 personal projects, open-source applications, or commercial applications, with
 minimal restrictions.
 
-The OPRA project started at Roon Labs, the makers of the [Roon](https://roon.app) music 
-management software, and Roon continues to contribute by maintaining the repository, 
-creating vendor and product artwork, and assisting with data ingestion and cleanup.
+The OPRA project started at Roon Labs, the makers of [Roon](https://roon.app) and 
+Roon Labs continues to contribute by maintaining the repository, producing vendor 
+and product artwork, and assisting with data ingestion and cleanup.
 
 ## How do I contribute to the database?
 
