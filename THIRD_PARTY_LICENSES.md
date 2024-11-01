@@ -1,6 +1,7 @@
 # AutoEQ
 
-This database includes data from the [AutoEQ](https://github.com/jaakkopasanen/AutoEq?tab=MIT-1-ov-file#readme) 
+This database includes data from the [AutoEQ](https://github.com/jaakkopasanen/AutoEq?tab=MIT-1-ov-file#readme) project.
+
 The AutoEQ repository is licensed as follows:
 
 	MIT License

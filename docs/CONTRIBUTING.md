@@ -123,10 +123,9 @@ _See also, [schemas/eq_info.json](../schemas/eq_info.json) for the JSON schema t
 
 #### Fields
 
-- `name`: The name of the EQ curve
 - `author`: The author of the EQ curve. Please keep this consistent across the author's output
+- `details`: Further details about the EQ curve, for example "Measured by John Smith"
 - `link`: A link to the source, if applicable. This might link to a measurement PDF, another git repository, a forum post, etc.
-- `blurb`: A 1-3 sentence description of the EQ curve.
 - `type`: `parametric_eq`. We may support more types later.
 - `parameters`: The parameters for the parametric equalizer
   - `gain_db`: An overall gain adjustment to apply as part of equalization.

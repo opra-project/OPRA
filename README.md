@@ -65,8 +65,7 @@ You can find OPRA logos in PNG format in the `images/` folder.
 
 ### Who is Roon Labs?
 
-Roon Labs is the team that makes the Roon music management software. For more 
-information about Roon, see https://roon.app.
+Roon Labs is the team that makes Roon. For more information about Roon, see https://roon.app.
 
 ### Why is Roon Labs doing this?
 
