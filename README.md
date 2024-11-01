@@ -39,12 +39,12 @@ Attribution is required at two levels. If you are presenting a browser for the
 OPRA database, please include the logo, as well as a brief description of what the 
 project is all about and a link to the repository. For example:
 
-<img src="images/opra_attribution_sample.png" alt="OPRA attribution sample" width="512" />
+<img src="images/opra_attribution_sample.png" alt="OPRA attribution sample" />
 
 When attributing presets, it is important to credit the preset creator as well 
 as the database itself. For example:
 
-<img src="images/preset_attribution_sample.png" alt="Preset attribution sample" width="512" />
+<img src="images/preset_attribution_sample.png" alt="Preset attribution sample" />
 
 ### Why is Roon Labs doing this?
 
