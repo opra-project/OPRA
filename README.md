@@ -61,6 +61,8 @@ visually prominent in these contexts. For example:
 
 <img src="images/preset_attribution_sample.png" alt="Preset attribution sample" />
 
+You can find OPRA logos in PNG format in the `images/` folder. 
+
 ### Who is Roon Labs?
 
 Roon Labs is the team that makes the Roon music management software. For more 
