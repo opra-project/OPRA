@@ -7,11 +7,11 @@ curves that optimize a wide range of headphone models. Our mission is to make it
 to unlock the full potential of your headphones regardless of your level of experience, 
 which software you choose to use, or the price point of your gear. 
 
-There is headphone EQ information spread across the internet in forums, subreddits, and Discord
+Headphone EQ information is spread across the internet in forums, subreddits, and Discord
 channels. It is all out there, but is not very accessible. At the same time, there are pricey 
 commercial headphone correction products, but they only work in certain software and with certain 
-headphones. We believe that community is doing a better job measuring headphones and developing EQ curves, 
-but their work is fragmented, not easily accessed in software, and difficult for people to use. 
+headphones. We believe that the community is doing a better job measuring headphones and developing EQ curves, 
+but their work is fragmented, not easily accessed in player software, and difficult for people to use. 
 
 We have seen how efforts like [Wikipedia](https://wikipedia.com), [MusicBrainz](https://musicbrainz.org), and
 the [Open Source Seed Initiative](https://osseeds.org) successfully disrupt commercial
@@ -35,9 +35,10 @@ See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for more detailed documentation.
 
 ## How do I consume this database?
 
-The dataset is automatically generated after every commit to the repository.
+The dataset is automatically generated after every commit to the repository. It is designed to be easily used by player
+software. 
 
-See [CONSUMING.md](docs/CONSUMING.md) for information about the dataset formats, and 
+See [CONSUMING.md](docs/CONSUMING.md) for information about the dataset formats, and how to best consume the data. 
 
 ## FAQ
 
@@ -50,18 +51,21 @@ manner to Wikipedia. This license allows both commercial and non-commercial use 
 ensures that derivative works remain available to the community.
 
 Attribution is required at two levels. If you are presenting a browser for the 
-OPRA database, please include the logo, as well as a brief description of what the 
-project is all about and a link to the repository. For example:
+OPRA database, please include the OPRA logo, as well as a brief description of what the 
+project is all about and a link to the repository. You can find OPRA logos in PNG format in the `images/` folder.  
+
+For example:
 
 <img src="images/opra_attribution_sample.png" alt="OPRA attribution sample" />
 
 When attributing presets, it is important to credit the preset creator as well 
-as the database itself. If possible, make the preset creator attribution more 
-visually prominent in these contexts. For example:
+as providing a link to the OPRA GitHub page. If possible, please make the preset 
+creator attribution more visually prominent than the OPRA attribution.
+
+For example:
 
 <img src="images/preset_attribution_sample.png" alt="Preset attribution sample" />
 
-You can find OPRA logos in PNG format in the `images/` folder. 
 
 ### Who is Roon Labs?
 
@@ -80,15 +84,16 @@ in varying levels of readiness for use. There is no one-size-fits-all solution
 for importing an EQ specification into a piece of software. 
 
 At the same time, we did not see it as our place to move into a new space and start
-grabbing land. We believe that something like this should exist, and that it would be 
+claiming territory. We believe that something like OPRA should exist, and that it would be 
 best for everyone if it is available to all, so while Roon will certainly integrate 
 and contribute to OPRA, it's not our intent to control its destiny. 
 
 ### How is Roon Labs involved in this project?
 
 Roon has set up the repository, defined the git-based database format, built the
-documentation and tooling, and built a system that makes this data available
-to software that might make use of it. 
+documentation and tooling, and craeted a system that makes this data available
+to software that might make use of it. We have also contributed significant amounts
+of vendor and product artwork to ensure that products based on OPRA look great.
 
 We will be approving PRs as the community builds out the repository, and as leaders emerge 
 in the community, we will share this responsibility with others to ensure that this project 
