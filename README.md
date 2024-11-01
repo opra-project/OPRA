@@ -1,4 +1,4 @@
-<p align='center'><img src="images/logo.png" alt="My Logo" width="512" /></p>
+<p align='center'><img src="images/repository_header_logo.png" alt="My Logo" width="512" /></p>
 
 ## About
 
