@@ -76,25 +76,22 @@ new to the hobby, and inefficient for the rest of us.
 EQ curves are described in varying formats and terms, sometimes delivered via pdf,
 or simply in forum messages. Terminology is inconsistent, and information appears
 in varying levels of readiness for use. There is no one-size-fits-all solution 
-for importing an EQ specification into a piece of software.
+for importing an EQ specification into a piece of software. 
 
-We want to make this process easier for headphone enthusiasts regardless of what 
-software they choose to use. We also want to help new members of the community, who 
-may not be as active on internet forums, to find these resources in their software of 
-choice.
-
-We felt that an open approach would be more beneficial for everyone involved. We are 
-trying to solve an access and convenience issue, not just for Roon, but for the 
-headphones community at large. We are in a good position to commit some resources to 
-making this a success, so we decided to proceed with an open approach
+At the same time, we did not see it as our place to move into a new space and start
+grabbing land. We believe that something like this should exist, and that it would be 
+best for everyone if it is available to all, so while Roon will certainly integrate 
+and contribute to OPRA, it's not our intent to control its destiny. 
 
 ### How is Roon Labs involved in this project?
 
-Roon has set up the repository, defined the git-based database format and built the
-documentation and tooling that surround this dataset. We will also be reviewing approving
-PRs as the community builds out the repository, and as leaders emerge in the community,
-we will share this responsibility with others to ensure that this project is resillient 
-to future change.
+Roon has set up the repository, defined the git-based database format, built the
+documentation and tooling, and built a system that makes this data available
+to software that might make use of it. 
+
+We will be approving PRs as the community builds out the repository, and as leaders emerge 
+in the community, we will share this responsibility with others to ensure that this project 
+is resillient in the long term. 
 
 Going forward, we will work to keep the data set clean and consistent so that when it
 is utilized within a product, the experience is great. We will use our graphic design team 
