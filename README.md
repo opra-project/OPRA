@@ -111,7 +111,7 @@ the headphones communities. We have kicked things off by ingesting and cleaning 
 from [the AutoEQ project](https://github.com/jaakkopasanen/AutoEq), as it is already 
 released under a permissive license. 
 
-Early collaborations are being developed with likeminded leaders such as 
+Early collaborations are under development with likeminded leaders such as 
 [oratory1990](https://www.reddit.com/r/oratory1990/) and we look forward to sharing 
 updates soon.
 
