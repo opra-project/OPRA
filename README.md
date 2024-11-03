@@ -3,12 +3,12 @@
 ## About
 
 OPRA is an open, community-maintained directory of product information and EQ compensation 
-curves that optimize a wide range of headphone models. Our mission is to make it simpler 
-to unlock the full potential of your headphones regardless of your level of experience, 
+curves that optimize a wide range of headphone models. Our mission is to simplify and reduce the 
+effort required to unlock the full potential of your headphones regardless of your level of experience, 
 which software you choose to use, or the price point of your gear. 
 
 Headphone EQ information is spread across the internet in forums, subreddits, and Discord
-channels. It is all out there, but is not very accessible. At the same time, there are pricey 
+channels. It is all out there, but not very accessible. At the same time, there are pricey 
 commercial headphone correction products, but they only work in certain software and with certain 
 headphones. We believe that the community is doing a better job measuring headphones and developing EQ curves, 
 but their work is fragmented, not easily accessed in player software, and difficult for people to use. 
@@ -91,13 +91,13 @@ and contribute to OPRA, it's not our intent to control its destiny.
 ### How is Roon Labs involved in this project?
 
 Roon has set up the repository, defined the git-based database format, built the
-documentation and tooling, and craeted a system that makes this data available
+documentation and tooling, and created a system that makes this data available
 to software that might make use of it. We have also contributed significant amounts
 of vendor and product artwork to ensure that products based on OPRA look great.
 
 We will be approving PRs as the community builds out the repository, and as leaders emerge 
 in the community, we will share this responsibility with others to ensure that this project 
-is resillient in the long term. 
+is resilient in the long term. 
 
 Going forward, we will work to keep the data set clean and consistent so that when it
 is utilized within a product, the experience is great. We will use our graphic design team 
@@ -110,6 +110,10 @@ This repository is intended to aggregate the output of major creators of EQ curv
 the headphones communities. We have kicked things off by ingesting and cleaning the data 
 from [the AutoEQ project](https://github.com/jaakkopasanen/AutoEq), as it is already 
 released under a permissive license. 
+
+Early collaborations are being developed with likeminded leaders such as 
+[oratory1990](https://www.reddit.com/r/oratory1990/) and we look forward to sharing 
+updates soon.
 
 We hope that over time other major creators of EQ compensation curves will choose to be 
 a part of this effort, and we look forward to collaborating with the community to see
