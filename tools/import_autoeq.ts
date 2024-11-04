@@ -80,7 +80,14 @@ async function splitVendorModel(productName: string): Promise<string> {
     while (retries > 0) {
       try {
         // Define the GPT-4o-mini prompt
-        const prompt = `Extract the vendor name and product name from the following product name: "${productName}". The vendor name is the part of the string that comes before the specific model or product designation. Your response should in the format { "vendorName": "Vendor Name", "productName": "Product Name" }.`;
+        const prompt = `Extract the vendor name and product name from the following product name: "${productName}". The vendor name is the part of the string that comes before the specific model or product designation. 
+
+When you see a product name like 'Sennheiser HD 800 S', split it so that vendor is 'Sennheiser' and product name is 'HD 800 S'
+When you see a product name like 'Moondrop x Crinacle FooBarBaz', split it so that vendor is 'Moondrop' and product name is 'Moondrop x Crinacle FooBarBaz'. This is a special case for collaborations
+In general, words like "Audio" or "Acoustics" are part of a vendor name, e.g. "Aroma Audio ACE" is a product by "Aroma Audio". "ACE" is the product name. "Audio" is not part of the product name.
+There is a vendor called "Unknown". 
+
+Your response should in the format { "vendorName": "Vendor Name", "productName": "Product Name" }.`;
 
         // Set up the API request
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -107,6 +114,7 @@ async function splitVendorModel(productName: string): Promise<string> {
         const json = JSON.parse(data.choices?.[0]?.message?.content.trim());
 
         if (json && json.vendorName && json.productName) {
+          log(`Munged ${productName} into ${json.vendorName} and ${json.productName}`);
           return json;
         } else {
           console.error(`Failed to extract vendor and product names: ${data}`);
@@ -226,6 +234,7 @@ async function processSourceDirectory(srcDir: string, targetDir: string) {
     const fileName = basename(entry.path);
     if (!fileName.endsWith("ParametricEQ.txt")) continue;
 
+  /*
     if (entry.path == "../AutoEq/results/ToneDeafMonk/in-ear/EPZ Q5/EPZ Q5 ParametricEQ.txt") {
       gotit = true;
     }
@@ -233,6 +242,7 @@ async function processSourceDirectory(srcDir: string, targetDir: string) {
       log(`Skipping ${entry.path}`);
       continue;
     }
+    */
 
     log(`Processing EQ file: "${entry.path}"`);
 
