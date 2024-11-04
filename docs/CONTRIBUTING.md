@@ -184,6 +184,7 @@ For vendor logos we are looking for a square PNG file that depicts the company l
 2. Dimensions:  1024x1024 pixels 
 3. Background:  White background
 5. Quality:  Please ensure the logo is clear and legible
+6. Borders: Please ensure that there is 110px of whitespace around the edge of the image
 
 Please look at other entries in the database as examples before contributing graphics of your own.
 
