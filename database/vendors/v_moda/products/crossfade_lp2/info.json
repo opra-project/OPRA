@@ -1,5 +1,6 @@
 {
-  "name": "Crossfade LP2",
-  "type": "headphones",
-  "subtype": "over_the_ear"
+    "name": "Crossfade LP2",
+    "type": "headphones",
+    "subtype": "over_the_ear",
+    "line_art_svg": "line_art.svg"
 }

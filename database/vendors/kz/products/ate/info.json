@@ -1,5 +1,6 @@
 {
-  "name": "ATE",
-  "type": "headphones",
-  "subtype": "in_ear"
+    "name": "ATE",
+    "type": "headphones",
+    "subtype": "in_ear",
+    "line_art_svg": "line_art.svg"
 }

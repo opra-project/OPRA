@@ -1,5 +1,6 @@
 {
-  "name": "Steel",
-  "type": "headphones",
-  "subtype": "earbuds"
+    "name": "Steel",
+    "type": "headphones",
+    "subtype": "earbuds",
+    "line_art_svg": "line_art.svg"
 }

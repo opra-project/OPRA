@@ -1,5 +1,6 @@
 {
-  "name": "Elite 7 Pro",
-  "type": "headphones",
-  "subtype": "in_ear"
+    "name": "Elite 7 Pro",
+    "type": "headphones",
+    "subtype": "in_ear",
+    "line_art_svg": "line_art.svg"
 }

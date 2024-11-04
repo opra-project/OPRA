@@ -1,5 +1,6 @@
 {
-  "name": "A40 TR",
-  "type": "headphones",
-  "subtype": "over_the_ear"
+    "name": "A40 TR",
+    "type": "headphones",
+    "subtype": "over_the_ear",
+    "line_art_svg": "line_art.svg"
 }

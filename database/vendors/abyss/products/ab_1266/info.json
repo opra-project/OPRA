@@ -1,5 +1,6 @@
 {
-  "name": "AB-1266",
-  "type": "headphones",
-  "subtype": "over_the_ear"
+    "name": "AB-1266",
+    "type": "headphones",
+    "subtype": "over_the_ear",
+    "line_art_svg": "line_art.svg"
 }
