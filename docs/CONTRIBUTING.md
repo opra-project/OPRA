@@ -66,7 +66,7 @@ _See also, [schemas/vendor_info.json](../schemas/vendor_info.json) for the JSON 
 - `name`: A friendly name for the vendor, as people understand the brand.
 - `official_name`: The official name of the vendor, including company desginations.
 - `blurb`: a 1-3 sentence blurb describing the brand. It should describe the brand in a neutral fashion, and is not meant to contain marketing copy.
-- `logo`: The filename of a logo, if available. Conventionally, this should be `logo.png` and it should be placed next to the `info.json`. Logos should be square PNG files at 1024x1024 resolution with a transparent background. Logos may be omitted, and Roon Labs will help fill in gaps. (TODO: spec from B2)
+- `logo`: The filename of a logo, if available. Conventionally, this should be `logo.png` and it should be placed next to the `info.json`. Logos should follow the specs below. 
 
 
 ### Product `info.json`
@@ -90,8 +90,7 @@ _See also, [schemas/product_info.json](../schemas/product_info.json) for the JSO
 
 - `name`: The name of the product, as it appears in the product's marketing materials.
 - `blurb`: A 1-3 sentence description of the product.
-- `photo`: A photo of the product. (TODO: spec from B2)
-- `line_art`: An SVG line art image (TODO: spec from B2)
+- `line_art`: An SVG line art image. See below for graphics asset specs
 - `type`: "headphones"
 - `subtype`: `over_the_ear`, `on_the_ear`, `in-ear`, `earbuds`
 
