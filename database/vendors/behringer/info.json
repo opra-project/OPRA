@@ -1,3 +1,5 @@
 {
-  "name": "Behringer"
+    "name": "Behringer",
+    "logo": "logo.png",
+    "blurb": "Behringer is a leading global manufacturer of audio equipment, offering a wide range of products including mixers, synthesizers, amplifiers, and sound processors for both professional and home studio environments."
 }
