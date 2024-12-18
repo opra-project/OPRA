@@ -1,0 +1,46 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • With Ep0 Energizer",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -9.6,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 75,
+        "gain_db": -2.5,
+        "q": 0.3
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 10,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2410,
+        "gain_db": -7.8,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3500,
+        "gain_db": 5.3,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -17,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9500,
+        "gain_db": -4,
+        "q": 6
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Bluetooth, Anc Off",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 130,
+        "gain_db": -9.2,
+        "q": 0.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 380,
+        "gain_db": 1.8,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1450,
+        "gain_db": 3.1,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 4,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2800,
+        "gain_db": -3.3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4800,
+        "gain_db": -5,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8100,
+        "gain_db": -8,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1,
+        "q": 0.71
+      }
+    ]
+  }
+}

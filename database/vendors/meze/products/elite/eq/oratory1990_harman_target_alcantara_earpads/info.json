@@ -1,0 +1,64 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Alcantara Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -13.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 36,
+        "gain_db": 8,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": -1.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 410,
+        "gain_db": 2.7,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1950,
+        "gain_db": 5.8,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3700,
+        "gain_db": -2.4,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5300,
+        "gain_db": -2.3,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 11000,
+        "gain_db": -7,
+        "q": 0.71
+      }
+    ]
+  }
+}

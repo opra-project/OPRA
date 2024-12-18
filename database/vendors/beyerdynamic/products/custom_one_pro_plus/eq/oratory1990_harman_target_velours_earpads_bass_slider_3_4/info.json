@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Velours Earpads, Bass Slider 3_4",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 48,
+        "gain_db": -6.5,
+        "q": 0.5
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 125,
+        "gain_db": -2.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": 2,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2600,
+        "gain_db": -2.8,
+        "q": 1.7
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 2.8,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3900,
+        "gain_db": -1,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5700,
+        "gain_db": -5,
+        "q": 4.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8100,
+        "gain_db": -3.7,
+        "q": 6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -2,
+        "q": 0.71
+      }
+    ]
+  }
+}

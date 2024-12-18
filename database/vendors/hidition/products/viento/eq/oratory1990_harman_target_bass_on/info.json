@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Bass On",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 23,
+        "gain_db": -8.5,
+        "q": 0.2
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 10,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 360,
+        "gain_db": -1.2,
+        "q": 1.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 950,
+        "gain_db": 1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1400,
+        "gain_db": -1.4,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2900,
+        "gain_db": -1,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5500,
+        "gain_db": 3.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6800,
+        "gain_db": -1.3,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8800,
+        "gain_db": -5.3,
+        "q": 6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1,
+        "q": 0.71
+      }
+    ]
+  }
+}

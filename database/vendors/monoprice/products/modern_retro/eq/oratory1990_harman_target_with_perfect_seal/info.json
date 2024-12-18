@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • With Perfect Seal",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.3,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 200,
+        "gain_db": -13,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 250,
+        "gain_db": -2,
+        "q": 2.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 1600,
+        "gain_db": 5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2800,
+        "gain_db": -5.6,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": 5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4100,
+        "gain_db": -1.7,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5230,
+        "gain_db": -8,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6540,
+        "gain_db": -7.8,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 13000,
+        "gain_db": -5,
+        "q": 0.71
+      }
+    ]
+  }
+}

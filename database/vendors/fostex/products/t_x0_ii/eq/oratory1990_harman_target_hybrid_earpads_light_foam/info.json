@@ -1,0 +1,64 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Hybrid Earpads _ Light Foam",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.9,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 68,
+        "gain_db": -5.5,
+        "q": 0.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 130,
+        "gain_db": -1,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 500,
+        "gain_db": 4.3,
+        "q": 1.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1080,
+        "gain_db": -3.7,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2120,
+        "gain_db": 5.4,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3700,
+        "gain_db": -3.1,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5650,
+        "gain_db": -5.9,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8150,
+        "gain_db": -5.8,
+        "q": 5
+      }
+    ]
+  }
+}

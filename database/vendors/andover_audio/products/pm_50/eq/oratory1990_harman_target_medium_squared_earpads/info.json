@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Medium Squared Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -8.4,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 45,
+        "gain_db": 1,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 600,
+        "gain_db": 0.8,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1680,
+        "gain_db": -2.7,
+        "q": 1.8
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 1900,
+        "gain_db": 8,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3200,
+        "gain_db": -1.8,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4800,
+        "gain_db": 1.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6300,
+        "gain_db": -3,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8000,
+        "gain_db": -3.5,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 13000,
+        "gain_db": -4,
+        "q": 0.71
+      }
+    ]
+  }
+}

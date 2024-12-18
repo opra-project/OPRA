@@ -1,0 +1,52 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Velours Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 67,
+        "gain_db": -4,
+        "q": 1
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": -1.8,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1250,
+        "gain_db": -1.6,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2300,
+        "gain_db": -1,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5250,
+        "gain_db": -3,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10500,
+        "gain_db": 5,
+        "q": 0.8
+      }
+    ]
+  }
+}

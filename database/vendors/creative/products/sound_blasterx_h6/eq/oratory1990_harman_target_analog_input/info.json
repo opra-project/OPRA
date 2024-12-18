@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Analog Input",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 130,
+        "gain_db": -5.4,
+        "q": 0.25
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 590,
+        "gain_db": 7.4,
+        "q": 1.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 970,
+        "gain_db": -8.4,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2400,
+        "gain_db": 9.4,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3250,
+        "gain_db": -9.5,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4950,
+        "gain_db": -3.4,
+        "q": 7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5320,
+        "gain_db": -6.6,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 1,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10550,
+        "gain_db": -4,
+        "q": 7
+      }
+    ]
+  }
+}
