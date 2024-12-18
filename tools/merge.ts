@@ -235,6 +235,13 @@ function mergeEq(sourceEq: EQ, targetProduct: Product): EQ {
       if (targetEq.keys.includes(sourceKey)) {
         log(`Found matching EQ: ${sourceEq.slug} -> ${targetEq.slug}`);
 
+        // ABS the q's, there are occasionally typos :(
+        if (sourceEq.info.parameters) {
+          for (let band of sourceEq.info.parameters.bands) {
+            if (band.q < 0) band.q = -band.q;
+          }
+        }
+
         if (!validateEq(sourceEq.info)) {
           log(`Invalid EQ info in ${join(sourceEq.path, "info.json")}`);
           log(validateEq.errors);
@@ -265,14 +272,11 @@ function mergeEq(sourceEq: EQ, targetProduct: Product): EQ {
   newEq.keys = [...sourceEq.keys];
   newEq.parent = targetProduct;
 
-  if (!newEq.info.parameters) {
-    log(`missing EQ params in ${join(eqPath, "info.json")}`);
-    return undefined;
-  }
-
-  // ABS the q's, there are occasionally typos :(
-  for (let band of newEq.info.parameters.bands) {
-    if (band.q < 0) band.q = -band.q;
+  if (newEq.info.parameters) {
+    // ABS the q's, there are occasionally typos :(
+    for (let band of newEq.info.parameters.bands) {
+      if (band.q < 0) band.q = -band.q;
+    }
   }
 
   // Validate EQ info before writing

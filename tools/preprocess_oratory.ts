@@ -203,92 +203,102 @@ async function parseFilename(filename: string): Promise<ParsedFilename> {
 async function processDirectory(srcDir: string, targetDir: string) {
   log(`Starting PDF processing from "${srcDir}" to "${targetDir}"`);
 
-  // Clear out target directory if it exists
-  try {
-    await Deno.remove(targetDir, { recursive: true });
-    log(`Cleared existing target directory "${targetDir}"`);
-  } catch (error) {
-    if (!(error instanceof Deno.errors.NotFound)) {
-      throw error;
-    }
-  }
-  
-  // Create fresh target directory
+  // Create target directory if it doesn't exist
   await Deno.mkdir(targetDir, { recursive: true });
-  log(`Created fresh target directory "${targetDir}"`);
+  log(`Ensured target directory exists: "${targetDir}"`);
 
+  // Collect all PDF files first
+  const pdfFiles = [];
   for await (const entry of walk(srcDir, { exts: [".pdf"] })) {
-    log(`Processing PDF file: "${entry.path}"`);
+    pdfFiles.push(entry);
+  }
+  log(`Found ${pdfFiles.length} PDF files to process`);
 
-    try {
-      // Parse filename
-      const parsed = await parseFilename(entry.path);
-      const vendorSlug = generateSlug(parsed.vendor);
-      const productSlug = generateSlug(parsed.product);
+  // Process PDFs in chunks of 8
+  const chunkSize = 8;
+  for (let i = 0; i < pdfFiles.length; i += chunkSize) {
+    const chunk = pdfFiles.slice(i, i + chunkSize);
+    log(`Processing chunk of ${chunk.length} PDFs (${i + 1}-${Math.min(i + chunkSize, pdfFiles.length)} of ${pdfFiles.length})`);
+    
+    // Process chunk in parallel
+    await Promise.all(chunk.map(async (entry) => {
+      log(`Processing PDF file: "${entry.path}"`);
+      try {
+        // Parse filename
+        const parsed = await parseFilename(entry.path);
+        
+        // Create paths
+        const vendorSlug = generateSlug(parsed.vendor);
+        const productSlug = generateSlug(parsed.product);
+        const targetSlug = generateSlug(parsed.target);
+        const extraSlug = parsed.extra ? `_${generateSlug(parsed.extra)}` : '';
+        const eqSlug = `oratory1990_${targetSlug}${extraSlug}`;
 
-      log(`    Parsed filename: ${JSON.stringify(parsed)}`);
-      log(`    Vendor slug: ${vendorSlug}`);
-      log(`    Product slug: ${productSlug}`);
+        const vendorPath = join(targetDir, "vendors", vendorSlug);
+        const productPath = join(vendorPath, "products", productSlug);
+        const eqPath = join(productPath, "eq", eqSlug);
 
-      // Extract EQ data
-      const eqData = await extractEQData(entry.path);
+        // Check if EQ info already exists
+        if (await exists(eqPath)) {
+          log(`    Skipping - EQ info already exists at "${eqPath}"`);
+          return;
+        }
 
-      log(`    Extracted EQ data: ${JSON.stringify(eqData)}`);
+        log(`    Parsed filename: ${JSON.stringify(parsed)}`);
+        log(`    Vendor slug: ${vendorSlug}`);
+        log(`    Product slug: ${productSlug}`);
 
-      // Create directory structure
-      const vendorPath = join(targetDir, "vendors", vendorSlug);
-      const productPath = join(vendorPath, "products", productSlug);
-      // Create EQ slug from author and details
-      const targetSlug = generateSlug(parsed.target);
-      const extraSlug = parsed.extra ? `_${generateSlug(parsed.extra)}` : '';
-      const eqSlug = `oratory1990_${targetSlug}${extraSlug}`;
-      const eqPath = join(productPath, "eq", eqSlug);
+        // Extract EQ data
+        const eqData = await extractEQData(entry.path);
 
-      await Deno.mkdir(eqPath, { recursive: true });
+        log(`    Extracted EQ data: ${JSON.stringify(eqData)}`);
 
-      // Create vendor info if it doesn't exist
-      const vendorInfoPath = join(vendorPath, "info.json");
-      if (!await exists(vendorInfoPath)) {
-        const vendorInfo: VendorInfo = {
-          name: parsed.vendor,
+        await Deno.mkdir(eqPath, { recursive: true });
+
+        // Create vendor info if it doesn't exist
+        const vendorInfoPath = join(vendorPath, "info.json");
+        if (!await exists(vendorInfoPath)) {
+          const vendorInfo: VendorInfo = {
+            name: parsed.vendor,
+          };
+          const vendorInfoContent = JSON.stringify(vendorInfo, null, 2);
+          await Deno.writeTextFile(vendorInfoPath, vendorInfoContent);
+          log(`    Created vendor info at "${vendorInfoPath}":`);
+          log(`${vendorInfoContent.split('\n').map(line => `      ${line}`).join('\n')}`);
+        }
+
+        // Create product info if it doesn't exist
+        const productInfoPath = join(productPath, "info.json");
+        if (!await exists(productInfoPath)) {
+          const productInfo: ProductInfo = {
+            name: parsed.product,
+            type: "headphones",
+            subtype: "unknown", 
+          };
+          const productInfoContent = JSON.stringify(productInfo, null, 2);
+          await Deno.writeTextFile(productInfoPath, productInfoContent);
+          log(`    Created product info at "${productInfoPath}":`);
+          log(`${productInfoContent.split('\n').map(line => `      ${line}`).join('\n')}`);
+        }
+
+        // Create EQ info
+        const eqInfo: EQInfo = {
+          author: "oratory1990",
+          details: parsed.extra ? `${parsed.target} • ${parsed.extra}` : parsed.target,
+          type: "parametric_eq",
+          parameters: eqData,
         };
-        const vendorInfoContent = JSON.stringify(vendorInfo, null, 2);
-        await Deno.writeTextFile(vendorInfoPath, vendorInfoContent);
-        log(`    Created vendor info at "${vendorInfoPath}":`);
-        log(`${vendorInfoContent.split('\n').map(line => `      ${line}`).join('\n')}`);
+
+        const eqInfoPath = join(eqPath, "info.json");
+        const eqInfoContent = JSON.stringify(eqInfo, null, 2);
+        await Deno.writeTextFile(eqInfoPath, eqInfoContent);
+        log(`    Created EQ info at "${eqInfoPath}":`);
+        log(`${eqInfoContent.split('\n').map(line => `      ${line}`).join('\n')}`);
+
+      } catch (error) {
+        log(`Error processing "${entry.path}": ${error.stack || error}`);
       }
-
-      // Create product info if it doesn't exist
-      const productInfoPath = join(productPath, "info.json");
-      if (!await exists(productInfoPath)) {
-        const productInfo: ProductInfo = {
-          name: parsed.product,
-          type: "headphones",
-          subtype: "unknown", 
-        };
-        const productInfoContent = JSON.stringify(productInfo, null, 2);
-        await Deno.writeTextFile(productInfoPath, productInfoContent);
-        log(`    Created product info at "${productInfoPath}":`);
-        log(`${productInfoContent.split('\n').map(line => `      ${line}`).join('\n')}`);
-      }
-
-      // Create EQ info
-      const eqInfo: EQInfo = {
-        author: "oratory1990",
-        details: parsed.extra ? `${parsed.target} • ${parsed.extra}` : parsed.target,
-        type: "parametric_eq",
-        parameters: eqData,
-      };
-
-      const eqInfoPath = join(eqPath, "info.json");
-      const eqInfoContent = JSON.stringify(eqInfo, null, 2);
-      await Deno.writeTextFile(eqInfoPath, eqInfoContent);
-      log(`    Created EQ info at "${eqInfoPath}":`);
-      log(`${eqInfoContent.split('\n').map(line => `      ${line}`).join('\n')}`);
-
-    } catch (error) {
-      log(`Error processing "${entry.path}": ${error.stack || error}`);
-    }
+    }));
   }
 }
 
