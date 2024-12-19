@@ -1,0 +1,58 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Blu-tac Mod",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1300,
+        "gain_db": -8.3,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 1550,
+        "gain_db": 4,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": 4.5,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3050,
+        "gain_db": -4,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5500,
+        "gain_db": -7.7,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8400,
+        "gain_db": -3,
+        "q": 6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -5,
+        "q": 0.71
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Sdr Mod, Dekoni Fenestrated Sheepskin Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -14.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 45,
+        "gain_db": 9,
+        "q": 0.55
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1100,
+        "gain_db": -1.9,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2050,
+        "gain_db": 5.7,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2850,
+        "gain_db": -5.1,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3800,
+        "gain_db": 2.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4600,
+        "gain_db": -3.3,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5550,
+        "gain_db": -1.6,
+        "q": 6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 11000,
+        "gain_db": -6,
+        "q": 0.7
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Usound",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 95,
+        "gain_db": 4,
+        "q": 0.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1550,
+        "gain_db": -3.2,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3450,
+        "gain_db": -2.5,
+        "q": 7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": 3.5,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8000,
+        "gain_db": -5,
+        "q": 0.71
+      }
+    ]
+  }
+}

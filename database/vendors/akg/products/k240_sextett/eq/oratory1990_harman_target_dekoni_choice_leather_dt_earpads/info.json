@@ -1,0 +1,64 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Dekoni Choice Leather Dt Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2.9,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 100,
+        "gain_db": -12,
+        "q": 0.2
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 500,
+        "gain_db": 3.3,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1500,
+        "gain_db": 4.3,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2700,
+        "gain_db": -4.1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3800,
+        "gain_db": 5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4450,
+        "gain_db": -3,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5500,
+        "gain_db": -8.8,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10580,
+        "gain_db": -6,
+        "q": 7
+      }
+    ]
+  }
+}

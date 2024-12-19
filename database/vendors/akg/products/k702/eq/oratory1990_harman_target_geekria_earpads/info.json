@@ -1,0 +1,64 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Geekria Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -10,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 40,
+        "gain_db": 4.5,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 760,
+        "gain_db": 2.8,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1700,
+        "gain_db": -2.9,
+        "q": 1.9
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2000,
+        "gain_db": -3,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2600,
+        "gain_db": -3.9,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3600,
+        "gain_db": 3.8,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5520,
+        "gain_db": -3.9,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": 1,
+        "q": 0.71
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Perforated Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.3,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 40,
+        "gain_db": -3.2,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 95,
+        "gain_db": -6.9,
+        "q": 1.2
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 185,
+        "gain_db": 2,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 850,
+        "gain_db": 1.4,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3150,
+        "gain_db": -1.8,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": 1.5,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6000,
+        "gain_db": -3.5,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7900,
+        "gain_db": -1.5,
+        "q": 7
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 14000,
+        "gain_db": -6,
+        "q": 0.71
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Sdr Mod",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 48,
+        "gain_db": 2.5,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 210,
+        "gain_db": -1.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 520,
+        "gain_db": 0.4,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1050,
+        "gain_db": -1.3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1900,
+        "gain_db": 3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2900,
+        "gain_db": -2.5,
+        "q": 2.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3900,
+        "gain_db": 3.8,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5600,
+        "gain_db": -5.5,
+        "q": 3.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1,
+        "q": 0.71
+      }
+    ]
+  }
+}

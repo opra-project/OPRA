@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • New Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2.6,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 43,
+        "gain_db": -9.5,
+        "q": 0.25
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 90,
+        "gain_db": 2,
+        "q": 1.4
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 210,
+        "gain_db": 6,
+        "q": 1.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2550,
+        "gain_db": -1.6,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3800,
+        "gain_db": 3,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5100,
+        "gain_db": -2.8,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6450,
+        "gain_db": -4,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8300,
+        "gain_db": -3.9,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -4,
+        "q": 0.71
+      }
+    ]
+  }
+}

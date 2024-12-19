@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Brainwavz Memory Foam Hybrid Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.3,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 28,
+        "gain_db": 4.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 180,
+        "gain_db": -0.9,
+        "q": 2
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 250,
+        "gain_db": -2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 348,
+        "gain_db": 7,
+        "q": 1.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 580,
+        "gain_db": -1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2800,
+        "gain_db": -2.4,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3900,
+        "gain_db": 2,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5800,
+        "gain_db": -8.1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8450,
+        "gain_db": -6,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1,
+        "q": 0.7
+      }
+    ]
+  }
+}

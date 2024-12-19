@@ -1,0 +1,52 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • 2020 Revised Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -7.5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 20,
+        "gain_db": 3,
+        "q": 1.4
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 350,
+        "gain_db": -1,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 950,
+        "gain_db": -1.7,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2200,
+        "gain_db": 2,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 6000,
+        "gain_db": 1,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 13000,
+        "gain_db": -3,
+        "q": 4
+      }
+    ]
+  }
+}

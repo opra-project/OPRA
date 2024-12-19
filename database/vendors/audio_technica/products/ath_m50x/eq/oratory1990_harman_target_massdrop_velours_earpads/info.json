@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Massdrop Velours Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 20,
+        "gain_db": 4.5,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 160,
+        "gain_db": -2.3,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 290,
+        "gain_db": 4.4,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 500,
+        "gain_db": -0.4,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1500,
+        "gain_db": -1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2700,
+        "gain_db": -3.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3650,
+        "gain_db": 2.3,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4350,
+        "gain_db": -5,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7500,
+        "gain_db": -1.5,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -9,
+        "q": 0.7
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Anc Off",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.3,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 40,
+        "gain_db": -4.1,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 175,
+        "gain_db": -4.7,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 88,
+        "gain_db": 1.2,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 300,
+        "gain_db": 6.3,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": -2.8,
+        "q": 1.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2300,
+        "gain_db": 1.2,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4100,
+        "gain_db": -1.7,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7400,
+        "gain_db": -4,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 13200,
+        "gain_db": -9,
+        "q": 6
+      }
+    ]
+  }
+}
