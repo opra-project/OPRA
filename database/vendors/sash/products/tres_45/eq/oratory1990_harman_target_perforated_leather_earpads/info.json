@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Perforated Leather Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -13.5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 30,
+        "gain_db": 8,
+        "q": 0.8
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 220,
+        "gain_db": -1,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 650,
+        "gain_db": -1,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1350,
+        "gain_db": -2.1,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1800,
+        "gain_db": 3.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3100,
+        "gain_db": -1.7,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5200,
+        "gain_db": -3.1,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7450,
+        "gain_db": -2,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 11000,
+        "gain_db": -3,
+        "q": 0.71
+      }
+    ]
+  }
+}

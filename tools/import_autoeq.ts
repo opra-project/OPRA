@@ -339,8 +339,10 @@ async function processSourceDirectory(srcDir: string, targetDir: string) {
 
     // Write EQ info.json
     try {
-      await Deno.writeTextFile(eqInfoPath, JSON.stringify(eqInfo, null, 2));
-      log(`    Wrote EQ info.json at "${eqInfoPath}"`);
+      const eqInfoContent = JSON.stringify(eqInfo, null, 2);
+      await Deno.writeTextFile(eqInfoPath, eqInfoContent);
+      log(`    Wrote EQ info.json at "${eqInfoPath}":`);
+      log(`${eqInfoContent.split('\n').map(line => `      ${line}`).join('\n')}`);
     } catch (error) {
       log(`    Failed to write EQ info.json at "${eqInfoPath}": ${error}`);
       continue;
@@ -356,8 +358,10 @@ async function processSourceDirectory(srcDir: string, targetDir: string) {
     // Write Product info.json
     try {
       await Deno.mkdir(productPath, { recursive: true });
-      await Deno.writeTextFile(productInfoPath, JSON.stringify(productInfo, null, 2));
-      log(`    Wrote Product info.json at "${productInfoPath}"`);
+      const productInfoContent = JSON.stringify(productInfo, null, 2);
+      await Deno.writeTextFile(productInfoPath, productInfoContent);
+      log(`    Wrote Product info.json at "${productInfoPath}":`);
+      log(`${productInfoContent.split('\n').map(line => `      ${line}`).join('\n')}`);
     } catch (error) {
       log(`    Failed to write Product info.json at "${productInfoPath}": ${error}`);
       continue;
@@ -373,8 +377,10 @@ async function processSourceDirectory(srcDir: string, targetDir: string) {
         name: vendorName,
       };
       try {
-        await Deno.writeTextFile(vendorInfoPath, JSON.stringify(vendorInfo, null, 2));
-        log(`    Wrote Vendor info.json at "${vendorInfoPath}"`);
+        const vendorInfoContent = JSON.stringify(vendorInfo, null, 2);
+        await Deno.writeTextFile(vendorInfoPath, vendorInfoContent);
+        log(`    Wrote Vendor info.json at "${vendorInfoPath}":`);
+        log(`${vendorInfoContent.split('\n').map(line => `      ${line}`).join('\n')}`);
       } catch (error) {
         log(`    Failed to write Vendor info.json at "${vendorInfoPath}": ${error}`);
         continue;

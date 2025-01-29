@@ -1,0 +1,64 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Pleather Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.8,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 72,
+        "gain_db": -3.8,
+        "q": 0.3
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 800,
+        "gain_db": 2,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1250,
+        "gain_db": -1,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2000,
+        "gain_db": 3,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2900,
+        "gain_db": -2.1,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5100,
+        "gain_db": -3.9,
+        "q": 3.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8000,
+        "gain_db": -2.7,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -3,
+        "q": 0.71
+      }
+    ]
+  }
+}

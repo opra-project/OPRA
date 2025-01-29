@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -9.9,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 30,
+        "gain_db": 6,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 52,
+        "gain_db": -3.5,
+        "q": 2
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 4,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 127,
+        "gain_db": 0.9,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1250,
+        "gain_db": -6,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2800,
+        "gain_db": 9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3850,
+        "gain_db": -3.7,
+        "q": 3.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5150,
+        "gain_db": -3.5,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10400,
+        "gain_db": -3,
+        "q": 7
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 11000,
+        "gain_db": -1,
+        "q": 0.71
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Aliexpress Leather Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 110,
+        "gain_db": -4,
+        "q": 0.65
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 355,
+        "gain_db": 3.9,
+        "q": 1.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1800,
+        "gain_db": -1.4,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2600,
+        "gain_db": -1,
+        "q": 2.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6000,
+        "gain_db": -0.9,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7000,
+        "gain_db": 3,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8500,
+        "gain_db": -2.7,
+        "q": 6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 4,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 12500,
+        "gain_db": -6,
+        "q": 7
+      }
+    ]
+  }
+}

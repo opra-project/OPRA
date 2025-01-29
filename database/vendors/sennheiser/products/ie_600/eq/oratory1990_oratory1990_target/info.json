@@ -1,0 +1,52 @@
+{
+  "author": "oratory1990",
+  "details": "oratory1990 Target",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2.9,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 20,
+        "gain_db": -3,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 110,
+        "gain_db": 1.2,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 880,
+        "gain_db": 1.6,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1390,
+        "gain_db": -2.5,
+        "q": 1.6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2000,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2250,
+        "gain_db": -5.2,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8500,
+        "gain_db": -13,
+        "q": 0.71
+      }
+    ]
+  }
+}

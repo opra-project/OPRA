@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Small Rounded Earpads",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -10.9,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 45,
+        "gain_db": 2.5,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1200,
+        "gain_db": -3.5,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 1650,
+        "gain_db": 9.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1680,
+        "gain_db": -3,
+        "q": 2.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3150,
+        "gain_db": -1.7,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4500,
+        "gain_db": 2.5,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6150,
+        "gain_db": -4,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8400,
+        "gain_db": -3,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 13000,
+        "gain_db": -9.5,
+        "q": 0.71
+      }
+    ]
+  }
+}

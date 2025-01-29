@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Foam Eartips) (USound Target",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -10.1,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 250,
+        "gain_db": -2.7,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 800,
+        "gain_db": 2.4,
+        "q": 1.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1450,
+        "gain_db": -1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1900,
+        "gain_db": -2.4,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3400,
+        "gain_db": 10.6,
+        "q": 0.85
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5250,
+        "gain_db": -1.7,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6100,
+        "gain_db": -0.7,
+        "q": 6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 7000,
+        "gain_db": -15,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8500,
+        "gain_db": -3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 14000,
+        "gain_db": 20,
+        "q": 1
+      }
+    ]
+  }
+}

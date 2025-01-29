@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Foam Eartips",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -8.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 108,
+        "gain_db": 4,
+        "q": 0.7
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 40,
+        "gain_db": 4.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 260,
+        "gain_db": -4.9,
+        "q": 0.45
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1200,
+        "gain_db": -1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2200,
+        "gain_db": 2.1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2750,
+        "gain_db": -0.6,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3650,
+        "gain_db": 4.1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5100,
+        "gain_db": -1.8,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6500,
+        "gain_db": 2,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -8,
+        "q": 0.7
+      }
+    ]
+  }
+}

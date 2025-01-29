@@ -1,0 +1,70 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Wc Pads, Anc Off",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.6,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 90,
+        "gain_db": -7.3,
+        "q": 0.3
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 340,
+        "gain_db": 4.4,
+        "q": 1.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1920,
+        "gain_db": 4.8,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 6,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2800,
+        "gain_db": -6,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4950,
+        "gain_db": -8.4,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8300,
+        "gain_db": -6.6,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -3,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10600,
+        "gain_db": -6,
+        "q": 3
+      }
+    ]
+  }
+}

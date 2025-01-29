@@ -1,0 +1,34 @@
+{
+  "author": "oratory1990",
+  "details": "crinacle target",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": 0.1,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 27,
+        "gain_db": -8.4,
+        "q": 0.18
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1060,
+        "gain_db": -1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2600,
+        "gain_db": -2.5,
+        "q": 1.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4600,
+        "gain_db": -1.9,
+        "q": 2.7
+      }
+    ]
+  }
+}

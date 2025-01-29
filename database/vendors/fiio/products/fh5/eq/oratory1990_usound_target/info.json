@@ -1,0 +1,40 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.3,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 1250,
+        "gain_db": -3.3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2200,
+        "gain_db": -2.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": 6,
+        "q": 0.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5300,
+        "gain_db": -1,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7500,
+        "gain_db": -5,
+        "q": 3
+      }
+    ]
+  }
+}
