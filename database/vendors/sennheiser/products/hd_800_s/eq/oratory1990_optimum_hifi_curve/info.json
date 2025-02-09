@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Optimum HiFi Curve",
+  "link": "https://www.reddit.com/r/oratory1990/wiki/index/list_of_presets/",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": 0.2,
