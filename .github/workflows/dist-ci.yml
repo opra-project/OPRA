@@ -31,6 +31,7 @@ jobs:
         run: deno run --allow-read --allow-write --allow-run tools/dist.ts
 
       - name: Check for changes
+        if: github.event_name == 'push' && github.repository == 'opra-project/OPRA'
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             echo "Changes detected."
