@@ -1,0 +1,40 @@
+{
+  "author": "Rtings/AutoEQ",
+  "details": "Target_SoundGuys_Consumer",
+  "type": "5Band",
+  "parameters": {
+    "gain_db": -16.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 45.0,
+        "gain_db": 12.0,
+        "q": 0.63
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5679.0,
+        "gain_db": -9.2,
+        "q": 2.86
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 20.0,
+        "gain_db": 5.2,
+        "q": 0.43
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 359.0,
+        "gain_db": 1.7,
+        "q": 0.75
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2147.0,
+        "gain_db": 2.9,
+        "q": 4.39
+      }
+    ]
+  }
+}

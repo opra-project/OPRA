@@ -1,0 +1,70 @@
+{
+  "author": "Rtings/AutoEQ",
+  "details": "HRTF_5128_Diffuse_Field",
+  "type": "10Band",
+  "parameters": {
+    "gain_db": -4.4,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105.0,
+        "gain_db": 3.9,
+        "q": 0.7
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 5000.0,
+        "gain_db": 3.0,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 78.0,
+        "gain_db": -4.3,
+        "q": 0.72
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1271.0,
+        "gain_db": -1.7,
+        "q": 2.69
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8646.0,
+        "gain_db": -2.1,
+        "q": 5.36
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4417.0,
+        "gain_db": -3.0,
+        "q": 6.76
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 38.0,
+        "gain_db": -2.5,
+        "q": 1.21
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7178.0,
+        "gain_db": 2.4,
+        "q": 7.62
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2064.0,
+        "gain_db": 0.9,
+        "q": 3.23
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5972.0,
+        "gain_db": -2.0,
+        "q": 8.15
+      }
+    ]
+  }
+}

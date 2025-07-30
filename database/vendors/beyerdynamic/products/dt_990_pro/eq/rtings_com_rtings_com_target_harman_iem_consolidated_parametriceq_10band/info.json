@@ -1,0 +1,70 @@
+{
+  "author": "Rtings/AutoEQ",
+  "details": "Target_Harman_IEM",
+  "type": "10Band",
+  "parameters": {
+    "gain_db": -9.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105.0,
+        "gain_db": 11.2,
+        "q": 0.7
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 7750.0,
+        "gain_db": -3.0,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 86.0,
+        "gain_db": -6.6,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9929.0,
+        "gain_db": -12.0,
+        "q": 1.54
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5475.0,
+        "gain_db": 6.1,
+        "q": 1.05
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1644.0,
+        "gain_db": 2.5,
+        "q": 1.01
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 762.0,
+        "gain_db": 0.9,
+        "q": 1.84
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1086.0,
+        "gain_db": -0.9,
+        "q": 4.09
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4639.0,
+        "gain_db": -2.4,
+        "q": 6.53
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 217.0,
+        "gain_db": 0.2,
+        "q": 2.73
+      }
+    ]
+  }
+}
