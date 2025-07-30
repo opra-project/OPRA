@@ -1,0 +1,70 @@
+{
+  "author": "Rtings/AutoEQ",
+  "details": "Target_Rtings_com",
+  "type": "10Band",
+  "parameters": {
+    "gain_db": -4.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105.0,
+        "gain_db": -3.3,
+        "q": 0.7
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8916.0,
+        "gain_db": 1.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1292.0,
+        "gain_db": -2.5,
+        "q": 1.49
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 519.0,
+        "gain_db": 1.4,
+        "q": 1.76
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 72.0,
+        "gain_db": 2.4,
+        "q": 0.57
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3443.0,
+        "gain_db": -1.4,
+        "q": 2.09
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7080.0,
+        "gain_db": 3.9,
+        "q": 4.94
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 190.0,
+        "gain_db": -1.0,
+        "q": 3.22
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 47.0,
+        "gain_db": 0.2,
+        "q": 1.77
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9433.0,
+        "gain_db": 1.7,
+        "q": 6.28
+      }
+    ]
+  }
+}

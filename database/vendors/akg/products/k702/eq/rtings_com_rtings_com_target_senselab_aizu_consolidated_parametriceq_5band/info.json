@@ -1,0 +1,40 @@
+{
+  "author": "Rtings/AutoEQ",
+  "details": "Target_SenseLab_Aizu",
+  "type": "5Band",
+  "parameters": {
+    "gain_db": -12.4,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 29.0,
+        "gain_db": 10.7,
+        "q": 0.95
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2430.0,
+        "gain_db": -6.5,
+        "q": 1.99
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 846.0,
+        "gain_db": 3.1,
+        "q": 1.79
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 45.0,
+        "gain_db": 4.8,
+        "q": 2.14
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 46.0,
+        "gain_db": 4.3,
+        "q": 0.5
+      }
+    ]
+  }
+}
