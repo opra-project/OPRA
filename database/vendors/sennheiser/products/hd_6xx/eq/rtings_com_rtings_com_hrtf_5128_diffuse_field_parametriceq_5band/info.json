@@ -1,0 +1,40 @@
+{
+  "author": "Rtings/AutoEQ",
+  "details": "HRTF_5128_Diffuse_Field",
+  "type": "5Band",
+  "parameters": {
+    "gain_db": -6.0,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 73.0,
+        "gain_db": 5.9,
+        "q": 0.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 86.0,
+        "gain_db": -5.3,
+        "q": 0.42
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9000.0,
+        "gain_db": 6.0,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1258.0,
+        "gain_db": -0.7,
+        "q": 3.66
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 37.0,
+        "gain_db": -2.3,
+        "q": 1.62
+      }
+    ]
+  }
+}

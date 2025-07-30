@@ -1,0 +1,70 @@
+{
+  "author": "Rtings/AutoEQ",
+  "details": "Target_SoundGuys_Consumer",
+  "type": "10Band",
+  "parameters": {
+    "gain_db": -11.3,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105.0,
+        "gain_db": 12.0,
+        "q": 0.7
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 5000.0,
+        "gain_db": 1.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 77.0,
+        "gain_db": -7.8,
+        "q": 1.26
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1847.0,
+        "gain_db": 6.8,
+        "q": 1.56
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6075.0,
+        "gain_db": -10.9,
+        "q": 4.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 46.0,
+        "gain_db": -4.0,
+        "q": 2.37
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4502.0,
+        "gain_db": -3.7,
+        "q": 5.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1288.0,
+        "gain_db": 1.9,
+        "q": 3.04
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 140.0,
+        "gain_db": -4.0,
+        "q": 0.96
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9650.0,
+        "gain_db": -3.2,
+        "q": 6.6
+      }
+    ]
+  }
+}
