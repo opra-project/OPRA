@@ -1,3 +1,5 @@
+import { sleep } from "https://deno.land/x/sleep/mod.ts";
+
 /**
  * Converts a string to snake_case without punctuation.
  */
@@ -63,6 +65,10 @@ Your response should in the format { "vendorName": "Vendor Name", "productName":
       const json = JSON.parse(data.choices?.[0]?.message?.content.trim());
 
       if (json && json.vendorName && json.productName) {
+        if (json.vendorName != 'Unknown') {
+          json.vendorName = productName.substring(0, json.vendorName.length);
+          json.productName = productName.substring(json.vendorName.length + 1, json.vendorName.length + 1 + json.productName.length);
+        }
         return json;
       } else {
         console.error(`Failed to extract vendor and product names: ${data}`);

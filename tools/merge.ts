@@ -128,42 +128,51 @@ async function loadDatabase(baseDir: string): Promise<Database> {
     for await (const productEntry of walk(productsPath, { maxDepth: 1 })) {
       if (productEntry.path === productsPath) continue;
 
-      const productSlug = basename(productEntry.path);
-      const productInfo = JSON.parse(await Deno.readTextFile(join(productEntry.path, "info.json")));
-
       const product = new Product();
-      product.slug = productSlug;
-      product.info = productInfo;
-      product.path = productEntry.path;
-      product.keys = [
-        normalizeForComparison(productInfo.name),
-        normalizeForComparison(productSlug)
-      ];
+      try {
+        const productSlug = basename(productEntry.path);
+        const productInfo = JSON.parse(await Deno.readTextFile(join(productEntry.path, "info.json")));
 
+        product.slug = productSlug;
+        product.info = productInfo;
+        product.path = productEntry.path;
+        product.keys = [
+          normalizeForComparison(productInfo.name),
+          normalizeForComparison(productSlug)
+        ];
+      } catch {
+          log(`skipping directory: ${productEntry.path}`);
+          continue;
+      }
+          
       // Load all EQs for this product
       const eqPath = join(productEntry.path, "eq");
-      for await (const eqEntry of walk(eqPath, { maxDepth: 1 })) {
-        if (eqEntry.path === eqPath) continue;
+      try {  
+        for await (const eqEntry of walk(eqPath, { maxDepth: 1 })) {
+          if (eqEntry.path === eqPath) continue;
 
-        const eqSlug = basename(eqEntry.path);
-        try {
-          const eqInfo = JSON.parse(await Deno.readTextFile(join(eqEntry.path, "info.json")));
+          const eqSlug = basename(eqEntry.path);
+          try {
+            const eqInfo = JSON.parse(await Deno.readTextFile(join(eqEntry.path, "info.json")));
 
-          const eq = new EQ();
-          eq.slug = eqSlug;
-          eq.info = eqInfo;
-          eq.path = eqEntry.path;
-          eq.keys = [normalizeForComparison(eqSlug)];
+            const eq = new EQ();
+            eq.slug = eqSlug;
+            eq.info = eqInfo;
+            eq.path = eqEntry.path;
+            eq.keys = [normalizeForComparison(eqSlug)];
 
-          eq.parent = product;
-          product.eqs.push(eq);
-        } catch {
-          log(`Error loading EQ info for ${eqSlug}`);
+            eq.parent = product;
+            product.eqs.push(eq);
+          } catch {
+            log(`Error loading EQ info for ${eqSlug}`);
+          }
         }
-      }
 
-      product.parent = vendor;
-      vendor.products.push(product);
+        product.parent = vendor;
+        vendor.products.push(product);
+      } catch {
+        log(`Error loading from path: ${eqPath}`);
+      }
     }
 
     vendor.parent = database;
