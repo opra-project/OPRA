@@ -32,8 +32,8 @@
       {
         "type": "peak_dip",
         "frequency": 2310,
-        "gain_db": 3.3,
-        "q": 3
+        "gain_db": -3.8,
+        "q": 3.3
       },
       {
         "type": "peak_dip",
