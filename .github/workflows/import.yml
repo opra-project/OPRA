@@ -1,0 +1,137 @@
+name: Import Sources
+
+on:
+  schedule:
+    # Run on the 1st of every month at midnight UTC
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+    inputs:
+      source:
+        description: 'Which source to import'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - autoeq
+          - oratory
+      dry_run:
+        description: 'Dry run (show changes without writing)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y p7zip-full
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Determine import flags
+        id: flags
+        run: |
+          FLAGS=""
+          # Handle both manual trigger (workflow_dispatch) and scheduled runs
+          SOURCE="${{ github.event.inputs.source }}"
+          DRY_RUN="${{ github.event.inputs.dry_run }}"
+
+          if [ "$SOURCE" = "autoeq" ]; then
+            FLAGS="--autoeq-only"
+          elif [ "$SOURCE" = "oratory" ]; then
+            FLAGS="--oratory-only"
+          fi
+
+          if [ "$DRY_RUN" = "true" ]; then
+            FLAGS="$FLAGS --dry-run"
+          fi
+
+          echo "flags=$FLAGS" >> $GITHUB_OUTPUT
+          echo "is_dry_run=$DRY_RUN" >> $GITHUB_OUTPUT
+
+      - name: Run import
+        id: import
+        run: |
+          set +e  # Don't exit on error
+          deno run --allow-all tools/import.ts ${{ steps.flags.outputs.flags }} --output-json > import-summary.json 2>&1
+          EXIT_CODE=$?
+          set -e
+
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+
+          if [ -f import-summary.json ]; then
+            cat import-summary.json
+          else
+            echo '{"error": "Import failed to produce summary"}' > import-summary.json
+          fi
+
+          # Fail the step if import had errors (but continue workflow for PR creation)
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo "::warning::Import completed with errors (exit code $EXIT_CODE)"
+          fi
+
+      - name: Check for changes
+        id: changes
+        if: steps.flags.outputs.is_dry_run != 'true'
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          BRANCH="import/${DATE}"
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH"
+          git add .
+          git commit -m "Import EQ sources ${DATE}"
+          git push origin "$BRANCH"
+
+          # Create PR with summary from import
+          if [ -f import-summary.json ] && jq -e . import-summary.json > /dev/null 2>&1; then
+            SUMMARY=$(jq -r '
+              "## Import Summary\n\n" +
+              "### AutoEQ\n" +
+              "- New vendors: \(.autoeq.newVendors // 0)\n" +
+              "- New products: \(.autoeq.newProducts // 0)\n" +
+              "- New EQs: \(.autoeq.newEqs // 0)\n" +
+              "- Updated EQs: \(.autoeq.updatedEqs // 0)\n" +
+              "- Errors: \(.autoeq.errors // 0)\n\n" +
+              "### Oratory\n" +
+              "- New vendors: \(.oratory.newVendors // 0)\n" +
+              "- New products: \(.oratory.newProducts // 0)\n" +
+              "- New EQs: \(.oratory.newEqs // 0)\n" +
+              "- Updated EQs: \(.oratory.updatedEqs // 0)\n" +
+              "- Errors: \(.oratory.errors // 0)"
+            ' import-summary.json)
+          else
+            SUMMARY="Import completed. See workflow logs for details."
+          fi
+
+          gh pr create \
+            --title "Import EQ sources ${DATE}" \
+            --body "${SUMMARY}" \
+            --base main \
+            --head "$BRANCH"

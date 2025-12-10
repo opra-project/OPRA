@@ -1,3 +1,25 @@
+# Editor/IDE
 .aider*
+.vscode/
+.idea/
+
+# Environment
 .env
+.env.*
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Sources (downloaded externally)
+sources/
+
+# Temp files
+tmp/
+*.tmp
+
+# Deno
+deno.lock
+
+# Test coverage
+coverage/
