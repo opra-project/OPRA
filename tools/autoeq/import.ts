@@ -113,7 +113,6 @@ export async function importAutoEQ(
 
     const measurer = relativePath[0];
     let type: string;
-    let productDirName: string;
 
     // Determine if the second segment is a type or part of the product directory
     const possibleType = relativePath[1].toLowerCase();
@@ -121,13 +120,11 @@ export async function importAutoEQ(
 
     if (typeOptions.includes(possibleType)) {
       type = possibleType;
-      productDirName = relativePath[2];
     } else {
       // Check for equipment folder like "GRAS 43AG-7 over-ear"
       const typeMatch = relativePath[1].match(/(in-ear|over-ear|on-ear|earbud|earbuds)/i);
       if (typeMatch && relativePath.length >= 4) {
         type = typeMatch[1].toLowerCase();
-        productDirName = relativePath[2];
         log(`    Extracted type "${type}" from equipment folder "${relativePath[1]}".`);
       } else {
         log(`    Unable to determine type from path: "${entry.path}"`);
