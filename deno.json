@@ -1,0 +1,30 @@
+{
+  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+  "tasks": {
+    "test": "deno test --allow-read --allow-write --allow-env --allow-net tests/",
+    "test:utils": "deno test --allow-read tests/utils_test.ts",
+    "test:oratory": "deno test --allow-read --allow-write tests/oratory_*.ts",
+    "test:autoeq": "deno test --allow-read tests/import_autoeq_test.ts",
+    "test:coverage": "deno test --allow-read --allow-write --allow-env --allow-net --coverage=coverage tests/",
+    "build": "deno run --allow-read --allow-write --allow-run tools/dist.ts",
+    "build:validate": "deno run --allow-read --allow-write --allow-run tools/dist.ts --validate-only",
+    "import": "deno run --allow-all tools/import.ts",
+    "import:dry-run": "deno run --allow-all tools/import.ts --dry-run"
+  },
+  "test": {
+    "include": ["tests/"]
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 100,
+    "indentWidth": 2,
+    "singleQuote": false,
+    "proseWrap": "preserve"
+  },
+  "lint": {
+    "include": ["tools/", "tests/"],
+    "rules": {
+      "tags": ["recommended"]
+    }
+  }
+}

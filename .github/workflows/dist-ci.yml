@@ -4,9 +4,17 @@ on:
   push:
     branches:
       - "**"
+    paths:
+      - 'database/**'
+      - 'schemas/**'
+      - 'tools/dist.ts'
   pull_request:
     branches:
       - "**"
+    paths:
+      - 'database/**'
+      - 'schemas/**'
+      - 'tools/dist.ts'
   workflow_dispatch:
 
 jobs:

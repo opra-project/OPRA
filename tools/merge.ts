@@ -1,6 +1,6 @@
 #!/usr/bin/env -S deno run --allow-all
 
-import { join, basename, dirname } from "https://deno.land/std@0.203.0/path/mod.ts";
+import { join, basename, dirname, fromFileUrl } from "https://deno.land/std@0.203.0/path/mod.ts";
 import { walk } from "https://deno.land/std@0.203.0/fs/walk.ts";
 import Ajv from "https://cdn.skypack.dev/ajv@6?dts";
 
@@ -8,13 +8,17 @@ import {
   VendorInfo,
   ProductInfo,
   EQInfo,
-} from "./schemas.ts";
+} from "./types.ts";
 
-// Load and compile schemas
+// Get the directory where this script is located
+const scriptDir = dirname(fromFileUrl(import.meta.url));
+const projectRoot = dirname(scriptDir);
+
+// Load and compile schemas using paths relative to project root
 const ajv = new Ajv();
-const vendorSchema = JSON.parse(await Deno.readTextFile("../schemas/vendor_info.json"));
-const productSchema = JSON.parse(await Deno.readTextFile("../schemas/product_info.json")); 
-const eqSchema = JSON.parse(await Deno.readTextFile("../schemas/eq_info.json"));
+const vendorSchema = JSON.parse(await Deno.readTextFile(join(projectRoot, "schemas/vendor_info.json")));
+const productSchema = JSON.parse(await Deno.readTextFile(join(projectRoot, "schemas/product_info.json")));
+const eqSchema = JSON.parse(await Deno.readTextFile(join(projectRoot, "schemas/eq_info.json")));
 
 const validateVendor = ajv.compile(vendorSchema);
 const validateProduct = ajv.compile(productSchema);
@@ -36,13 +40,13 @@ function normalizeForComparison(str: string): string {
     .replace(/_audio_design$/, '');
 
   // special cases for name variations
-  if (ret == "bw" || ret == "bowerswilkins") {
+  if (ret === "bw" || ret === "bowerswilkins") {
     ret = "bowerswilkins";
   }
-  if (ret == "lz" || ret == "lzhifi") {
-    ret = "bowerswilkins";
+  if (ret === "lz" || ret === "lzhifi") {
+    ret = "lzhifi";
   }
-  if (ret == "drop") {
+  if (ret === "drop") {
     ret = "massdrop";
   }
 

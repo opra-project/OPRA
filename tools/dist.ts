@@ -8,6 +8,7 @@ import Ajv from "https://cdn.skypack.dev/ajv@6?dts";
 import { createHash } from "https://deno.land/std@0.118.0/hash/mod.ts";
 import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
 import { gray, brightGreen, red } from "https://deno.land/std@0.118.0/fmt/colors.ts";
+import { getAssetPath as getAssetPathBase, getRelativeAssetPath, AssetPathCache } from "./asset_paths.ts";
 
 // Parse command-line arguments
 const args = parse(Deno.args, {
@@ -55,8 +56,8 @@ const validateVendorInfo = ajv.compile(vendorInfoSchema);
 const validateProductInfo = ajv.compile(productInfoSchema);
 const validateEqInfo = ajv.compile(eqInfoSchema);
 
-// Maps to keep track of processed assets and avoid duplication
-const processedAssets = new Map<string, string>(); // Map from original path to hash
+// Cache to keep track of processed assets and avoid duplication
+const assetCache = new AssetPathCache();
 const processedEntries: any[] = [];
 
 // Function to compute SHA256 hash of a file
@@ -73,40 +74,19 @@ async function ensureDirForFile(filePath: string): Promise<void> {
   await ensureDir(dir);
 }
 
-// Function to get the asset path based on hash and original file extension
+// Function to get the full asset path (wraps imported function with DIST_DIR)
 function getAssetPath(hash: string, originalFilePath: string): string {
-  const ext = extname(originalFilePath);
-  const filename = `${hash}${ext}`;
-  const assetPath = join(
-    DIST_DIR,
-    "assets",
-    hash.substring(0, 2),
-    hash.substring(2, 4),
-    filename,
-  );
-  return assetPath;
-}
-
-// Function to get the relative asset path for JSON references
-function getRelativeAssetPath(hash: string, originalFilePath: string): string {
-  const ext = extname(originalFilePath);
-  const filename = `${hash}${ext}`;
-  const relativePath = join(
-    "assets",
-    hash.substring(0, 2),
-    hash.substring(2, 4),
-    filename,
-  );
-  return relativePath;
+  return getAssetPathBase(DIST_DIR, hash, originalFilePath);
 }
 
 // Function to process image assets (PNG)
 async function processImageAsset(filePath: string): Promise<string> {
-  const hash = await computeFileHash(filePath);
-
-  if (processedAssets.has(filePath)) {
-    return processedAssets.get(filePath)!;
+  // Return cached path if already processed
+  if (assetCache.has(filePath)) {
+    return assetCache.get(filePath)!;
   }
+
+  const hash = await computeFileHash(filePath);
 
   // Check if the image is a 1024x1024 PNG
   const imageInfo = await Deno.run({
@@ -142,17 +122,17 @@ async function processImageAsset(filePath: string): Promise<string> {
     }
   }
 
-  processedAssets.set(filePath, hash);
-  return getRelativeAssetPath(hash, filePath);
+  // Cache and return the relative path (AssetPathCache ensures consistent format)
+  return assetCache.getOrCompute(filePath, hash);
 }
 
 async function processSvgAsset(filePath: string): Promise<string> {
-  const hash = await computeFileHash(filePath);
-
-  if (processedAssets.has(filePath)) {
-    return processedAssets.get(filePath)!;
+  // Return cached path if already processed
+  if (assetCache.has(filePath)) {
+    return assetCache.get(filePath)!;
   }
 
+  const hash = await computeFileHash(filePath);
   const assetPath = getAssetPath(hash, filePath);
 
   try {
@@ -160,7 +140,7 @@ async function processSvgAsset(filePath: string): Promise<string> {
     console.log(SKIPPED, `SVG ${filePath}\n${INDENT}  (already exists at ${assetPath})`);
   } catch {
     if (!validateOnly) {
-      console.log(COPYING,`${filePath} => ${assetPath}`);
+      console.log(COPYING, `${filePath} => ${assetPath}`);
       await ensureDirForFile(assetPath);
       await Deno.copyFile(filePath, assetPath);
     } else {
@@ -168,8 +148,8 @@ async function processSvgAsset(filePath: string): Promise<string> {
     }
   }
 
-  processedAssets.set(filePath, hash);
-  return getRelativeAssetPath(hash, filePath);
+  // Cache and return the relative path (AssetPathCache ensures consistent format)
+  return assetCache.getOrCompute(filePath, hash);
 }
 
 // Function to generate PNG from SVG

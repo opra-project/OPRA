@@ -1,0 +1,25 @@
+EQ setting for Sennheiser HD 650
+v2.0 01.05.2023
+
+Preamp gain: -6.5 dB
+
+Headphone Equalization
+Filter Settings
+
+Band 1 LOW_SHELF 105 Hz 5,5 dB 0,71 1,89
+Band 2 PEAK 200 Hz -2,0 dB 1,41 0,49
+Band 3 PEAK 1500 Hz 2,5 dB 2,00 0,35
+Band 4 PEAK 3000 Hz -1,5 dB 3,00 0,23
+Band 5 HIGH_SHELF 8000 Hz -3,0 dB 0,71 1,89
+Band 6 PEAK 5500 Hz 1,2 dB 4,00 0,18
+Band 7 PEAK 7000 Hz -0,8 dB 2,50 0,28
+Band 8 PEAK 10000 Hz -1,0 dB 1,80 0,39
+Band 9 LOW_PASS 18000 Hz 0,0 dB 0,70 1,92
+Band 10 PEAK 12000 Hz 0,5 dB 2,20 0,32
+
+Before EQ After EQ
+1,64 dB 0,29 dB Adjust gain of band
+84/100 100/100
+
+This EQ is meant to be used with the Harman Target curve.
+Visit oratory1990.com for more headphone measurements and EQ settings.
