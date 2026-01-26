@@ -1,0 +1,46 @@
+{
+  "author": "Juan M Romero",
+  "details": "Harman Target",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.1,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 80,
+        "gain_db": 3,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 250,
+        "gain_db": -2,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": -2,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2000,
+        "gain_db": 4,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": -2.8,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": 5,
+        "q": 2
+      }
+    ]
+  }
+}
