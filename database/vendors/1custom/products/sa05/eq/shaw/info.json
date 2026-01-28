@@ -1,0 +1,69 @@
+{
+  "author": "shaw",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": 0,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 100,
+        "gain_db": 3,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": 0,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": 0,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2000,
+        "gain_db": 0,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": 0,
+        "q": 1.41
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 6000,
+        "gain_db": -2,
+        "q": 0.71
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8000,
+        "gain_db": -2,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 50,
+        "gain_db": 3,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 150,
+        "gain_db": 0,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 250,
+        "gain_db": 0,
+        "q": 1.41
+      }
+    ]
+  }
+}
