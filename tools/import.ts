@@ -358,9 +358,14 @@ async function fetchOratory(dryRun: boolean): Promise<boolean> {
   log("FETCH", "Extracting Oratory PDFs...");
 
   // Try 7zz (homebrew) first, then 7z
-  let extractResult = await runCommand([
-    "/opt/homebrew/bin/7zz", "x", "-y", `-o${ORATORY_DIR}`, archivePath
-  ]);
+  let extractResult;
+  try {
+    extractResult = await runCommand([
+      "/opt/homebrew/bin/7zz", "x", "-y", `-o${ORATORY_DIR}`, archivePath
+    ]);
+  } catch {
+    extractResult = { success: false, stdout: "", stderr: "" };
+  }
 
   if (!extractResult.success) {
     extractResult = await runCommand([
