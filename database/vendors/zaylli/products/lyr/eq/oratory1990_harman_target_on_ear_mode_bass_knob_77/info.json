@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • on-ear mode - bass knob 7/7",
+  "link": "https://www.dropbox.com/scl/fi/jto071iiayai4cmkg4zdx/Zaylli-Lyr-On-Ear-Mode.pdf?rlkey=xn9y0k33ic9muvte3t7180id1&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.1,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 55,
+        "gain_db": -8.4,
+        "q": 0.3
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1200,
+        "gain_db": -2.1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1550,
+        "gain_db": 2.2,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": -1,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3600,
+        "gain_db": -6.4,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5300,
+        "gain_db": 4,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7500,
+        "gain_db": -2,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 2,
+        "q": 0.71
+      }
+    ]
+  }
+}

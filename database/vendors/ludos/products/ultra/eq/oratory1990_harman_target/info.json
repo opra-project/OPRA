@@ -1,0 +1,59 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/z8w3vdcf9wo2tm8q4c5km/Ludos-Ultra.pdf?rlkey=03fw9eluijyeu28f1xcd7ktmh&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.3,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 1,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 380,
+        "gain_db": -9.5,
+        "q": 0.63
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1650,
+        "gain_db": -4.1,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2400,
+        "gain_db": -2.8,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 9,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3800,
+        "gain_db": 1.6,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5680,
+        "gain_db": -10.3,
+        "q": 3.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9500,
+        "gain_db": -10,
+        "q": 0.71
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Cipher Cable",
+  "link": "https://www.dropbox.com/s/s8sm9j8fp0ox344/Audeze%20Sine%20%28Cipher%20Cable%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.4,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 75,
+        "gain_db": -3,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 720,
+        "gain_db": 1.7,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 7,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3200,
+        "gain_db": -4.4,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7700,
+        "gain_db": -3.9,
+        "q": 5.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -9,
+        "q": 0.71
+      }
+    ]
+  }
+}

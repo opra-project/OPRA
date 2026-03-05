@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/o2l9bdvluy0us6w3ldcc7/Fairbuds-XL.pdf?rlkey=loeqojme4w9oaapm4pph7p3w4&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2.8,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 22,
+        "gain_db": -11.2,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 62,
+        "gain_db": 1.4,
+        "q": 1.5
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 105,
+        "gain_db": -2,
+        "q": 2.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1050,
+        "gain_db": -1.6,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1650,
+        "gain_db": 1.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2000,
+        "gain_db": -2.6,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3300,
+        "gain_db": 3,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6450,
+        "gain_db": -3.7,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 0,
+        "q": 0.71
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • preliminary",
+  "link": "https://www.dropbox.com/s/5suar9o02wda7v8/KZ%20ZS7%20%28preliminary%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 90,
+        "gain_db": 10,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 50,
+        "gain_db": -13,
+        "q": 0.18
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 800,
+        "gain_db": 1.7,
+        "q": 1.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2280,
+        "gain_db": -6,
+        "q": 1.9
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4050,
+        "gain_db": -6.3,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8000,
+        "gain_db": -6,
+        "q": 0.7
+      }
+    ]
+  }
+}

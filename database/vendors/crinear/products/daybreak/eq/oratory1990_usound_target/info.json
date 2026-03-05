@@ -1,0 +1,59 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/m1prh23bbju6caexkd5jv/CrinEar-Daybreak-Megaclite-Eartips-oratory1990.pdf?rlkey=gchflamlf697mb7xblh7bt8xl&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.8,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 117,
+        "gain_db": 3.9,
+        "q": 0.65
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 330,
+        "gain_db": -1.3,
+        "q": 1.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 870,
+        "gain_db": 1.3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1400,
+        "gain_db": -1.6,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2100,
+        "gain_db": 0.8,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": -2.5,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 4,
+        "q": 0.35
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -4,
+        "q": 0.71
+      }
+    ]
+  }
+}

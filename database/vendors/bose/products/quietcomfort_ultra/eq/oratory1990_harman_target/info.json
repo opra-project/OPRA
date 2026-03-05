@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/hmz9gqkix6nqywlxt99se/Bose-QuietComfort-Ultra.pdf?rlkey=x1a3ayo34f51gm9lc8rkw39tt&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.7,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 32,
+        "gain_db": -3.9,
+        "q": 1
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 0,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 130,
+        "gain_db": -2.8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 350,
+        "gain_db": 1,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 900,
+        "gain_db": -1.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1550,
+        "gain_db": 2.2,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2430,
+        "gain_db": -3,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5200,
+        "gain_db": 7,
+        "q": 1.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6000,
+        "gain_db": -6.5,
+        "q": 5
+      }
+    ]
+  }
+}

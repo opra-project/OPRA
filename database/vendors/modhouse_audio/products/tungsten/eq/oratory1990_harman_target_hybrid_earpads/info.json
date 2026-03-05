@@ -1,0 +1,59 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • hybrid earpads",
+  "link": "https://www.dropbox.com/scl/fi/ognjml406dmd0m27j2uiv/Modhouse-Tungsten-double-sided-hybrid-earpads.pdf?rlkey=85d3hj05mpzbcrctm3z15oiew&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 75,
+        "gain_db": -1,
+        "q": 1.4
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": -1,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1600,
+        "gain_db": 3,
+        "q": 1.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": -2.7,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5500,
+        "gain_db": -2.4,
+        "q": 6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -4,
+        "q": 0.71
+      }
+    ]
+  }
+}

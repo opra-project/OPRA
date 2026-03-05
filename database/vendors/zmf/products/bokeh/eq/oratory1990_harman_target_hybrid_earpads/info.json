@@ -1,0 +1,59 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Hybrid earpads",
+  "link": "https://www.dropbox.com/scl/fi/6o6oega5ccmhi4tnq8vrl/ZMF-Bokeh-Hybrid-Pads.pdf?rlkey=2o8xikbboxo7jqnlrlqub1rs4&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -3,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 160,
+        "gain_db": 1,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 275,
+        "gain_db": -7.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": -1,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 2,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3400,
+        "gain_db": -3.6,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5550,
+        "gain_db": -1.4,
+        "q": 6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 1,
+        "q": 0.71
+      }
+    ]
+  }
+}

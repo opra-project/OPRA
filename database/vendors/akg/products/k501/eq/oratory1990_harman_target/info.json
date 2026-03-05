@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/gh6q2e0ryusfz0m66ml5v/AKG-K501.pdf?rlkey=guzp9cocolnlalhnez4s68o34&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -8,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 45,
+        "gain_db": 3,
+        "q": 1.4
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": -2.4,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 500,
+        "gain_db": 1.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1300,
+        "gain_db": -2.2,
+        "q": 1.1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 1,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3300,
+        "gain_db": -4.6,
+        "q": 3.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6050,
+        "gain_db": -8,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 12000,
+        "gain_db": 2,
+        "q": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • very preliminary",
+  "link": "https://www.dropbox.com/s/1oc6ay2d4u35obd/MySphere%203%20%28very%20preliminary%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -8.3,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 425,
+        "gain_db": 1.4,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 800,
+        "gain_db": -1.3,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1950,
+        "gain_db": -2.8,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2700,
+        "gain_db": -1.9,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3500,
+        "gain_db": 2,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4550,
+        "gain_db": -3,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6300,
+        "gain_db": 9,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 11000,
+        "gain_db": -4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 11100,
+        "gain_db": -5,
+        "q": 3
+      }
+    ]
+  }
+}

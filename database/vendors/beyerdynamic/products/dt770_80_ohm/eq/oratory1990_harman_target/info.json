@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/gqu1wg1hh4o0qnbj8lvwr/Beyerdynamic-DT770-80-Ohm.pdf?rlkey=ouwbyd4o31nbpjf7xf16169fu&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.7,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 65,
+        "gain_db": -9.7,
+        "q": 0.35
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 210,
+        "gain_db": 7.8,
+        "q": 1.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 950,
+        "gain_db": -1,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2600,
+        "gain_db": -3.1,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 1,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3700,
+        "gain_db": 5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4700,
+        "gain_db": -3,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7200,
+        "gain_db": -6.5,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -2,
+        "q": 0.71
+      }
+    ]
+  }
+}

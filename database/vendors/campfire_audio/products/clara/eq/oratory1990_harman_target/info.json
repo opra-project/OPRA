@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/nsimwy1pc5u07bzf1mzm7/Campfire-Audio-Clara.pdf?rlkey=s07cam86cag2zdwthyfw46n4u&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.7,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 100,
+        "gain_db": 2,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 350,
+        "gain_db": -4.5,
+        "q": 0.71
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 1100,
+        "gain_db": 4,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1350,
+        "gain_db": -9,
+        "q": 1.22
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2300,
+        "gain_db": 3,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 3,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3100,
+        "gain_db": -2,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4500,
+        "gain_db": -1.6,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8000,
+        "gain_db": -5,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8000,
+        "gain_db": -8,
+        "q": 0.71
+      }
+    ]
+  }
+}

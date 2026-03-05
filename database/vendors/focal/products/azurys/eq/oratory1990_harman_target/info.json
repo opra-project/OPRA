@@ -1,0 +1,59 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/kdtibb5oz7dmiwo9v2h4r/Focal-Azurys.pdf?rlkey=devle0nojwqvjzvf2n295l2x9&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2.6,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 35,
+        "gain_db": -8.1,
+        "q": 0.35
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 220,
+        "gain_db": 0.8,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2100,
+        "gain_db": 6,
+        "q": 0.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3400,
+        "gain_db": -5,
+        "q": 1.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6750,
+        "gain_db": -2.6,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8200,
+        "gain_db": -3,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -6,
+        "q": 0.71
+      }
+    ]
+  }
+}

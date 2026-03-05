@@ -1,0 +1,41 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • 5-band graphic EQ",
+  "link": "https://www.dropbox.com/s/cswx2zrfkluxn64/Sony%20MDR-7506%20%285-band%20EQ%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 1100,
+        "gain_db": 2,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2950,
+        "gain_db": -5.2,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": 3,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4500,
+        "gain_db": -7.3,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6600,
+        "gain_db": -7.2,
+        "q": 2.3
+      }
+    ]
+  }
+}

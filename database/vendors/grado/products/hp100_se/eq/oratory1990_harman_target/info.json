@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/mpry0weepphn91jxsyaz6/Grado-HP100-SE.pdf?rlkey=couyhvunwl8sxcbr2hz12fhyx&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.9,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 30,
+        "gain_db": 7,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 0,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 180,
+        "gain_db": -2.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 350,
+        "gain_db": 1.3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 650,
+        "gain_db": 1.4,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2000,
+        "gain_db": -11,
+        "q": 0.45
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4500,
+        "gain_db": -4.1,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5950,
+        "gain_db": -4.2,
+        "q": 5.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10500,
+        "gain_db": -4,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 12000,
+        "gain_db": 10,
+        "q": 1
+      }
+    ]
+  }
+}

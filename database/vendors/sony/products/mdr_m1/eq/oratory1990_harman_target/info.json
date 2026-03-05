@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/vdprnol15vnjvzqwipgk9/Sony-MDR-M1.pdf?rlkey=fppv74mg5mmbx4ovp4r516rh1&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.3,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 50,
+        "gain_db": -8.7,
+        "q": 0.4
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 170,
+        "gain_db": -1.8,
+        "q": 2.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 235,
+        "gain_db": 4.5,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 0,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3100,
+        "gain_db": -1,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4500,
+        "gain_db": 6.4,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4900,
+        "gain_db": -2.4,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9800,
+        "gain_db": -3,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 5,
+        "q": 0.71
+      }
+    ]
+  }
+}

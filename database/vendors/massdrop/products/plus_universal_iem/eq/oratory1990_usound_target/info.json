@@ -1,0 +1,59 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/s/cq8zw832ro2jx78/Massdrop%20Plus%20Universal%20IEMs%20%28USound%20Target%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 300,
+        "gain_db": -3.9,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 800,
+        "gain_db": 3.3,
+        "q": 1.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 850,
+        "gain_db": -7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1050,
+        "gain_db": 0.7,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2300,
+        "gain_db": -0.4,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3450,
+        "gain_db": 0.9,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 11000,
+        "gain_db": 5,
+        "q": 0.7
+      }
+    ]
+  }
+}

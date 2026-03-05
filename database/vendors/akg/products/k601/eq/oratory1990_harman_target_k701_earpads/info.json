@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • K701 earpads",
+  "link": "https://www.dropbox.com/s/kbpi4sx67hlz4nr/AKG%20K601%20%28angled%20earpads%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -12.3,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 25,
+        "gain_db": 7,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": -3.4,
+        "q": 0.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 750,
+        "gain_db": 2.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": -1.2,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2300,
+        "gain_db": -6.2,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5912,
+        "gain_db": -3.3,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8500,
+        "gain_db": 1.5,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 13000,
+        "gain_db": -3,
+        "q": 0.71
+      }
+    ]
+  }
+}

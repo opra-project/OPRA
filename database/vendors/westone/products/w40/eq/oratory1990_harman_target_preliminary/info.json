@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • preliminary",
+  "link": "https://www.dropbox.com/s/rva5cj9tiesby7b/Westone%20W40%20%28preliminary%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -11.9,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 77,
+        "gain_db": -6.9,
+        "q": 0.5
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 10,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 290,
+        "gain_db": -3.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 900,
+        "gain_db": 1.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1450,
+        "gain_db": -3,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 1500,
+        "gain_db": 9,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3600,
+        "gain_db": -2.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5000,
+        "gain_db": 5,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7900,
+        "gain_db": -5,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8500,
+        "gain_db": -8,
+        "q": 0.71
+      }
+    ]
+  }
+}

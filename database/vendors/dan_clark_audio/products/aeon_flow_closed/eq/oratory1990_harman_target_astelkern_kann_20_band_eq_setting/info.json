@@ -1,0 +1,131 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • AstelKern KANN 20 band EQ setting",
+  "link": "https://www.dropbox.com/s/sfn4dtwjdh8xc9h/MrSpeakers%20Aeon%20Flow%20Closed%20%28AstelKern%20KANN%2020%20band%20setting%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -0.4,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 30,
+        "gain_db": -1.1,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": -3.9,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 45,
+        "gain_db": -0.2,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1500,
+        "gain_db": -1.7,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 60,
+        "gain_db": 0.6,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2000,
+        "gain_db": 0.3,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 90,
+        "gain_db": -0.4,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": 0,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 120,
+        "gain_db": 0.4,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": -1,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 180,
+        "gain_db": 0.2,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6000,
+        "gain_db": -5,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 250,
+        "gain_db": -1,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8000,
+        "gain_db": 0.7,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 380,
+        "gain_db": -1.4,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 12000,
+        "gain_db": -2,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 500,
+        "gain_db": -2.1,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 14000,
+        "gain_db": 0,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 750,
+        "gain_db": -2.6,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 18000,
+        "gain_db": -2,
+        "q": 2.5
+      }
+    ]
+  }
+}

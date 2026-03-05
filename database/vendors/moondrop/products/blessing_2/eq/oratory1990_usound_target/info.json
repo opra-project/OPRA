@@ -1,0 +1,47 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/s/agalmk0bqnoq3qb/Moondrop%20Blessing%202%20%28oratory1990%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.1,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 150,
+        "gain_db": 4,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 960,
+        "gain_db": 1.9,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1360,
+        "gain_db": -4.1,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2650,
+        "gain_db": -2,
+        "q": 1.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4200,
+        "gain_db": 1.8,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1,
+        "q": 0.71
+      }
+    ]
+  }
+}

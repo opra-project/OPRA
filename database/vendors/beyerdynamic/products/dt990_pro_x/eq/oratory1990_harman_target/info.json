@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/trhf6n20s4h0eht4us5di/Beyerdynamic-DT990-Pro-X.pdf?rlkey=gi19j6qsiy0k909921abehiny&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 220,
+        "gain_db": -2.3,
+        "q": 0.45
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1150,
+        "gain_db": -2.2,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1600,
+        "gain_db": 1.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2600,
+        "gain_db": -2.3,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 0,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3600,
+        "gain_db": -2,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6350,
+        "gain_db": -7.2,
+        "q": 2.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 2,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 11000,
+        "gain_db": -7,
+        "q": 3
+      }
+    ]
+  }
+}

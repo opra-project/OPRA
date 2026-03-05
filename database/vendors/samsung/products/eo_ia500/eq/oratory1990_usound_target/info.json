@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/p0lmtc6isjygr7tlug8my/Samsung-EO-IA500-USound-Target.pdf?rlkey=810qu50ql7atb3vwrh6g9aejh&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -1.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 0,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 220,
+        "gain_db": -3.9,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 850,
+        "gain_db": 3.5,
+        "q": 0.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1400,
+        "gain_db": -1.2,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2700,
+        "gain_db": -1.4,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 0,
+        "q": 0.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3600,
+        "gain_db": -1.8,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5000,
+        "gain_db": 2.5,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 7000,
+        "gain_db": -3,
+        "q": 0.71
+      }
+    ]
+  }
+}

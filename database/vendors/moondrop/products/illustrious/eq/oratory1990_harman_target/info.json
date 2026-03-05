@@ -1,0 +1,41 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/4nenm3dnlruz3yhvahrqe/Moondrop-Illustrious.pdf?rlkey=rf6op81eg9jh7pwmauecgj4fb&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -9.3,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 75,
+        "gain_db": -6,
+        "q": 0.38
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 10,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 340,
+        "gain_db": -1.8,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 1.5,
+        "q": 0.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 1,
+        "q": 0.71
+      }
+    ]
+  }
+}

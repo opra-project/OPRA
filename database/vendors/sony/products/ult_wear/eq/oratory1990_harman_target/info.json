@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/u2hwxdbnmxhu398meuxbb/Sony-ULT-Wear-ANC-On.pdf?rlkey=r4ac0a34clfwho9fzooak57qe&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.9,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 43,
+        "gain_db": -6.8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 105,
+        "gain_db": -8.5,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 190,
+        "gain_db": -1.7,
+        "q": 1.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 360,
+        "gain_db": 1.1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 650,
+        "gain_db": -1.2,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 1000,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1280,
+        "gain_db": -1.5,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4500,
+        "gain_db": 2,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5800,
+        "gain_db": -3,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8000,
+        "gain_db": -5,
+        "q": 0.71
+      }
+    ]
+  }
+}

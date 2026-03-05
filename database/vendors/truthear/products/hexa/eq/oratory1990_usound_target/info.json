@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/ccdfe2m5kdxr4baaohjx4/Truthear-Hexa-oratory1990.pdf?rlkey=zy31jxc3xp7t4leihqx016z6u&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.2,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 90,
+        "gain_db": 3.3,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 300,
+        "gain_db": -1.1,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 780,
+        "gain_db": 0.8,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1350,
+        "gain_db": -2.1,
+        "q": 1.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 3.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3100,
+        "gain_db": -4.4,
+        "q": 2.2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8000,
+        "gain_db": -5,
+        "q": 0.71
+      }
+    ]
+  }
+}

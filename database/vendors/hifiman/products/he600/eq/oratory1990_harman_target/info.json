@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/dh17ca46y6qd0csqw259u/Hifiman-HE600.pdf?rlkey=2zoxker8qw10v88ket188dk6p&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1050,
+        "gain_db": -1.3,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1520,
+        "gain_db": -1.5,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1900,
+        "gain_db": 3.6,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 2,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2850,
+        "gain_db": -1.8,
+        "q": 2.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7400,
+        "gain_db": -1,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": 2,
+        "q": 0.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10950,
+        "gain_db": -5,
+        "q": 6
+      }
+    ]
+  }
+}

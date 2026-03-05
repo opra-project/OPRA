@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/6is3yzzrpmqnekleisetn/Hifiman-Susvara-Unveiled.pdf?rlkey=y9e41fw4wuwct7e1vwfrztbpg&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 95,
+        "gain_db": 6.5,
+        "q": 0.65
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 250,
+        "gain_db": 0.4,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 540,
+        "gain_db": 0.4,
+        "q": 4.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 780,
+        "gain_db": -1,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1750,
+        "gain_db": 2.8,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2700,
+        "gain_db": -1.9,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3400,
+        "gain_db": 1.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4450,
+        "gain_db": -2.2,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7000,
+        "gain_db": -1.8,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 1,
+        "q": 0.71
+      }
+    ]
+  }
+}

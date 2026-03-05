@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • preliminary",
+  "link": "https://www.dropbox.com/s/hjc5gnvp99kpftt/Base%20Audio%20G12%20%28preliminary%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.5,
+    "bands": [
+      {
+        "type": "high_shelf",
+        "frequency": 300,
+        "gain_db": 2.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": -1,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 35,
+        "gain_db": 2.5,
+        "q": 1.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1570,
+        "gain_db": -1.8,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 750,
+        "gain_db": 0.6,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2200,
+        "gain_db": 0.7,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3750,
+        "gain_db": 2,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4550,
+        "gain_db": -8,
+        "q": 3.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6750,
+        "gain_db": -8,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 4,
+        "q": 0.7
+      }
+    ]
+  }
+}

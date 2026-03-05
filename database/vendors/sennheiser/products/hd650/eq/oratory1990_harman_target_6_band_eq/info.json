@@ -1,0 +1,47 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • 6 Band EQ",
+  "link": "https://www.dropbox.com/s/p3hcne1z7n965sx/Sennheiser%20HD650%20%286%20Band%20EQ%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -8.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 65,
+        "gain_db": 8.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 210,
+        "gain_db": -2.3,
+        "q": 1.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2150,
+        "gain_db": 1.5,
+        "q": 2.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": -2.2,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 16000,
+        "gain_db": -5,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 3,
+        "q": 0.7
+      }
+    ]
+  }
+}

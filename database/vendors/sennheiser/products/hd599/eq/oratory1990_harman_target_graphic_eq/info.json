@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • graphic EQ",
+  "link": "https://www.dropbox.com/scl/fi/6xg7wlx9vsyke5826zher/Sennheiser-HD599-graphic-EQ.pdf?rlkey=p1hhwhw8qp1ztj4i9dozct70w&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 31.5,
+        "gain_db": 5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 63,
+        "gain_db": 1,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 125,
+        "gain_db": -4,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 250,
+        "gain_db": -5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 500,
+        "gain_db": -2.5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": -1.8,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2000,
+        "gain_db": 2,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": -5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8000,
+        "gain_db": 0,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 16000,
+        "gain_db": 0,
+        "q": 1.41
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/j4w8kuj1mf60w87g2uvx6/Sennheiser-HD550.pdf?rlkey=v40t0i3bkmfxauba0cv46wtb7&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -9.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 33,
+        "gain_db": 4,
+        "q": 0.8
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 750,
+        "gain_db": 1.4,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1300,
+        "gain_db": -2.5,
+        "q": 1.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1950,
+        "gain_db": 2.3,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 3.5,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5000,
+        "gain_db": -1.5,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8000,
+        "gain_db": -1.7,
+        "q": 0.71
+      }
+    ]
+  }
+}

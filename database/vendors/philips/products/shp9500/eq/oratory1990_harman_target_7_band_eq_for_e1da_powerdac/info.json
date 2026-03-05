@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • 7-band EQ for E1DA Powerdac",
+  "link": "https://www.dropbox.com/s/a4scazb14hg3oet/Philips%20SHP9500%20%287-band%20EQ%20for%20E1DA%20Powerdac%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 60,
+        "gain_db": 8,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": -1.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1250,
+        "gain_db": -1.4,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2300,
+        "gain_db": 4,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": -2,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5900,
+        "gain_db": -8.4,
+        "q": 1.6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 11000,
+        "gain_db": -5,
+        "q": 0.71
+      }
+    ]
+  }
+}

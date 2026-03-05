@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/vu955avxg4681pazzom6s/Ludos-Ultra-USound-Target.pdf?rlkey=wj6wk2t02w6ay3d8jx0wt2enp&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -1.5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 20,
+        "gain_db": -2.9,
+        "q": 0.6
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 0,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 440,
+        "gain_db": -7,
+        "q": 0.68
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1700,
+        "gain_db": -3.6,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2450,
+        "gain_db": -2.8,
+        "q": 2.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 0,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3850,
+        "gain_db": 3.1,
+        "q": 1.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5700,
+        "gain_db": -7.7,
+        "q": 3.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8000,
+        "gain_db": 1,
+        "q": 0.71
+      }
+    ]
+  }
+}

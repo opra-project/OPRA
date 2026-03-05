@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/mci1578jutuiqe76q6f2d/Grado-SR80e.pdf?rlkey=9cn5ic724pauah5cfwdvvifol&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -10.4,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 42,
+        "gain_db": 5,
+        "q": 0.85
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 85,
+        "gain_db": -3.3,
+        "q": 0.5
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1600,
+        "gain_db": 2,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2050,
+        "gain_db": -9.5,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3600,
+        "gain_db": 3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4400,
+        "gain_db": -4.7,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7000,
+        "gain_db": -1.5,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9300,
+        "gain_db": -6,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 1,
+        "q": 0.71
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • preliminary",
+  "link": "https://www.dropbox.com/s/4osvi3rb03nbxzg/Campfire%20Audio%20Io%20%28preliminary%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -16.8,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 2820,
+        "gain_db": 20,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1570,
+        "gain_db": -16,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3900,
+        "gain_db": -4.6,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10200,
+        "gain_db": -11.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 245,
+        "gain_db": -4,
+        "q": 0.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 900,
+        "gain_db": 1,
+        "q": 2
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 70,
+        "gain_db": 6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5600,
+        "gain_db": 3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2500,
+        "gain_db": 1.5,
+        "q": 2
+      }
+    ]
+  }
+}

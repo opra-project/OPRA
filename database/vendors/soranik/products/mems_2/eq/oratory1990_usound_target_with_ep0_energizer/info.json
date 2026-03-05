@@ -1,0 +1,47 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target • with EP0 Energizer",
+  "link": "https://www.dropbox.com/scl/fi/7mknus0e1lcmodrm4xx4f/Soranik-MEMS-2-with-EP0-Energizer-oratory1990.pdf?rlkey=z9yg4ymb3ovs1e47r60bu8rcc&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -10,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 130,
+        "gain_db": 10,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 280,
+        "gain_db": -1.2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2415,
+        "gain_db": -7.5,
+        "q": 2.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3600,
+        "gain_db": 4,
+        "q": 1.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -16,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9500,
+        "gain_db": -2,
+        "q": 6
+      }
+    ]
+  }
+}

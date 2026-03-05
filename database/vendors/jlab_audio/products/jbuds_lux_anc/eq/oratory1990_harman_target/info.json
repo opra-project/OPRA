@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/3v9l64qlplhafu3zl629p/JLab-JBuds-Lux-ANC.pdf?rlkey=75i137ul8d35kyv7qhepfmmi1&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -1.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 0,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 380,
+        "gain_db": -3,
+        "q": 0.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 600,
+        "gain_db": 1.7,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 890,
+        "gain_db": -1.5,
+        "q": 3.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2400,
+        "gain_db": 4,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": -5,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3250,
+        "gain_db": -1.8,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4900,
+        "gain_db": 2,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6000,
+        "gain_db": -4.2,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 5,
+        "q": 0.71
+      }
+    ]
+  }
+}

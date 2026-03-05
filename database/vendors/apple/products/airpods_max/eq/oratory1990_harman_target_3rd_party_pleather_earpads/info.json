@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • 3rd party pleather earpads",
+  "link": "https://www.dropbox.com/s/bp8m10zyjeryoyd/Apple%20AirPods%20Max%20%283rd%20party%20pleather%20earpads%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -7.4,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 23,
+        "gain_db": -3.1,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 215,
+        "gain_db": -1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 500,
+        "gain_db": 1,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1120,
+        "gain_db": -12.2,
+        "q": 1.9
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 1450,
+        "gain_db": 9,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2850,
+        "gain_db": -2,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5100,
+        "gain_db": -3.3,
+        "q": 7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6000,
+        "gain_db": -5.9,
+        "q": 6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -16,
+        "q": 0.71
+      }
+    ]
+  }
+}
