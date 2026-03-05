@@ -356,8 +356,37 @@ async function writeDatabaseFile() {
   }
 }
 
+// Validate referential integrity
+function validateReferentialIntegrity() {
+  const vendorIds = new Set<string>();
+  const productIds = new Set<string>();
+  let errors = 0;
+
+  for (const entry of processedEntries) {
+    if (entry.type === "vendor") vendorIds.add(entry.id);
+    else if (entry.type === "product") productIds.add(entry.id);
+  }
+
+  for (const entry of processedEntries) {
+    if (entry.type === "product" && !vendorIds.has(entry.data.vendor_id)) {
+      console.error(ERROR, `Product ${entry.id} references non-existent vendor "${entry.data.vendor_id}"`);
+      errors++;
+    }
+    if (entry.type === "eq" && !productIds.has(entry.data.product_id)) {
+      console.error(ERROR, `EQ ${entry.id} references non-existent product "${entry.data.product_id}"`);
+      errors++;
+    }
+  }
+
+  if (errors > 0) {
+    console.error(ERROR, `${errors} referential integrity error(s) found. Every EQ must have a corresponding product, and every product must have a corresponding vendor.`);
+    Deno.exit(1);
+  }
+}
+
 // Main execution
 await processEntries();
+validateReferentialIntegrity();
 await writeDatabaseFile();
 
 
