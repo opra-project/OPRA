@@ -97,6 +97,9 @@ jobs:
         if: steps.changes.outputs.has_changes == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_SERVER_URL: ${{ github.server_url }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
         run: |
           DATE=$(date +%Y-%m-%d)
           BRANCH="import/${DATE}"
@@ -111,20 +114,56 @@ jobs:
 
           # Create PR with summary from import
           if [ -f import-summary.json ] && jq -e . import-summary.json > /dev/null 2>&1; then
-            SUMMARY=$(jq -r '
+            SUMMARY=$(jq -r --arg server_url "$GITHUB_SERVER_URL" --arg repo "$GITHUB_REPOSITORY" --arg run_id "$GITHUB_RUN_ID" '
               "## Import Summary\n\n" +
               "### AutoEQ\n" +
               "- New vendors: \(.autoeq.newVendors // 0)\n" +
               "- New products: \(.autoeq.newProducts // 0)\n" +
               "- New EQs: \(.autoeq.newEqs // 0)\n" +
               "- Updated EQs: \(.autoeq.updatedEqs // 0)\n" +
-              "- Errors: \(.autoeq.errors // 0)\n\n" +
-              "### Oratory\n" +
+              "- Unchanged EQs: \(.autoeq.unchangedEqs // 0)\n" +
+              (if (.autoeq.errors // 0) > 0 then "- ⚠️ Errors: \(.autoeq.errors)\n" else "" end) +
+              "\n### Oratory\n" +
               "- New vendors: \(.oratory.newVendors // 0)\n" +
               "- New products: \(.oratory.newProducts // 0)\n" +
               "- New EQs: \(.oratory.newEqs // 0)\n" +
               "- Updated EQs: \(.oratory.updatedEqs // 0)\n" +
-              "- Errors: \(.oratory.errors // 0)"
+              "- Unchanged EQs: \(.oratory.unchangedEqs // 0)\n" +
+              (if (.oratory.errors // 0) > 0 then "- ⚠️ Errors: \(.oratory.errors)\n" else "" end) +
+              (
+                if (.unknownTypes | length) > 0 then
+                  "\n---\n\n### ⚠️ Products Needing Subtype Classification\n\n" +
+                  "**\(.unknownTypes | length) products** were imported with `subtype: unknown` and need manual classification.\n\n" +
+                  (if (.unknownTypes | length) <= 20 then
+                    (.unknownTypes | map("- `" + . + "`") | join("\n")) + "\n"
+                  else
+                    (.unknownTypes[0:20] | map("- `" + . + "`") | join("\n")) + "\n- ... and \((.unknownTypes | length) - 20) more\n"
+                  end) +
+                  "\n<details>\n<summary>ℹ️ Valid subtypes</summary>\n\n" +
+                  "Products must have one of:\n" +
+                  "- `over_the_ear` - Circumaural (around the ear)\n" +
+                  "- `on_ear` - Supra-aural (on the ear)\n" +
+                  "- `in_ear` - IEMs (in-ear monitors)\n" +
+                  "- `earbuds` - Earbuds (sit in outer ear)\n" +
+                  "\n</details>\n"
+                else ""
+                end
+              ) +
+              (
+                if (.errors | length) > 0 then
+                  "\n---\n\n### ❌ Import Errors\n\n" +
+                  "**\(.errors | length) files** failed to import:\n\n" +
+                  (if (.errors | length) <= 10 then
+                    (.errors | map("- **[\(.source)]** `" + (.file | split("/")[-1]) + "`\n  ```\n  " + .message + "\n  ```") | join("\n")) + "\n"
+                  else
+                    (.errors[0:10] | map("- **[\(.source)]** `" + (.file | split("/")[-1]) + "`\n  ```\n  " + .message + "\n  ```") | join("\n")) + "\n- ... and \((.errors | length) - 10) more errors (see workflow logs)\n"
+                  end) +
+                  "\n<details>\n<summary>View workflow logs</summary>\n\n" +
+                  "[See full import logs](\($server_url)/\($repo)/actions/runs/\($run_id))\n" +
+                  "\n</details>\n"
+                else ""
+                end
+              )
             ' import-summary.json)
           else
             SUMMARY="Import completed. See workflow logs for details."

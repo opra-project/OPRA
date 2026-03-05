@@ -9,25 +9,25 @@
  *   deno run --allow-all tools/import.ts [options]
  *
  * Options:
- *   --autoeq-only      Only import AutoEQ source
- *   --oratory-only     Only import Oratory source
- *   --skip-fetch       Skip fetching sources (use existing ./sources/)
- *   --skip-dist        Skip dist.ts rebuild after import
- *   --dry-run          Show what would change without writing
- *   --output-json      Output JSON summary (for CI/Slack integration)
- *   --verbose          Enable verbose logging
- *   --help             Show this help message
+ *   --autoeq-only           Only import AutoEQ source
+ *   --oratory-only          Only import Oratory source
+ *   --oratory-csv <path>    Path to oratory CSV file (required for oratory import)
+ *   --skip-fetch            Skip fetching sources (use existing ./sources/)
+ *   --skip-dist             Skip dist.ts rebuild after import
+ *   --dry-run               Show what would change without writing
+ *   --output-json           Output JSON summary (for CI/Slack integration)
+ *   --verbose               Enable verbose logging
+ *   --help                  Show this help message
  */
 
 import { parse } from "https://deno.land/std@0.203.0/flags/mod.ts";
 import { join, dirname, fromFileUrl } from "https://deno.land/std@0.203.0/path/mod.ts";
 import { ensureDir, exists } from "https://deno.land/std@0.203.0/fs/mod.ts";
 import { gray, brightGreen, yellow, red, cyan } from "https://deno.land/std@0.203.0/fmt/colors.ts";
-import { crypto } from "https://deno.land/std@0.203.0/crypto/mod.ts";
 
 // Import the actual import modules
-import { importAutoEQ, type ImportResult as AutoEQResult } from "./autoeq/import.ts";
-import { importOratory, type ImportResult as OratoryResult } from "./oratory/import.ts";
+import { importAutoEQ } from "./autoeq/import.ts";
+import { importOratory } from "./oratory/import.ts";
 
 // =============================================================================
 // Types
@@ -36,6 +36,7 @@ import { importOratory, type ImportResult as OratoryResult } from "./oratory/imp
 interface ImportOptions {
   autoeqOnly: boolean;
   oratoryOnly: boolean;
+  oratoryCsv: string;
   skipFetch: boolean;
   skipDist: boolean;
   dryRun: boolean;
@@ -66,14 +67,10 @@ interface ImportSummary {
 
 const SOURCES_DIR = "./sources";
 const AUTOEQ_DIR = join(SOURCES_DIR, "autoeq");
-const ORATORY_DIR = join(SOURCES_DIR, "oratory");
 const DATABASE_DIR = "./database";
 
 const AUTOEQ_REPO = "https://github.com/jaakkopasanen/AutoEq.git";
 const AUTOEQ_SPARSE_PATH = "results";
-
-// Oratory Dropbox URL - NOTE: Date stamp in filename needs updating for new archives
-const ORATORY_DROPBOX_URL = "https://www.dropbox.com/scl/fi/2ejg5akb5zigfncd1u1as/PDFs-27.11.24.7z?rlkey=23cksihiq2r14svx520qkwbuk&e=2&dl=1";
 
 // =============================================================================
 // Logging
@@ -103,6 +100,7 @@ function log(level: keyof typeof LOG_PREFIX, message: string) {
 function parseArgs(): ImportOptions {
   const args = parse(Deno.args, {
     boolean: ["autoeq-only", "oratory-only", "skip-fetch", "skip-dist", "dry-run", "output-json", "verbose", "help"],
+    string: ["oratory-csv"],
     alias: {
       h: "help",
       v: "verbose",
@@ -113,6 +111,7 @@ function parseArgs(): ImportOptions {
   return {
     autoeqOnly: args["autoeq-only"] || false,
     oratoryOnly: args["oratory-only"] || false,
+    oratoryCsv: args["oratory-csv"] || "",
     skipFetch: args["skip-fetch"] || false,
     skipDist: args["skip-dist"] || false,
     dryRun: args["dry-run"] || false,
@@ -130,21 +129,22 @@ ${cyan("USAGE:")}
   deno run --allow-all tools/import.ts [OPTIONS]
 
 ${cyan("OPTIONS:")}
-  --autoeq-only      Only import AutoEQ source
-  --oratory-only     Only import Oratory source
-  --skip-fetch       Skip fetching sources (use existing ./sources/)
-  --skip-dist        Skip dist.ts rebuild after import
-  --dry-run, -n      Show what would change without writing
-  --output-json      Output JSON summary (for CI/Slack integration)
-  --verbose, -v      Enable verbose logging
-  --help, -h         Show this help message
+  --autoeq-only           Only import AutoEQ source
+  --oratory-only          Only import Oratory source
+  --oratory-csv <path>    Path to oratory CSV (required for oratory import)
+  --skip-fetch            Skip fetching sources (use existing ./sources/)
+  --skip-dist             Skip dist.ts rebuild after import
+  --dry-run, -n           Show what would change without writing
+  --output-json           Output JSON summary (for CI/Slack integration)
+  --verbose, -v           Enable verbose logging
+  --help, -h              Show this help message
 
 ${cyan("EXAMPLES:")}
-  # Full import (fetch + import + rebuild dist)
-  deno run --allow-all tools/import.ts
+  # Import oratory from CSV (skip dist rebuild)
+  deno run --allow-all tools/import.ts --oratory-csv ~/Downloads/Oratory_Feb25_2026.csv --skip-dist --verbose
 
   # Dry run to see what would change
-  deno run --allow-all tools/import.ts --dry-run
+  deno run --allow-all tools/import.ts --oratory-csv ~/Downloads/Oratory_Feb25_2026.csv --dry-run
 
   # Import AutoEQ only, skip fetching (use existing sources)
   deno run --allow-all tools/import.ts --autoeq-only --skip-fetch
@@ -154,33 +154,8 @@ ${cyan("EXAMPLES:")}
 
 ${cyan("SOURCES:")}
   AutoEQ:  ${AUTOEQ_REPO}
-  Oratory: Dropbox archive (requires manual URL update)
+  Oratory: CSV with Dropbox links (--oratory-csv)
 `);
-}
-
-// =============================================================================
-// Hash Utilities
-// =============================================================================
-
-async function computeFileMd5(filePath: string): Promise<string> {
-  const file = await Deno.open(filePath, { read: true });
-  const hash = await crypto.subtle.digest("MD5", file.readable);
-  return Array.from(new Uint8Array(hash))
-    .map(b => b.toString(16).padStart(2, "0"))
-    .join("");
-}
-
-async function readHashFile(hashPath: string): Promise<string | null> {
-  try {
-    const content = await Deno.readTextFile(hashPath);
-    return content.trim();
-  } catch {
-    return null;
-  }
-}
-
-async function writeHashFile(hashPath: string, hash: string): Promise<void> {
-  await Deno.writeTextFile(hashPath, hash + "\n");
 }
 
 // =============================================================================
@@ -301,90 +276,6 @@ async function fetchAutoEQ(dryRun: boolean): Promise<boolean> {
   return await gitSparseClone(AUTOEQ_REPO, AUTOEQ_DIR, AUTOEQ_SPARSE_PATH);
 }
 
-async function fetchOratory(dryRun: boolean): Promise<boolean> {
-  log("FETCH", "Fetching Oratory source...");
-
-  if (dryRun) {
-    log("INFO", `[DRY-RUN] Would download and extract Oratory PDFs to ${ORATORY_DIR}`);
-    return true;
-  }
-
-  await ensureDir(SOURCES_DIR);
-
-  const archivePath = join(SOURCES_DIR, "oratory-pdfs.7z");
-  const hashPath = join(SOURCES_DIR, "oratory-pdfs.7z.md5");
-
-  log("FETCH", "Downloading Oratory PDFs from Dropbox...");
-  const curlResult = await runCommand([
-    "curl", "-L", "-o", archivePath, ORATORY_DROPBOX_URL
-  ]);
-
-  if (!curlResult.success) {
-    log("ERROR", `Failed to download Oratory archive: ${curlResult.stderr}`);
-    return false;
-  }
-
-  let fileSize = 0;
-  try {
-    const stat = await Deno.stat(archivePath);
-    fileSize = stat.size;
-    log("INFO", `Downloaded ${(fileSize / 1024 / 1024).toFixed(1)} MB`);
-  } catch {
-    log("ERROR", "Download failed - archive file not found");
-    return false;
-  }
-
-  log("FETCH", "Computing MD5 hash...");
-  const newHash = await computeFileMd5(archivePath);
-  log("DEBUG", `New archive MD5: ${newHash}`);
-
-  const storedHash = await readHashFile(hashPath);
-  if (storedHash === newHash && await exists(ORATORY_DIR)) {
-    log("INFO", "Archive unchanged (MD5 match), skipping extraction");
-    try {
-      await Deno.remove(archivePath);
-    } catch {
-      // Ignore
-    }
-    return true;
-  }
-
-  if (await exists(ORATORY_DIR)) {
-    log("DEBUG", "Removing existing oratory directory...");
-    await Deno.remove(ORATORY_DIR, { recursive: true });
-  }
-  await ensureDir(ORATORY_DIR);
-
-  log("FETCH", "Extracting Oratory PDFs...");
-
-  // Try 7zz (homebrew) first, then 7z
-  let extractResult = await runCommand([
-    "/opt/homebrew/bin/7zz", "x", "-y", `-o${ORATORY_DIR}`, archivePath
-  ]);
-
-  if (!extractResult.success) {
-    extractResult = await runCommand([
-      "7z", "x", "-y", `-o${ORATORY_DIR}`, archivePath
-    ]);
-  }
-
-  if (!extractResult.success) {
-    log("ERROR", `Failed to extract Oratory archive: ${extractResult.stderr}`);
-    return false;
-  }
-
-  await writeHashFile(hashPath, newHash);
-
-  try {
-    await Deno.remove(archivePath);
-  } catch {
-    // Ignore
-  }
-
-  log("INFO", "Oratory PDFs extracted successfully");
-  return true;
-}
-
 // =============================================================================
 // Import Operations
 // =============================================================================
@@ -431,25 +322,17 @@ async function runAutoEQImport(options: ImportOptions): Promise<{ stats: ImportS
 async function runOratoryImport(options: ImportOptions): Promise<{ stats: ImportStats; unknownTypes: string[]; errors: { source: string; file: string; message: string }[] }> {
   log("IMPORT", "Starting Oratory import...");
 
-  if (!await exists(ORATORY_DIR)) {
-    log("ERROR", `Oratory directory not found: ${ORATORY_DIR}`);
+  if (!options.oratoryCsv) {
+    log("ERROR", "No --oratory-csv path provided");
     return {
       stats: { ...createEmptyStats(), errors: 1 },
       unknownTypes: [],
-      errors: [{ source: "oratory", file: ORATORY_DIR, message: "Directory not found" }],
+      errors: [{ source: "oratory", file: "cli", message: "Missing --oratory-csv argument" }],
     };
   }
 
-  // Find PDFs directory (may be in a subdirectory)
-  let pdfDir = ORATORY_DIR;
-  for await (const entry of Deno.readDir(ORATORY_DIR)) {
-    if (entry.isDirectory && entry.name.startsWith("PDFs")) {
-      pdfDir = join(ORATORY_DIR, entry.name);
-      break;
-    }
-  }
-
-  const result = await importOratory(pdfDir, DATABASE_DIR, {
+  const result = await importOratory(DATABASE_DIR, {
+    csvPath: options.oratoryCsv,
     dryRun: options.dryRun,
     verbose: options.verbose,
     onProgress: (msg) => log("DEBUG", msg),
@@ -565,21 +448,13 @@ async function main() {
     errors: [],
   };
 
-  // Step 1: Fetch sources
+  // Step 1: Fetch sources (AutoEQ only — Oratory downloads are handled by the CSV importer)
   if (!options.skipFetch) {
     if (!options.oratoryOnly) {
       const autoeqSuccess = await fetchAutoEQ(options.dryRun);
       if (!autoeqSuccess) {
         log("ERROR", "Failed to fetch AutoEQ source");
         summary.errors.push({ source: "autoeq", file: "fetch", message: "Failed to fetch" });
-      }
-    }
-
-    if (!options.autoeqOnly) {
-      const oratorySuccess = await fetchOratory(options.dryRun);
-      if (!oratorySuccess) {
-        log("WARN", "Failed to fetch Oratory source");
-        summary.errors.push({ source: "oratory", file: "fetch", message: "Failed to fetch" });
       }
     }
   } else {

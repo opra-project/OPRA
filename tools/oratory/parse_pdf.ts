@@ -178,6 +178,24 @@ export function parseOratoryPdfText(text: string): ParsedEQ {
     }
   }
 
+  // Pattern 3: Old format with Bandwidth column (Sony W850C circa 2018)
+  // Band X | Frequency | Q-Factor | Bandwidth | Gain | Filter Type
+  // This format has an extra bandwidth column between Q and Gain, and Type at the end
+  if (filters.length === 0) {
+    const filterPattern3 = /Band\s*(\d+)\s+([\d,\.]+)\s*Hz\s+([\d,\.]+)\s+([\d,\.]+)\s+([-\d,\.]+)\s*dB\s+(PEAK|LOW_SHELF|HIGH_SHELF|LOW_PASS|HIGH_PASS|PK|LSC|HSC|LS|HS|LP|HP)/gi;
+
+    while ((match = filterPattern3.exec(text)) !== null) {
+      const band = parseInt(match[1]);
+      const frequency = parseNumber(match[2]);
+      const q = parseNumber(match[3]);
+      // match[4] is bandwidth - we ignore it since we have Q-factor
+      const gain = parseNumber(match[5]);
+      const type = parseFilterType(match[6]);
+
+      filters.push({ band, type, frequency, gain, q });
+    }
+  }
+
   // Sort filters by band number
   filters.sort((a, b) => a.band - b.band);
 
@@ -199,6 +217,31 @@ export function parseOratoryPdfText(text: string): ParsedEQ {
 // =============================================================================
 // Output Formatting
 // =============================================================================
+
+/**
+ * Extract the target curve type from PDF text content.
+ * Looks for specific graph label patterns like "USOUND 1V1 In-Ear Target",
+ * "Harman AE/OE 2018 Target", "Harman In-Ear LI Target", or
+ * "oratory1990 In-Ear Target".
+ * Returns null if no target can be determined.
+ */
+export function extractTargetFromPdfText(text: string): "usound" | "harman" | "oratory1990" | null {
+  // Match the specific target curve label format used in oratory1990 PDFs.
+  // These appear in graph titles as "<Name> [qualifier] Target".
+  // The qualifier is a short descriptor (1-5 words) like "1V1 In-Ear", "AE/OE 2018", "In-Ear LI".
+  // We use a tight pattern to avoid false matches like "by oratory1990 ... Deviation from Target".
+  const targetLabelPattern = /\b(USOUND|Harman|oratory1990)\s+[\w/\s-]{1,30}?Target\b/gi;
+  const matches = [...text.matchAll(targetLabelPattern)];
+
+  for (const match of matches) {
+    const keyword = match[1].toLowerCase();
+    if (keyword === "usound") return "usound";
+    if (keyword === "harman") return "harman";
+    if (keyword === "oratory1990") return "oratory1990";
+  }
+
+  return null;
+}
 
 export function formatAsParametricEQ(eq: ParsedEQ): string {
   // Format similar to AutoEQ's ParametricEQ.txt format
