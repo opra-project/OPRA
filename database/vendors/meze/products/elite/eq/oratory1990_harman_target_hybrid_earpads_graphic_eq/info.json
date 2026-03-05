@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • Hybrid Earpads, graphic EQ",
+  "link": "https://www.dropbox.com/scl/fi/9ncb9dpa45efwksbcoqd9/Meze-Elite-Hybrid-Earpads-graphic-EQ.pdf?rlkey=s9tj4usfeqa0rvbgjonxnul9m&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.9,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 31.5,
+        "gain_db": 6,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 63,
+        "gain_db": 2.5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 125,
+        "gain_db": 0.5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 250,
+        "gain_db": -2.5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 500,
+        "gain_db": 0.5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": 0,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2000,
+        "gain_db": 6.5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": 1,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8000,
+        "gain_db": 5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 16000,
+        "gain_db": -6,
+        "q": 1.41
+      }
+    ]
+  }
+}

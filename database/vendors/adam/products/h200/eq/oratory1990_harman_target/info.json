@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/rjql4izgv2f4sovnmrkec/Adam-Audio-H200.pdf?rlkey=q6axu9azcummh2pe6pwg6xqd0&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 48,
+        "gain_db": -11.9,
+        "q": 0.3
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 158,
+        "gain_db": 5.8,
+        "q": 1.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 700,
+        "gain_db": 1.2,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1520,
+        "gain_db": 3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2840,
+        "gain_db": -7.4,
+        "q": 1.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5000,
+        "gain_db": 5.3,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6800,
+        "gain_db": -7,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 2,
+        "q": 0.71
+      }
+    ]
+  }
+}

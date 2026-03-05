@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "USound target",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/bkjhi20uh3p320766x3ia/Sony-Pulse-Explore.pdf?rlkey=p134qq8581wturl12u5c07mrp&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.1,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/zzwnh6g7sprnhoj/Lindy%20HF-100.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -9.5,

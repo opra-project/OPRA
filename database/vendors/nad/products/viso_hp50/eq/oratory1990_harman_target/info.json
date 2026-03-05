@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/mjbp2dau2o3m680/NAD%20Viso%20HP50.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "USound target",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/s/8lpu8vp58vkmi8f/64%20Audio%20N8%20%28USound%20target%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.4,
@@ -33,7 +34,7 @@
         "type": "peak_dip",
         "frequency": 3500,
         "gain_db": 1.9,
-        "q": 0.71
+        "q": 2
       },
       {
         "type": "peak_dip",

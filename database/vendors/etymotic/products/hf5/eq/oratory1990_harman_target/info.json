@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/txdrbl4kjss8ulm/Etymotic%20Research%20hf5.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -12.5,

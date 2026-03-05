@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/5axwna28sivhgty4lo7xn/CrinEar-Meta.pdf?rlkey=h6okvuheb1wese7dh7uxllt3e&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.4,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 133,
+        "gain_db": 3.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 380,
+        "gain_db": -2,
+        "q": 0.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 900,
+        "gain_db": 0.6,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1280,
+        "gain_db": -1.7,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2750,
+        "gain_db": -2.2,
+        "q": 3.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 4,
+        "q": 0.35
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -6,
+        "q": 0.71
+      }
+    ]
+  }
+}

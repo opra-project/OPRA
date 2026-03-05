@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/fk4qx1jjjjrl37n/Sennheiser%20HE1.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.8,

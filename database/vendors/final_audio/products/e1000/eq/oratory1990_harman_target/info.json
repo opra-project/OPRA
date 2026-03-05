@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/3a951nzllsstl5z/Final%20Audio%20E1000.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -9.5,

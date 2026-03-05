@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/umz3igcua8fzqol866pkh/Pud-s-Vogue.pdf?rlkey=x1fwsxlstvmiin2xajfkc6nee&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -7,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": -7,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 330,
+        "gain_db": -6,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 490,
+        "gain_db": -4,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 602,
+        "gain_db": -2.6,
+        "q": 12
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 790,
+        "gain_db": -19,
+        "q": 2.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1150,
+        "gain_db": 4,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2530,
+        "gain_db": -2.7,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3900,
+        "gain_db": -15,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5400,
+        "gain_db": -9.1,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 7000,
+        "gain_db": 7,
+        "q": 0.6
+      }
+    ]
+  }
+}

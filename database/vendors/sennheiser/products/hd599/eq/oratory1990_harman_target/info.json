@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/xo3o8ge30qe23vat3ybd5/Sennheiser-HD599.pdf?rlkey=3u94biy0ewk8txko3lqs4tx0x&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -9.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 33,
+        "gain_db": 4,
+        "q": 0.8
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 165,
+        "gain_db": -5,
+        "q": 0.45
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1150,
+        "gain_db": -1.1,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1700,
+        "gain_db": 3.6,
+        "q": 1.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 1,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3100,
+        "gain_db": -2.6,
+        "q": 3.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4350,
+        "gain_db": -2.6,
+        "q": 3.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5800,
+        "gain_db": -3,
+        "q": 3.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 3,
+        "q": 0.71
+      }
+    ]
+  }
+}

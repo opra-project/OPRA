@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/z8jso1abxn5f4qlpizae8/Bowers-Wilkins-PX8.pdf?rlkey=whhurwt0yyso7s7ejdlvqux9a&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3,

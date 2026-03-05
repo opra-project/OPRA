@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/0tw98j0sbhol4ruf2e4vt/Apple-AirPods-Pro-USound.pdf?rlkey=g2eekduzqj9bhr11ss9pffabq&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -8.4,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 43,
+        "gain_db": -1.8,
+        "q": 1
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 250,
+        "gain_db": 8.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 600,
+        "gain_db": -0.8,
+        "q": 0.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 935,
+        "gain_db": 2,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3500,
+        "gain_db": 8,
+        "q": 0.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5900,
+        "gain_db": -1.1,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -7,
+        "q": 0.71
+      }
+    ]
+  }
+}

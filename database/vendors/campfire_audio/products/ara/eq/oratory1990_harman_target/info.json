@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/47fi1gxyb1vi6x1/Campfire%20Audio%20Ara.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -9,

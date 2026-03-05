@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/ok1veqzrpc5omcn/Tin%20Audio%20T2%20Pro.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -9.8,
@@ -52,6 +53,12 @@
         "frequency": 5050,
         "gain_db": -2.4,
         "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8000,
+        "gain_db": -10,
+        "q": 5
       },
       {
         "type": "peak_dip",

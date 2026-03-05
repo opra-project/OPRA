@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/84d9oonazr5lzp5/Sennheiser%20HD518.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -10.3,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/uflmbrj3kd39p07obkqoh/Truthear-Zero.pdf?rlkey=6col9lc2z9i6fcpv6seub76o8&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8.1,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/33wvirm3thqte3l/Qudelix%20QX-Over%20%28Harman%20In-Ear%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.1,

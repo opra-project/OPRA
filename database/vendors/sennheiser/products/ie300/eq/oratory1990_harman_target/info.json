@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/kevgrjt27hctxtlfw1vdc/Sennheiser-IE300.pdf?rlkey=ji3ue9cgfdxt1hevx06novk3r&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -9.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 0,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 170,
+        "gain_db": -2.7,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 800,
+        "gain_db": 1.9,
+        "q": 1.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1500,
+        "gain_db": -2.4,
+        "q": 1.6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 3,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3300,
+        "gain_db": 8.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5200,
+        "gain_db": -1.7,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7100,
+        "gain_db": -4,
+        "q": 4.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8000,
+        "gain_db": -7,
+        "q": 0.71
+      }
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/xjkvdv89sk6i81628lwm1/Dyson-Zone.pdf?rlkey=hjc6rj8ng29prevgejc31wjym&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3.7,

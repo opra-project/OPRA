@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/6wx1hjx2ugz6doi/AKG%20K280%20Parabolic.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3.8,

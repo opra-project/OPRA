@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/ysj9jmchyob4m8e/Sony%20IER-Z1R.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.8,

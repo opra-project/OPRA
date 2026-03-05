@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/s4isno09gt20ozf/Sennheiser%20HD660S.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8.4,

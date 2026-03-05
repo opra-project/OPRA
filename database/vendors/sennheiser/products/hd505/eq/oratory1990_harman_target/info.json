@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/aveql8ablfjm54yf0kfzr/Sennheiser-HD505.pdf?rlkey=0v6pv1364oua3l5o68wv0ich2&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -11.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 31,
+        "gain_db": 6,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 600,
+        "gain_db": 2.3,
+        "q": 0.65
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1250,
+        "gain_db": -1.9,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2550,
+        "gain_db": -0.6,
+        "q": 3.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 6,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3250,
+        "gain_db": -2.3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5450,
+        "gain_db": -3,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 12000,
+        "gain_db": -4,
+        "q": 0.71
+      }
+    ]
+  }
+}

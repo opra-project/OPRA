@@ -1,0 +1,59 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/sam2omf6m50sqge1638gh/Campfire-Audio-Clara-oratory1990.pdf?rlkey=72apvw51uf8kt1do15mce8oxh&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.1,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 700,
+        "gain_db": 1.2,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 1100,
+        "gain_db": 4.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1370,
+        "gain_db": -9,
+        "q": 1.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2300,
+        "gain_db": 3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3100,
+        "gain_db": -2,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4500,
+        "gain_db": -1.6,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8000,
+        "gain_db": -5,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -6,
+        "q": 0.71
+      }
+    ]
+  }
+}

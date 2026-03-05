@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/u9dgz7y94kse97bktmnfr/Aune-AR5000.pdf?rlkey=rqqy43gey2ynvq2xaz779o3m1&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.5,

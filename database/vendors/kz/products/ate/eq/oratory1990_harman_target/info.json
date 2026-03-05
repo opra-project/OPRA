@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/0gct18k790mzg27/KZ%20ATE.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": 0.5,

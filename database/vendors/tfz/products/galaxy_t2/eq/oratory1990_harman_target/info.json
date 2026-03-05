@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/d9gb5cgkyew3ky4/TFZ%20Galaxy%20T2.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -0.7,

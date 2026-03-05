@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/nghajkgcmkyegbjpvpc4w/Warwick-Audio-Bravura.pdf?rlkey=o8l1ccefj4wz4bm2raksmsd65&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -6.5,

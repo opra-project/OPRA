@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/2jeminpn1nsxdww/Final%20Audio%20Adagio%20III.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -10.7,

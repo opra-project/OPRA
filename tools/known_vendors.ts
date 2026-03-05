@@ -19,13 +19,23 @@
  */
 export const KNOWN_VENDORS = [
   // Multi-word vendors (4+ words)
+  "Rosson Audio Design",
   "House Of Marley",
   "Advanced AcousticWerkes",
+  "Soul by Ludacris",
   "Alpha & Delta",
   "Alpha Design Labs",
+  "Etymotic Research",
+  "AFUL Acoustics",
+  "Shuoer Aoshida",
+  "Creative Labs",
 
   // Multi-word vendors (3 words)
   "Dan Clark Audio",
+  "Modhouse Audio",
+  "Andover Audio",
+  "Astro Gaming",
+  "Sivga Audio",
   "Acoustic Research",
   "Ambient Acoustics",
   "Ambient Dynamics",
@@ -34,6 +44,11 @@ export const KNOWN_VENDORS = [
   "Master Dynamic",
 
   // Multi-word vendors (2 words)
+  "Adam Audio",
+  "Base Audio",
+  "KB EAR",
+  "Kaldas Research",
+  "Lily Audio",
   "64 Audio",
   "Astell & Kern",
   "Audio Genetic",
@@ -74,6 +89,7 @@ export const KNOWN_VENDORS = [
   "V Moda",
   "V-MODA",
   "Vision Ears",
+  "Warwick Acoustics",
   "Warwick Audio",
   "IMR Acoustics",
   "Simgot Audio",
@@ -205,6 +221,8 @@ export const KNOWN_VENDORS = [
   "Zero Audio",
 
   // Single-word vendors (sorted alphabetically for maintainability)
+  "MOFI",
+  "Zaylli",
   "1Custom",
   "1More",
   "634ears",
@@ -324,6 +342,7 @@ export const KNOWN_VENDORS = [
   "Creative",
   "CVJ",
   "Dali",
+  "Dita",
   "Daiso",
   "Darkvoice",
   "DCMEKA",
@@ -376,6 +395,7 @@ export const KNOWN_VENDORS = [
   "GK",
   "Google",
   "Grado",
+  "Grell",
   "GuideRay",
   "Graphene",
   "HAKUGEI",
@@ -423,6 +443,7 @@ export const KNOWN_VENDORS = [
   "JBL",
   "JCally",
   "Jialai",
+  "JLab",
   "Joyodio",
   "JQ",
   "Juzear",
@@ -743,6 +764,8 @@ export const VENDOR_ALIASES: Record<string, string> = {
   "NF ACOUS": "NF Audio",
   "ISN AUDIO": "ISN Audio",
   "Audio-Technica": "Audio Technica",
+  "KB EAR": "KBEAR",
+  "Adam Audio": "Adam",
 
   // Map short/alternate names to canonical names in KNOWN_VENDORS
   "Campfire": "Campfire Audio",
@@ -755,4 +778,33 @@ export const VENDOR_ALIASES: Record<string, string> = {
   "See Audio": "SeeAudio",
   "Simgot": "Simgot Audio",
   "LZ Audio": "LZ Hi-Fi Audio",
+
+  // Company renames / rebrands
+  "MrSpeakers": "Dan Clark Audio",
+  "Tin Audio": "Tin HiFi",
+
+  // Abbreviations → full name
+  "B&O": "Bang & Olufsen",
+  "MMR": "Metal Magic Research",
+
+  // Short name → full name (full name has more data in DB)
+  "Etymotic Research": "Etymotic",
+  "Astro": "Astro Gaming",
+  "Andover": "Andover Audio",
+  "JLab": "JLab Audio",
+  "Dita": "Dita Audio",
+  "Modhouse": "Modhouse Audio",
+  "Grell": "Grell Audio",
+  "Rosson Audio": "Rosson Audio Design",
+  "Warwick Audio": "Warwick Acoustics",
+
+  // Full name → short name (short name has more data in DB)
+  "Creative Labs": "Creative",
+  "AFUL Acoustics": "AFUL",
+  "Sivga Audio": "Sivga",
+  "Shuoer Aoshida": "Shuoer",
+  "Soul by Ludacris": "Soul",
+
+  // Special character handling
+  "T+A": "T+A",  // Ensure slug stays as "t_a" matching existing DB
 };

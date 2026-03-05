@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/xa9qoixuxgna0zq0ihq9y/Meze-105-Aer.pdf?rlkey=8acm180d4uzn5jokzox9cbwra&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.2,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 80,
+        "gain_db": -3.7,
+        "q": 0.4
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 4.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 500,
+        "gain_db": 1,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2000,
+        "gain_db": 4,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": -2,
+        "q": 4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": -2,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": -2.5,
+        "q": 5.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5750,
+        "gain_db": -2.5,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8000,
+        "gain_db": 3,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -2,
+        "q": 0.71
+      }
+    ]
+  }
+}

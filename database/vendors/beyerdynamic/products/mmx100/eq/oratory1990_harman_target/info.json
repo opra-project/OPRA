@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/4983s6z4k9qd1bdgdfrcj/Beyerdynamic-MMX100.pdf?rlkey=6f9kj3noggycmt20ynblfixbr&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3.6,

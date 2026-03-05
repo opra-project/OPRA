@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/iieo2fj6qh5danokb00ki/Dan-Clark-Audio-Noire-X.pdf?rlkey=cidsg3xud2g7bxdzhzklyd0jr&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -1.5,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 100,
+        "gain_db": -1.5,
+        "q": 2
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 0,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 300,
+        "gain_db": 0,
+        "q": 0.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 630,
+        "gain_db": 1.5,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2100,
+        "gain_db": -1.8,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 0,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3500,
+        "gain_db": 1.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4750,
+        "gain_db": -2.9,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8000,
+        "gain_db": 1.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 11000,
+        "gain_db": -6,
+        "q": 5
+      }
+    ]
+  }
+}

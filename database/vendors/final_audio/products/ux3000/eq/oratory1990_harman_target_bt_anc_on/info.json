@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Bt, Anc On",
+  "details": "Harman Target • BT, ANC on",
+  "link": "https://www.dropbox.com/s/2r4vpwiujc79g4m/Final%20Audio%20UX3000%20%28BT%2C%20ANC%20on%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.7,

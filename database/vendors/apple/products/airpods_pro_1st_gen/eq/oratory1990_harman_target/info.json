@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/a3qv91axmak6yh1d8mqn0/Apple-AirPods-Pro.pdf?rlkey=ayeyal8el4uktmzdre40dj14m&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -9.1,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 52,
+        "gain_db": -5.4,
+        "q": 0.45
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 10,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 160,
+        "gain_db": 3.1,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 580,
+        "gain_db": -2.5,
+        "q": 0.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 935,
+        "gain_db": 1.4,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3500,
+        "gain_db": 8,
+        "q": 0.71
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -8,
+        "q": 0.71
+      }
+    ]
+  }
+}

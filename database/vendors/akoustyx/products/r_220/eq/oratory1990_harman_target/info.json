@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/i2x1myhcqbesyz2/Akoustyx%20R-220.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -10,

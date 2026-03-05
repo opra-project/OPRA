@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/s/0w9ko0j8gp4lmx5/Sennheiser%20IE800%20%28u%3Abubblegumdog%29%20%28oratory1990%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -7.9,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 220,
+        "gain_db": -1.6,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 350,
+        "gain_db": -0.6,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1350,
+        "gain_db": -2.1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2400,
+        "gain_db": 1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2800,
+        "gain_db": 3.6,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3500,
+        "gain_db": 3.5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4200,
+        "gain_db": 3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 11000,
+        "gain_db": -6,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 15000,
+        "gain_db": -2,
+        "q": 2
+      }
+    ]
+  }
+}

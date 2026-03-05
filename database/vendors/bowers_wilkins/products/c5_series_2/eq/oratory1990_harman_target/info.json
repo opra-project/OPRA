@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/wlvykgztvk04jwa/Bowers%20Wilkins%20C5%20Series%202.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -12.6,

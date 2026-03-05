@@ -1,69 +1,64 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/v4wkt7t98ghc08nhfl3ur/Sennheiser-HD660S2.pdf?rlkey=em9ocbjw0t0u3orpyc15cqibu&dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -6.6,
+    "gain_db": -9.6,
     "bands": [
       {
         "type": "low_shelf",
-        "frequency": 105,
+        "frequency": 28,
+        "gain_db": 4,
+        "q": 0.8
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 100,
         "gain_db": 5.5,
         "q": 0.71
       },
       {
         "type": "peak_dip",
-        "frequency": 200,
-        "gain_db": -2.2,
-        "q": 0.6
+        "frequency": 180,
+        "gain_db": -1.8,
+        "q": 1
       },
       {
         "type": "peak_dip",
-        "frequency": 550,
-        "gain_db": 1,
-        "q": 0.5
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 1230,
-        "gain_db": -1.7,
+        "frequency": 1250,
+        "gain_db": -2.4,
         "q": 1.4
       },
       {
-        "type": "peak_dip",
-        "frequency": 2250,
-        "gain_db": 2.2,
-        "q": 2
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 6,
+        "q": 0.35
       },
       {
         "type": "peak_dip",
-        "frequency": 2900,
-        "gain_db": -0.7,
-        "q": 2
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 5550,
-        "gain_db": -8.5,
+        "frequency": 3150,
+        "gain_db": -1.5,
         "q": 3
       },
       {
         "type": "peak_dip",
-        "frequency": 7500,
-        "gain_db": 8,
-        "q": 0.8
+        "frequency": 5600,
+        "gain_db": -7,
+        "q": 3.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6500,
+        "gain_db": 2,
+        "q": 1.4
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": 0,
-        "q": 0.71
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 10500,
-        "gain_db": -3,
-        "q": 6
+        "gain_db": -4,
+        "q": 1
       }
     ]
   }

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Pre 2020 Earpad Revision",
+  "details": "Harman Target • pre 2020 earpad revision",
+  "link": "https://www.dropbox.com/s/1nxotueyr2nsbi2/Hifiman%20Sundara%20%28pre%202020%20earpad%20revision%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.6,

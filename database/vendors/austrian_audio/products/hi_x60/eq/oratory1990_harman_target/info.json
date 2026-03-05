@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/a8xzrosd982jt0n6zkz1w/Austrian-Audio-Hi-X60.pdf?rlkey=klyaocc09cdsq2dbombysw2f6&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.5,

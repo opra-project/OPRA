@@ -1,0 +1,47 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/bk487fovmrybim4n5r8sp/Sony-MH1-USound.pdf?rlkey=c42fthmzra6q98ah4as1gjxwu&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.7,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 810,
+        "gain_db": 2.2,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1400,
+        "gain_db": -0.9,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2500,
+        "gain_db": 4.8,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3500,
+        "gain_db": -3.5,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5600,
+        "gain_db": 7,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -3,
+        "q": 0.71
+      }
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/7yvs0411yoo4g3x3y0pjr/Audio-Technica-ATH-AWKT.pdf?rlkey=uorwo1ypfttwul48j7m4u1heb&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -11.4,

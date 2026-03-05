@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/mycfokop24t3l7c/Hifiman%20HE1000%20stealth.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.3,

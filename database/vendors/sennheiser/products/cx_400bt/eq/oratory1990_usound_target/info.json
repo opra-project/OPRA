@@ -1,0 +1,47 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/s/skg67e443ltcje5/Sennheiser%20CX%20400BT%20True%20Wireless%20%28oratory1990%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -7.9,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 230,
+        "gain_db": -1.5,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 700,
+        "gain_db": 1.1,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1600,
+        "gain_db": -5.5,
+        "q": 1.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": 9,
+        "q": 0.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7200,
+        "gain_db": -4.5,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10200,
+        "gain_db": -5.7,
+        "q": 2.5
+      }
+    ]
+  }
+}

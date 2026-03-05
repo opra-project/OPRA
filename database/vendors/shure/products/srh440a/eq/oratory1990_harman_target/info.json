@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/1vt4eoyo4bdo7y0/Shure%20SRH440A.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.7,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/5p2u9amk5b2u5gc/Sennheiser%20Momentum%20In-Ear.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -12.5,

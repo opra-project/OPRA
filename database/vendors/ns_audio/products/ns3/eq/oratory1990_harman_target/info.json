@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/xcj3wrpvexe89at/NS%20Audio%20NS3.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -11,

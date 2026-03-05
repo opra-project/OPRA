@@ -1,14 +1,15 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/wvm959borifao31qpzxvq/Sennheiser-Momentum-4-Wireless.pdf?rlkey=c5ppx9jou94fawplsc6ogtawq&dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -5.7,
+    "gain_db": -5.1,
     "bands": [
       {
         "type": "peak_dip",
         "frequency": 23,
-        "gain_db": -8.7,
+        "gain_db": -7.9,
         "q": 0.35
       },
       {
@@ -20,44 +21,50 @@
       {
         "type": "peak_dip",
         "frequency": 200,
-        "gain_db": -2.6,
+        "gain_db": -1.4,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 650,
-        "gain_db": 1.3,
-        "q": 1.4
-      },
-      {
-        "type": "peak_dip",
         "frequency": 970,
+        "gain_db": -1.7,
+        "q": 2.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2150,
+        "gain_db": 5,
+        "q": 1.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2900,
+        "gain_db": -2.7,
+        "q": 6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 1,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3700,
         "gain_db": -1.9,
-        "q": 2.5
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 2400,
-        "gain_db": 6.4,
-        "q": 1
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 2940,
-        "gain_db": -4,
         "q": 6
       },
       {
         "type": "peak_dip",
-        "frequency": 4450,
+        "frequency": 7100,
         "gain_db": -2.6,
-        "q": 2
+        "q": 5
       },
       {
-        "type": "peak_dip",
-        "frequency": 6800,
-        "gain_db": -2.4,
-        "q": 6
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1,
+        "q": 0.71
       }
     ]
   }

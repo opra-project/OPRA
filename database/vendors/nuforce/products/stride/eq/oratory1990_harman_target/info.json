@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/ti0ouy10n9e6wnv/NuForce%20Stride.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.7,

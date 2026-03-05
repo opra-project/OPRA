@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/ew3z86epptmdk6e/Soundmagic%20E50C.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8.6,

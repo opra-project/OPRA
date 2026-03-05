@@ -1,0 +1,47 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/s/c0h52ax85dommef/Samsung%20SM-R170%20Galaxy%20Buds%20%28USound%20Target%2C%20Samsung%20EQ%29%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.4,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 190,
+        "gain_db": 2.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 135,
+        "gain_db": 1.4,
+        "q": 1.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 350,
+        "gain_db": -0.6,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 850,
+        "gain_db": 0.7,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1420,
+        "gain_db": -2,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2800,
+        "gain_db": -2,
+        "q": 2
+      }
+    ]
+  }
+}

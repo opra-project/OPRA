@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/qst47sbzbgkxdw80tja1z/Philips-Fidelio-X3.pdf?rlkey=50b696d7k5i3bq7s52vsihj0m&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -6.6,

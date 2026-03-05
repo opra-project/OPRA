@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/gh004pq9v1c1wp3q0k7pl/Hifiman-HE-R9.pdf?rlkey=b6v4qiql66klec3d9s2vjhz72&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.4,

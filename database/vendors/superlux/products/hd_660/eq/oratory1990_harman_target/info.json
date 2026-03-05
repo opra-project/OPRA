@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/6ysl2hvd061mep6/Superlux%20HD-660.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3.2,

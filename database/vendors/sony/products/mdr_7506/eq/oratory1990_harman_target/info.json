@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/shbp02so3niri79/Sony%20MDR-7506.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5,

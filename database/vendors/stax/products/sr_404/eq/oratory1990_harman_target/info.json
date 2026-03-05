@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/haku22ufmncj3u0/Stax%20SR-404.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.5,

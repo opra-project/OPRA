@@ -1,50 +1,63 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/p0re8udo9i3ev30/7Hz%20Timeless%20%28Harman%20Target%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -1.8,
+    "gain_db": -4.6,
     "bands": [
       {
         "type": "peak_dip",
-        "frequency": 260,
-        "gain_db": -1.3,
-        "q": 0.9
+        "frequency": 20,
+        "gain_db": -5.5,
+        "q": 0.4
       },
       {
         "type": "peak_dip",
-        "frequency": 900,
-        "gain_db": 0.9,
-        "q": 1.4
+        "frequency": 70,
+        "gain_db": -9,
+        "q": 0.35
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 10,
+        "q": 0.71
       },
       {
         "type": "peak_dip",
-        "frequency": 1430,
-        "gain_db": -3.3,
-        "q": 1.5
+        "frequency": 830,
+        "gain_db": 0.5,
+        "q": 2
       },
       {
         "type": "peak_dip",
-        "frequency": 2070,
-        "gain_db": -2.8,
-        "q": 2.5
+        "frequency": 1450,
+        "gain_db": -1.5,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2050,
+        "gain_db": -2.3,
+        "q": 2.1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2700,
+        "gain_db": 3,
+        "q": 0.7
       },
       {
         "type": "peak_dip",
         "frequency": 2600,
-        "gain_db": -1.4,
-        "q": 5.5
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 5800,
-        "gain_db": 2.8,
-        "q": 2
+        "gain_db": -1,
+        "q": 5
       },
       {
         "type": "high_shelf",
-        "frequency": 7000,
-        "gain_db": -3,
+        "frequency": 8000,
+        "gain_db": -7,
         "q": 0.71
       }
     ]

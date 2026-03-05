@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/70gk8sycd58c5q26z51re/Thinksound-OV21.pdf?rlkey=q4nmliabrxl3gw5xebrfopnx5&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.3,

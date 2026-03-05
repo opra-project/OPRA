@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/w9rs9b9b2gus9beor4gb6/Koss-ESP95X.pdf?rlkey=7i49br1h8641f7y2w0yu3qud3&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8.2,

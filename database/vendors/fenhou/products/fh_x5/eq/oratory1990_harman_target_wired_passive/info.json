@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Wired, Passive",
+  "details": "Harman Target • wired, passive",
+  "link": "https://www.dropbox.com/scl/fi/rafw7rw62ga4q54w0ba85/Fenhou-FH-X5-wired-passive.pdf?rlkey=zthi3s53h7uklj9ws6mjjnr7l&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.3,

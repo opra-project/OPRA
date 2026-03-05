@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/xn124a0e7l0x67j/Advanced%20GT-R.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -15.7,

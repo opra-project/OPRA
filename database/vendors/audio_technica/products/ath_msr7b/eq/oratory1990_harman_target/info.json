@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/8zm5dij5iw6mjpp/Audio%20Technica%20ATH-MSR7b.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5,

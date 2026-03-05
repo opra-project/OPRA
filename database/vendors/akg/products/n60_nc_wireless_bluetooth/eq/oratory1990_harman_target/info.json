@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/c5gksg2nblfz1qy/AKG%20N60%20NC%20Wireless%20Bluetooth.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -7.1,

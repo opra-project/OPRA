@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/z5eamho73tc7hrn/Sennheiser%20PC37X.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -9.5,

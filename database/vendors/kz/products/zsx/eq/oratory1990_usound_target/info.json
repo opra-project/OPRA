@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/sov5iaz1fj9gd0ixe4avz/KZ-ZSX-USound-Target.pdf?rlkey=ehvsacduczqopazmu3aidzrvw&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -1.1,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 0,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 225,
+        "gain_db": -1.8,
+        "q": 0.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 740,
+        "gain_db": 1.6,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1450,
+        "gain_db": -2.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2250,
+        "gain_db": -5.4,
+        "q": 1.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3200,
+        "gain_db": 2.8,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4250,
+        "gain_db": -3,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5100,
+        "gain_db": -2.6,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6000,
+        "gain_db": 2,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 8000,
+        "gain_db": -2,
+        "q": 0.71
+      }
+    ]
+  }
+}

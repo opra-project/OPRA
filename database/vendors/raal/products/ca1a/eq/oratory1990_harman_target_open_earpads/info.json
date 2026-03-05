@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Open Earpads",
+  "details": "Harman Target • open earpads",
+  "link": "https://www.dropbox.com/s/pk4kz8cacnarxek/Raal%20CA1a%20%28open%20earpads%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -6.3,

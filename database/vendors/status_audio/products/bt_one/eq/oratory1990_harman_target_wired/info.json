@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Wired",
+  "details": "Harman Target • wired",
+  "link": "https://www.dropbox.com/s/b1f927m6gtjfwqd/Status%20Audio%20BT%20One%20%28wired%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -0.6,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/nabq39xj25m097s/Neumann%20NDH%2020.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -7.7,

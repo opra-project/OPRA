@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/7e5w0ovgxylzm4y/AKG%20N5005.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.5,

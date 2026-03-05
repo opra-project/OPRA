@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • pre-production / review version",
+  "link": "https://www.dropbox.com/s/97vjg9y7t4l8oic/Drop%20Panda%20%28preliminary%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -8.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 35,
+        "gain_db": 3.5,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 180,
+        "gain_db": -7.7,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 370,
+        "gain_db": 1,
+        "q": 1.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 730,
+        "gain_db": -3.3,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2100,
+        "gain_db": 2,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": -1,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6600,
+        "gain_db": -2.8,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8200,
+        "gain_db": -2.6,
+        "q": 5
+      }
+    ]
+  }
+}

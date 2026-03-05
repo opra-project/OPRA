@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/4c6vnhc1p1pitxy/Dan%20Clark%20Audio%20Ether%20C%20Flow%201.1.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.2,

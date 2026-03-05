@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • with ring dampeners installed",
+  "link": "https://www.dropbox.com/s/88asim1msaflfzu/ETA%20Mini%20Semi-Closed%20%28Ring%20Dampeners%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 110,
+        "gain_db": 1.6,
+        "q": 1.4
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 400,
+        "gain_db": -5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1200,
+        "gain_db": -2.9,
+        "q": 1.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1600,
+        "gain_db": -0.8,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2300,
+        "gain_db": 2,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 6,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3050,
+        "gain_db": -3.8,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5500,
+        "gain_db": -3.5,
+        "q": 4.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 11000,
+        "gain_db": -7,
+        "q": 0.71
+      }
+    ]
+  }
+}

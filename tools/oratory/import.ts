@@ -1,19 +1,20 @@
 /**
- * tools/oratory/import.ts - Oratory import module
+ * tools/oratory/import.ts - CSV-driven Oratory1990 import module
  *
- * Processes Oratory1990 PDFs and writes to database.
- * Uses local PDF text extraction via unpdf library.
- * Can be used as a module or run standalone.
+ * Reads a semicolon-delimited CSV with Brand, Model, Comment, Target, Link columns.
+ * Downloads PDFs from Dropbox links, parses EQ data, and writes to database.
  */
 
-import { join, basename } from "https://deno.land/std@0.203.0/path/mod.ts";
-import { walk } from "https://deno.land/std@0.203.0/fs/walk.ts";
-import { exists } from "https://deno.land/std@0.203.0/fs/mod.ts";
+import { join } from "https://deno.land/std@0.224.0/path/mod.ts";
+import { exists } from "https://deno.land/std@0.224.0/fs/mod.ts";
+import { ensureDir } from "https://deno.land/std@0.224.0/fs/mod.ts";
+import { parse as parseCsv } from "https://deno.land/std@0.224.0/csv/mod.ts";
 
 import { extractTextFromPdf } from "./extract_text.ts";
-import { parseOratoryPdfText } from "./parse_pdf.ts";
-import { generateSlug, splitVendorProductOrUnknown } from "../utils.ts";
-import { VendorInfo, ProductInfo, EQInfo } from "../types.ts";
+import { parseOratoryPdfText, extractTargetFromPdfText } from "./parse_pdf.ts";
+import { generateSlug } from "../utils.ts";
+import { VendorInfo, ProductInfo, ProductSubtype, EQInfo } from "../types.ts";
+import { VENDOR_ALIASES } from "../known_vendors.ts";
 
 // =============================================================================
 // Types
@@ -35,73 +36,32 @@ export interface ImportResult {
 }
 
 export interface ImportOptions {
+  csvPath: string;
+  cacheDir?: string;
+  concurrency?: number; // Max parallel downloads (default: 8)
   dryRun?: boolean;
   verbose?: boolean;
   onProgress?: (message: string) => void;
 }
 
-// =============================================================================
-// Filename Parsing
-// =============================================================================
-
-interface ParsedFilename {
-  vendor: string;
-  product: string;
-  variant: string | null;
-  target: string;
+interface CsvRow {
+  Brand: string;
+  Model: string;
+  Comment: string;
+  Target: string;
+  Link: string;
 }
 
-/**
- * Parse an Oratory PDF filename to extract vendor, product, variant, and target.
- *
- * Filename formats:
- * - "Sennheiser HD 650.pdf" -> vendor: Sennheiser, product: HD 650, target: Harman
- * - "Sony WH-1000XM4 (ANC on).pdf" -> variant: ANC on
- * - "Beyerdynamic DT 880 (oratory1990 target).pdf" -> target: oratory1990
- * - "AKG K371 (Harman target).pdf" -> target: Harman
- */
-function parseFilename(filename: string): ParsedFilename {
-  // Remove .pdf extension
-  let name = filename.replace(/\.pdf$/i, "");
+// =============================================================================
+// Constants
+// =============================================================================
 
-  // Extract target curve from parentheses if present
-  let target = "harman"; // default
-  let variant: string | null = null;
-
-  // Check for target in parentheses: (Harman target), (oratory1990 target), (crinacle target)
-  const targetMatch = name.match(/\(([^)]*target[^)]*)\)/i);
-  if (targetMatch) {
-    const targetStr = targetMatch[1].toLowerCase();
-    if (targetStr.includes("crinacle")) {
-      target = "crinacle";
-    } else if (targetStr.includes("oratory") || targetStr.includes("1990")) {
-      target = "oratory1990";
-    } else if (targetStr.includes("usound")) {
-      target = "usound";
-    } else {
-      target = "harman";
-    }
-    // Remove target from name
-    name = name.replace(targetMatch[0], "").trim();
-  }
-
-  // Check for variant in remaining parentheses: (velour pads), (ANC on), etc.
-  const variantMatch = name.match(/\(([^)]+)\)/);
-  if (variantMatch) {
-    variant = variantMatch[1].trim();
-    name = name.replace(variantMatch[0], "").trim();
-  }
-
-  // Split into vendor and product using known vendors list
-  const { vendorName, productName } = splitVendorProductOrUnknown(name);
-
-  return {
-    vendor: vendorName,
-    product: productName,
-    variant,
-    target,
-  };
-}
+const DEFAULT_CACHE_DIR = join(
+  Deno.env.get("HOME") || Deno.env.get("USERPROFILE") || ".",
+  "Downloads",
+  "oratory_pdfs"
+);
+const RATE_LIMIT_MS = 100;
 
 // =============================================================================
 // Helpers
@@ -119,38 +79,215 @@ function createEmptyStats(): ImportStats {
 }
 
 /**
- * Convert parsed EQ data to our EQInfo format
+ * Extract the PDF filename from a Dropbox URL.
+ */
+function extractFilenameFromUrl(url: string): string | null {
+  const match = url.match(/\/([^/]+\.pdf)\?/i);
+  if (match) return decodeURIComponent(match[1]);
+  return null;
+}
+
+/**
+ * Convert Dropbox share URL to direct download URL.
+ */
+function toDirectDownloadUrl(url: string): string {
+  return url.replace(/([?&])dl=0/, "$1dl=1");
+}
+
+/**
+ * Determine the target curve for Target=3 rows by inspecting the PDF filename in the URL.
+ * Returns null if the filename has no recognizable target qualifier.
+ */
+function extractTargetFromUrl(url: string): string | null {
+  const filename = extractFilenameFromUrl(url) || url;
+  const lower = filename.toLowerCase();
+  // Only match explicit target qualifiers in the filename.
+  // Don't match bare "oratory" — almost every PDF contains it as the author name.
+  // For ambiguous filenames, return null to let extractTargetFromPdfText() resolve it.
+  if (lower.includes("usound")) return "usound";
+  if (lower.includes("oratory1990 target") || lower.includes("oratory1990_target")) return "oratory1990";
+  return null;
+}
+
+/**
+ * Map CSV Target field to product subtype and target curve name.
+ * For Target=3, targetCurve may be null if the URL filename is ambiguous
+ * (will be resolved later from PDF content).
+ */
+function mapTarget(
+  targetField: string,
+  link: string
+): { subtype: ProductSubtype; targetCurve: string | null } {
+  switch (targetField) {
+    case "1":
+      return { subtype: "over_the_ear", targetCurve: "harman" };
+    case "2":
+      return { subtype: "in_ear", targetCurve: "harman" };
+    case "3":
+      return { subtype: "in_ear", targetCurve: extractTargetFromUrl(link) };
+    default:
+      return { subtype: "unknown", targetCurve: "harman" };
+  }
+}
+
+/**
+ * Build the human-readable details string for an EQ entry.
+ * Format: "Harman Target" or "USound Target • ANC on"
+ */
+function buildDetails(targetCurve: string, comment: string): string {
+  const targetLabel =
+    targetCurve === "harman"
+      ? "Harman Target"
+      : targetCurve === "usound"
+        ? "USound Target"
+        : targetCurve === "oratory1990"
+          ? "oratory1990 Target"
+          : `${targetCurve} Target`;
+
+  if (!comment || comment === "0") return targetLabel;
+  return `${targetLabel} \u2022 ${comment}`;
+}
+
+/**
+ * Download a PDF from Dropbox with retry and caching.
+ */
+async function downloadPdf(
+  url: string,
+  cacheDir: string,
+  log: (msg: string) => void
+): Promise<string | null> {
+  const filename = extractFilenameFromUrl(url);
+  if (!filename) {
+    log(`  Could not extract filename from URL: ${url}`);
+    return null;
+  }
+
+  const localPath = join(cacheDir, filename);
+
+  // Check cache
+  try {
+    await Deno.stat(localPath);
+    log(`  Cached: ${filename}`);
+    return localPath;
+  } catch {
+    // Not cached, download
+  }
+
+  const directUrl = toDirectDownloadUrl(url);
+  log(`  Downloading: ${filename}`);
+
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const response = await fetch(directUrl, {
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+        },
+      });
+
+      if (!response.ok) {
+        if (attempt === 3) {
+          log(`  HTTP ${response.status}: ${response.statusText}`);
+          return null;
+        }
+        await new Promise((r) => setTimeout(r, 1000 * attempt));
+        continue;
+      }
+
+      const data = new Uint8Array(await response.arrayBuffer());
+      await Deno.writeFile(localPath, data);
+      log(`  Downloaded: ${filename} (${(data.length / 1024).toFixed(1)}KB)`);
+      return localPath;
+    } catch (err) {
+      if (attempt === 3) {
+        log(`  Network error: ${err instanceof Error ? err.message : String(err)}`);
+        return null;
+      }
+      await new Promise((r) => setTimeout(r, 1000 * attempt));
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Download multiple PDFs in parallel with a concurrency limit.
+ * Returns a Map from Dropbox URL → local file path (or null on failure).
+ */
+async function downloadAllPdfs(
+  urls: string[],
+  cacheDir: string,
+  concurrency: number,
+  log: (msg: string) => void
+): Promise<Map<string, string | null>> {
+  const results = new Map<string, string | null>();
+  const total = urls.length;
+  let completed = 0;
+
+  // Worker pool: N workers pull from a shared queue
+  const queue = [...urls];
+
+  async function worker() {
+    while (true) {
+      const url = queue.shift();
+      if (!url) return;
+      try {
+        const path = await downloadPdf(url, cacheDir, (msg) => {
+          log(`  [${++completed}/${total}] ${msg.trimStart()}`);
+        });
+        results.set(url, path);
+      } catch {
+        results.set(url, null);
+      }
+    }
+  }
+
+  log(`Downloading ${total} PDFs (concurrency: ${concurrency})...`);
+  const workers = Array.from({ length: Math.min(concurrency, total) }, () => worker());
+  await Promise.all(workers);
+
+  const succeeded = [...results.values()].filter((v) => v !== null).length;
+  log(`Downloads complete: ${succeeded} succeeded, ${total - succeeded} failed`);
+  return results;
+}
+
+/**
+ * Convert parsed EQ data to our EQInfo format.
  */
 function convertToEQInfo(
   parsed: ReturnType<typeof parseOratoryPdfText>,
-  target: string,
-  variant: string | null
+  targetCurve: string,
+  comment: string,
+  link: string
 ): EQInfo {
-  // Map filter types from parse_pdf format to our schema format
-  const bands = parsed.filters.map((f) => {
-    const typeMap: Record<string, "peak_dip" | "low_shelf" | "high_shelf" | "low_pass" | "high_pass"> = {
-      PEAK: "peak_dip",
-      LOW_SHELF: "low_shelf",
-      HIGH_SHELF: "high_shelf",
-      LOW_PASS: "low_pass",
-      HIGH_PASS: "high_pass",
-    };
+  const typeMap: Record<string, "peak_dip" | "low_shelf" | "high_shelf" | "low_pass" | "high_pass"> = {
+    PEAK: "peak_dip",
+    LOW_SHELF: "low_shelf",
+    HIGH_SHELF: "high_shelf",
+    LOW_PASS: "low_pass",
+    HIGH_PASS: "high_pass",
+  };
 
+  const bands = parsed.filters.map((f) => {
+    const mappedType = typeMap[f.type] || "peak_dip";
+    if (mappedType === "low_pass" || mappedType === "high_pass") {
+      return {
+        type: mappedType,
+        frequency: f.frequency,
+        slope: 12 as const,
+      };
+    }
     return {
-      type: typeMap[f.type] || "peak_dip",
+      type: mappedType,
       frequency: f.frequency,
       gain_db: f.gain,
       q: f.q,
     };
   });
 
-  const details = variant
-    ? `${target} target - ${variant}`
-    : `${target} target`;
-
   return {
     author: "oratory1990",
-    details,
+    details: buildDetails(targetCurve, comment),
+    link,
     type: "parametric_eq",
     parameters: {
       gain_db: parsed.preampGain,
@@ -159,28 +296,72 @@ function convertToEQInfo(
   };
 }
 
+/**
+ * Extract the base product name for sibling subtype inference.
+ */
+function extractBaseName(productName: string): string {
+  return productName
+    .replace(/\s*\([^)]*\)\s*/g, "")
+    .replace(/\s+v\d+$/i, "")
+    .replace(/\s+mk\s*\d+$/i, "")
+    .trim()
+    .toLowerCase();
+}
+
+/**
+ * Scan sibling products under a vendor for matching base name to infer subtype.
+ */
+async function inferSubtypeFromSiblings(
+  vendorProductsDir: string,
+  productName: string
+): Promise<ProductSubtype | null> {
+  const newBase = extractBaseName(productName);
+  try {
+    for await (const entry of Deno.readDir(vendorProductsDir)) {
+      if (!entry.isDirectory) continue;
+      const siblingInfoPath = join(vendorProductsDir, entry.name, "info.json");
+      try {
+        const raw = await Deno.readTextFile(siblingInfoPath);
+        const info = JSON.parse(raw) as ProductInfo;
+        if (info.subtype && info.subtype !== "unknown") {
+          const siblingBase = extractBaseName(info.name);
+          if (siblingBase === newBase) return info.subtype;
+        }
+      } catch {
+        // skip unparseable siblings
+      }
+    }
+  } catch {
+    // products dir doesn't exist yet
+  }
+  return null;
+}
+
 // =============================================================================
 // Main Import Function
 // =============================================================================
 
 /**
- * Import Oratory data from a source directory into the target database directory.
+ * Import Oratory data from a CSV file into the target database directory.
  *
- * @param srcDir - Path to Oratory PDFs directory
- * @param targetDir - Path to database directory
- * @param options - Import options
+ * @param targetDir - Path to database directory (e.g., "./database")
+ * @param options - Import options including csvPath
  */
 export async function importOratory(
-  srcDir: string,
   targetDir: string,
-  options: ImportOptions = {}
+  options: ImportOptions
 ): Promise<ImportResult> {
-  const { dryRun = false, verbose = false, onProgress } = options;
+  const {
+    csvPath,
+    cacheDir = DEFAULT_CACHE_DIR,
+    concurrency = 8,
+    dryRun = false,
+    verbose = false,
+    onProgress,
+  } = options;
 
   const log = (message: string) => {
-    if (verbose) {
-      console.log(`[${new Date().toISOString()}] ${message}`);
-    }
+    if (verbose) console.log(`[${new Date().toISOString()}] ${message}`);
     onProgress?.(message);
   };
 
@@ -188,79 +369,154 @@ export async function importOratory(
   const unknownTypes: string[] = [];
   const errors: { file: string; message: string }[] = [];
 
-  log(`Starting Oratory import from "${srcDir}" to "${targetDir}"`);
-
-  // Collect all PDF files
-  const pdfFiles: string[] = [];
+  // Read and parse CSV
+  log(`Reading CSV: ${csvPath}`);
+  let csvText: string;
   try {
-    for await (const entry of walk(srcDir, { exts: [".pdf"] })) {
-      pdfFiles.push(entry.path);
-    }
+    csvText = await Deno.readTextFile(csvPath);
   } catch (err) {
-    const message = `Could not walk source directory "${srcDir}": ${err}`;
+    const message = `Could not read CSV "${csvPath}": ${err}`;
     log(message);
-    errors.push({ file: srcDir, message });
+    errors.push({ file: csvPath, message });
     stats.errors++;
     return { stats, unknownTypes, errors };
   }
 
-  log(`Found ${pdfFiles.length} PDF files to process`);
+  const rows = parseCsv(csvText, {
+    skipFirstRow: true,
+    separator: ";",
+  }) as unknown as CsvRow[];
+
+  log(`Found ${rows.length} entries in CSV`);
+
+  // Ensure cache directory exists
+  await ensureDir(cacheDir);
+  log(`PDF cache directory: ${cacheDir}`);
 
   if (dryRun) {
-    log(`[DRY-RUN] Would process ${pdfFiles.length} PDFs`);
-    stats.newEqs = pdfFiles.length;
+    log(`[DRY-RUN] Would process ${rows.length} CSV entries`);
+    stats.newEqs = rows.length;
     return { stats, unknownTypes, errors };
   }
 
-  // Track seen vendors/products
+  // Phase 1: Collect all valid rows and their URLs
+  interface ParsedRow {
+    index: number;
+    brand: string;
+    model: string;
+    comment: string;
+    targetField: string;
+    link: string;
+  }
+
+  const validRows: ParsedRow[] = [];
+  const urlsToDownload = new Set<string>();
+
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i];
+    const brand = (row.Brand || "").trim();
+    const model = (row.Model || "").trim();
+    const comment = (row.Comment || "").trim();
+    const targetField = (row.Target || "").trim();
+    const link = (row.Link || "").trim();
+
+    if (!brand || !model || !link) {
+      log(`[${i + 1}/${rows.length}] SKIP: Missing brand/model/link`);
+      continue;
+    }
+
+    validRows.push({ index: i, brand, model, comment, targetField, link });
+    urlsToDownload.add(link);
+  }
+
+  log(`${validRows.length} valid entries, ${urlsToDownload.size} unique URLs to download`);
+
+  // Phase 2: Download all PDFs in parallel (cached files resolve instantly)
+  const downloadedPdfs = await downloadAllPdfs(
+    [...urlsToDownload],
+    cacheDir,
+    concurrency,
+    log
+  );
+
+  // Phase 3: Process rows sequentially (writing to database is order-sensitive)
   const seenVendors = new Set<string>();
   const seenProducts = new Set<string>();
 
-  // Process each PDF
-  for (const pdfPath of pdfFiles) {
-    const filename = basename(pdfPath);
-    log(`Processing: ${filename}`);
+  for (const { index, brand, model, comment, targetField, link } of validRows) {
+    log(`[${index + 1}/${rows.length}] ${brand} ${model}${comment && comment !== "0" ? ` (${comment})` : ""}`);
 
     try {
-      // Parse filename for metadata
-      const parsed = parseFilename(filename);
-      log(`  Vendor: ${parsed.vendor}, Product: ${parsed.product}, Target: ${parsed.target}`);
+      const { subtype, targetCurve: urlTargetCurve } = mapTarget(targetField, link);
 
-      // Extract text from PDF
+      // Look up downloaded PDF
+      const pdfPath = downloadedPdfs.get(link);
+      if (!pdfPath) {
+        errors.push({ file: `${brand} ${model}`, message: "Failed to download PDF" });
+        stats.errors++;
+        continue;
+      }
+
+      // Extract text and parse EQ
       const text = await extractTextFromPdf(pdfPath);
-
-      // Parse EQ data from text
       const eqData = parseOratoryPdfText(text);
 
+      // Resolve target curve: use URL-based if available, else fall back to PDF content
+      let targetCurve = urlTargetCurve;
+      if (targetCurve === null) {
+        const pdfTarget = extractTargetFromPdfText(text);
+        targetCurve = pdfTarget || "oratory1990"; // last resort default
+        if (pdfTarget) {
+          log(`  Target resolved from PDF content: ${pdfTarget}`);
+        } else {
+          log(`  Warning: Could not determine target from URL or PDF, defaulting to oratory1990`);
+        }
+      }
+
+      // Resolve vendor alias to canonical name
+      const canonicalBrand = VENDOR_ALIASES[brand] || brand;
+      const vendorSlug = generateSlug(canonicalBrand);
+      const productSlug = generateSlug(model);
+      const variantSlug = comment && comment !== "0" ? `_${generateSlug(comment)}` : "";
+      const eqSlug = `oratory1990_${targetCurve}_target${variantSlug}`;
+
+      if (canonicalBrand !== brand) {
+        log(`  Vendor alias: "${brand}" → "${canonicalBrand}"`);
+      }
+
+      const vendorPath = join(targetDir, "vendors", vendorSlug);
+      const productPath = join(vendorPath, "products", productSlug);
+      const eqPath = join(productPath, "eq", eqSlug);
+      const eqInfoPath = join(eqPath, "info.json");
+
       if (eqData.filters.length === 0) {
-        log(`  Warning: No filters found in ${filename}`);
-        errors.push({ file: pdfPath, message: "No filters found in PDF" });
+        log(`  Warning: No filters found in PDF`);
+        errors.push({ file: `${brand} ${model}`, message: "No filters found in PDF" });
         stats.errors++;
         continue;
       }
 
       log(`  Found ${eqData.filters.length} filters, preamp: ${eqData.preampGain} dB`);
 
-      // Generate slugs
-      const vendorSlug = generateSlug(parsed.vendor);
-      const productSlug = generateSlug(parsed.product);
-      const variantSlug = parsed.variant ? `_${generateSlug(parsed.variant)}` : "";
-      const eqSlug = `oratory1990_${parsed.target}_target${variantSlug}`;
+      // Build the new EQ info
+      const eqInfo = convertToEQInfo(eqData, targetCurve, comment, link);
+      const newJson = JSON.stringify(eqInfo, null, 2);
 
-      // Define paths
-      const vendorPath = join(targetDir, "vendors", vendorSlug);
-      const productPath = join(vendorPath, "products", productSlug);
-      const eqPath = join(productPath, "eq", eqSlug);
-      const eqInfoPath = join(eqPath, "info.json");
-
-      // Check if EQ already exists
+      // Check if EQ already exists and compare
       if (await exists(eqInfoPath)) {
-        log(`  Skipping - EQ already exists: ${eqSlug}`);
-        stats.unchangedEqs++;
+        const existingJson = await Deno.readTextFile(eqInfoPath);
+        if (existingJson === newJson) {
+          log(`  Unchanged: ${eqSlug}`);
+          stats.unchangedEqs++;
+          continue;
+        }
+        await Deno.writeTextFile(eqInfoPath, newJson);
+        stats.updatedEqs++;
+        log(`  Updated EQ: ${eqSlug}`);
         continue;
       }
 
-      // Create directories
+      // Create directories for new entry
       await Deno.mkdir(eqPath, { recursive: true });
 
       // Write vendor info if new
@@ -268,10 +524,10 @@ export async function importOratory(
         seenVendors.add(vendorSlug);
         const vendorInfoPath = join(vendorPath, "info.json");
         if (!(await exists(vendorInfoPath))) {
-          const vendorInfo: VendorInfo = { name: parsed.vendor };
+          const vendorInfo: VendorInfo = { name: canonicalBrand };
           await Deno.writeTextFile(vendorInfoPath, JSON.stringify(vendorInfo, null, 2));
           stats.newVendors++;
-          log(`  Created vendor: ${parsed.vendor}`);
+          log(`  Created vendor: ${canonicalBrand}`);
         }
       }
 
@@ -281,28 +537,36 @@ export async function importOratory(
         seenProducts.add(productKey);
         const productInfoPath = join(productPath, "info.json");
         if (!(await exists(productInfoPath))) {
+          const inferredSubtype = await inferSubtypeFromSiblings(
+            join(vendorPath, "products"),
+            model
+          );
+          const finalSubtype = inferredSubtype || subtype;
+
           const productInfo: ProductInfo = {
-            name: parsed.product,
+            name: model,
             type: "headphones",
-            subtype: "unknown" as const,
+            subtype: finalSubtype,
           };
           await Deno.writeTextFile(productInfoPath, JSON.stringify(productInfo, null, 2));
           stats.newProducts++;
-          unknownTypes.push(productKey);
-          log(`  Created product: ${parsed.product} (subtype unknown)`);
+          if (finalSubtype === "unknown") {
+            unknownTypes.push(productKey);
+            log(`  Created product: ${model} (subtype unknown)`);
+          } else {
+            log(`  Created product: ${model} (subtype: ${finalSubtype})`);
+          }
         }
       }
 
-      // Write EQ info
-      const eqInfo = convertToEQInfo(eqData, parsed.target, parsed.variant);
-      await Deno.writeTextFile(eqInfoPath, JSON.stringify(eqInfo, null, 2));
+      // Write new EQ info
+      await Deno.writeTextFile(eqInfoPath, newJson);
       stats.newEqs++;
       log(`  Created EQ: ${eqSlug}`);
-
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
       log(`  Error: ${message}`);
-      errors.push({ file: pdfPath, message });
+      errors.push({ file: `${brand} ${model}`, message });
       stats.errors++;
     }
   }
@@ -316,24 +580,27 @@ export async function importOratory(
 // =============================================================================
 
 if (import.meta.main) {
-  const args = Deno.args;
-  if (args.length < 2) {
-    console.error("Usage: deno run --allow-read --allow-write tools/oratory/import.ts <source_dir> <target_dir>");
-    console.error("Example: deno run --allow-read --allow-write tools/oratory/import.ts sources/oratory/PDFs database");
+  const csvPath = Deno.args[0];
+  const targetDir = Deno.args[1] || "./database";
+
+  if (!csvPath) {
+    console.error("Usage: deno run --allow-all tools/oratory/import.ts <csv_path> [target_dir]");
+    console.error("Example: deno run --allow-all tools/oratory/import.ts ~/Downloads/Oratory_Feb25_2026.csv database");
     Deno.exit(1);
   }
 
-  const srcDir = args[0];
-  const targetDir = args[1];
-
-  const result = await importOratory(srcDir, targetDir, { verbose: true });
+  const result = await importOratory(targetDir, {
+    csvPath,
+    verbose: true,
+  });
 
   console.log("\n=== Import Summary ===");
-  console.log(`New vendors:   ${result.stats.newVendors}`);
-  console.log(`New products:  ${result.stats.newProducts}`);
-  console.log(`New EQs:       ${result.stats.newEqs}`);
-  console.log(`Unchanged:     ${result.stats.unchangedEqs}`);
-  console.log(`Errors:        ${result.stats.errors}`);
+  console.log(`New vendors:       ${result.stats.newVendors}`);
+  console.log(`New products:      ${result.stats.newProducts}`);
+  console.log(`New EQs:           ${result.stats.newEqs}`);
+  console.log(`Updated EQs:       ${result.stats.updatedEqs}`);
+  console.log(`Unchanged EQs:     ${result.stats.unchangedEqs}`);
+  console.log(`Errors:            ${result.stats.errors}`);
 
   if (result.unknownTypes.length > 0) {
     console.log(`\nProducts with unknown subtype: ${result.unknownTypes.length}`);

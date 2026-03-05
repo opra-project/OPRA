@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • preliminary",
+  "link": "https://www.dropbox.com/scl/fi/crshzwpsnpwuiywl6cf1c/Audio-Technica-ATH-GDL3-preliminary.pdf?rlkey=lfhwb1svtk5ytno8ykwdxx1s4&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -11.1,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 65,
+        "gain_db": -7.3,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 215,
+        "gain_db": -3.8,
+        "q": 0.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1750,
+        "gain_db": 12,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": -2.1,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6000,
+        "gain_db": -8.4,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -10,
+        "q": 0.71
+      }
+    ]
+  }
+}

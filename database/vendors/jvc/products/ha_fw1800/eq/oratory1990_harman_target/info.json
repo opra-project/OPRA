@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/r09wtmlfb7mduip/JVC%20HA-FW1800.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.5,

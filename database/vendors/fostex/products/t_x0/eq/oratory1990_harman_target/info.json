@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/c9yjxu23dymqpuz/Fostex%20T-X0.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.9,
@@ -60,10 +61,9 @@
         "q": 6
       },
       {
-        "type": "low_shelf",
+        "type": "low_pass",
         "frequency": 15000,
-        "gain_db": 3.5,
-        "q": 1
+        "slope": 12
       }
     ]
   }

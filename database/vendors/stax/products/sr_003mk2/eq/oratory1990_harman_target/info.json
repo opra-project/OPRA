@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/726c3k23c84sxga/Stax%20SR-003mk2.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -10,

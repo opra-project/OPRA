@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target • Bluetooth",
+  "link": "https://www.dropbox.com/scl/fi/6tgg15piavw2i75nfun5l/Beyerdynamic-Amiron-Wireless-Bluetooth.pdf?rlkey=sc5pmk04b8ntrjr6r9jpaodi9&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.7,

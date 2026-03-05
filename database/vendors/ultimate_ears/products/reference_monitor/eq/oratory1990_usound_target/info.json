@@ -1,0 +1,41 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/s/r3w7gfach5hjv3q/Ultimate%20Ears%20Reference%20Monitor.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -8.1,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 150,
+        "gain_db": 8,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 880,
+        "gain_db": 0.7,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1680,
+        "gain_db": -1.4,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": 7,
+        "q": 1.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6400,
+        "gain_db": -2,
+        "q": 5
+      }
+    ]
+  }
+}

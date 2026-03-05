@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/43no9ztx9k04atzs6tj05/Fiio-FH9.pdf?rlkey=sgwzk8pycrjmpiwcfcdg2wavs&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8.5,

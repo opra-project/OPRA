@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Wired, Passive",
+  "details": "Harman Target • wired, passive",
+  "link": "https://www.dropbox.com/s/md37q9numwviq76/Anker%20Soundcore%20Space%20Q45%20%28wired%2C%20passive%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -9.7,

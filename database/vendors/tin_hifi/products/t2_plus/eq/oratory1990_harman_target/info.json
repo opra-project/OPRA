@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/ohioitw5a0skekr/Tin%20Audio%20T2%20Plus.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.4,

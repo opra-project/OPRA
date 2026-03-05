@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/so7visco6c0jwu4/Hifiman%20HE560.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -7.2,

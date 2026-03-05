@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/3ejwp77z71bzoqe5kiq4z/Moondrop-Para.pdf?rlkey=q717pkepg2txn07lfjoammtk4&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -9.5,

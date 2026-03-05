@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/2sf407edmzt3fkh/Dan%20Clark%20Audio%20Expanse.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.7,

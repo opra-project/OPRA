@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/vi2bq5nzx3s2smp/Audio%20Zenith%20PMx2%20v1.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.4,

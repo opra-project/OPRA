@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/6pnl0k5his5rzdk/Mark%20Levinson%205909.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2,

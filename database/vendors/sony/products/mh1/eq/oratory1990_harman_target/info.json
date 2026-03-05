@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/kyrr3nzx1waelhztjtkhf/Sony-MH1.pdf?rlkey=j6lxn6747o7n5uxx73t8deicq&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.4,

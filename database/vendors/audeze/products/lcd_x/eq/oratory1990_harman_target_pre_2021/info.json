@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Pre 2021",
+  "details": "Harman Target • pre 2021",
+  "link": "https://www.dropbox.com/s/vwxupe4gxczewff/Audeze%20LCD-X%20%28pre%202021%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -9.7,

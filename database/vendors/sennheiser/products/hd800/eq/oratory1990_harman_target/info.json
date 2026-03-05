@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/md5ffora1mvp00laojqce/Sennheiser-HD800.pdf?rlkey=mp6l86v48jrawmfseosjyw6j3&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -7.5,

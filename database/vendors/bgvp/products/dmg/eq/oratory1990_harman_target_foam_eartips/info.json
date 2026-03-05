@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Foam Eartips",
+  "details": "Harman Target • foam eartips",
+  "link": "https://www.dropbox.com/s/qkhga2m4otehp2j/BGVP%20DMG%20%28foam%20eartips%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3.8,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/dazkdi0voflg1zi/Monoprice%20M1060.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -7,

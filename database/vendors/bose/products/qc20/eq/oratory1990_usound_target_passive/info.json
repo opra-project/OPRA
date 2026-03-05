@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target • passive",
+  "link": "https://www.dropbox.com/scl/fi/ta8pl459y2ctguzsy9xtm/Bose-QC20-passive.pdf?rlkey=vo4ph738ird1btxdqu3dn5wnh&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -11.8,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 20,
+        "gain_db": 7,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 80,
+        "gain_db": -3.4,
+        "q": 1
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 320,
+        "gain_db": -4.4,
+        "q": 1.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 620,
+        "gain_db": 4.3,
+        "q": 1.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1600,
+        "gain_db": -8.4,
+        "q": 1.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2750,
+        "gain_db": 8.5,
+        "q": 1.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4110,
+        "gain_db": -8.3,
+        "q": 4.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 5,
+        "q": 0.71
+      }
+    ]
+  }
+}

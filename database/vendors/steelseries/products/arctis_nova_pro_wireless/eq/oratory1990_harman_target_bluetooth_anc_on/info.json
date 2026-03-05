@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Bluetooth, Anc On",
+  "details": "Harman Target • Bluetooth, ANC on",
+  "link": "https://www.dropbox.com/scl/fi/dwq7ngh7p23cwemtrm0z6/Steelseries-Arctis-Nova-Pro-Wireless-Bluetooth-ANC-on.pdf?rlkey=4lcysd9tu47obkwe27nuzsgwi&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -0.1,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Blu-tac Mod",
+  "details": "Harman Target • blu-tac mod",
+  "link": "https://www.dropbox.com/s/n4ygj3e4iuxqdbz/Stax%20SR-L500%20%28blu-tac%20mod%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.5,

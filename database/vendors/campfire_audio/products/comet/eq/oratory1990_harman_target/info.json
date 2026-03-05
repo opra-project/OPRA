@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/70tzudkydpftzp7/Campfire%20Audio%20Comet.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5,

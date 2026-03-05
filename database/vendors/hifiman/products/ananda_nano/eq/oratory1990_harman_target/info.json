@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/x8gul94n7nxzbbsip9xik/Hifiman-Ananda-Nano.pdf?rlkey=1ktv3frohbxcxnsikryr9iylp&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.5,

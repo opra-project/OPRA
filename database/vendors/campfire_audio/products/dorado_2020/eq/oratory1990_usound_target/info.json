@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/xyo3e32ej642p08u56f23/Campfire-Audio-Dorado-2020-oratory1990.pdf?rlkey=7loxs80exzy9eun8j5vzawbbw&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.9,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": -2,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 230,
+        "gain_db": -5.2,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 920,
+        "gain_db": 4.4,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1350,
+        "gain_db": -7.9,
+        "q": 2.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": -2.4,
+        "q": 2.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3050,
+        "gain_db": 6,
+        "q": 0.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5060,
+        "gain_db": -4,
+        "q": 4.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9000,
+        "gain_db": -3,
+        "q": 3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 1,
+        "q": 0.71
+      }
+    ]
+  }
+}

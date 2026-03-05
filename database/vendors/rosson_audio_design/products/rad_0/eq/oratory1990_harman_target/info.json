@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/f972x6s5xwyn30p/Rosson%20Audio%20RAD-0.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8.5,

@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • very preliminary! (probably ignore bass shelf)",
+  "link": "https://www.dropbox.com/s/bme9g5lc2w47f9l/Kaldas%20Research%20Conquest%20%28preliminary%21%21%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -11.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 50,
+        "gain_db": 12,
+        "q": 0.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 650,
+        "gain_db": 2,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1420,
+        "gain_db": -6.5,
+        "q": 2.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2400,
+        "gain_db": 7.5,
+        "q": 1.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5200,
+        "gain_db": -2.8,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6000,
+        "gain_db": 3,
+        "q": 1.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7300,
+        "gain_db": -3.9,
+        "q": 5
+      }
+    ]
+  }
+}

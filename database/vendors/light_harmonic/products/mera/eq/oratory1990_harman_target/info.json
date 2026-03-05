@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/pm9tjh1wmnumrq4/Light%20Harmonic%20Mera.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5,

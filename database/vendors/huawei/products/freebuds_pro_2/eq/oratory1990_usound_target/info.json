@@ -1,0 +1,53 @@
+{
+  "author": "oratory1990",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/s/vek4uspl8viv85x/Huawei%20Freebuds%20Pro%202%20%28oratory1990%29.pdf?dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.6,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 130,
+        "gain_db": 5.7,
+        "q": 1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 250,
+        "gain_db": -0.6,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1350,
+        "gain_db": -4.2,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3000,
+        "gain_db": -1.6,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5400,
+        "gain_db": -2.3,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 2,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 14000,
+        "gain_db": -7,
+        "q": 1.4
+      }
+    ]
+  }
+}

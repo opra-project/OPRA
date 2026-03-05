@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/fcco46cmx41xrwg/Ollo%20S4R.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -7,

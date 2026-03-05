@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/o0l5w4l65c3yrrwg8gjam/Arpegear-Hane.pdf?rlkey=c7g4ksm8leokfruwa8ovi5eyy&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3,
