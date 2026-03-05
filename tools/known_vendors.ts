@@ -19,13 +19,23 @@
  */
 export const KNOWN_VENDORS = [
   // Multi-word vendors (4+ words)
+  "Rosson Audio Design",
   "House Of Marley",
   "Advanced AcousticWerkes",
+  "Soul by Ludacris",
   "Alpha & Delta",
   "Alpha Design Labs",
+  "Etymotic Research",
+  "AFUL Acoustics",
+  "Shuoer Aoshida",
+  "Creative Labs",
 
   // Multi-word vendors (3 words)
   "Dan Clark Audio",
+  "Modhouse Audio",
+  "Andover Audio",
+  "Astro Gaming",
+  "Sivga Audio",
   "Acoustic Research",
   "Ambient Acoustics",
   "Ambient Dynamics",
@@ -332,6 +342,7 @@ export const KNOWN_VENDORS = [
   "Creative",
   "CVJ",
   "Dali",
+  "Dita",
   "Daiso",
   "Darkvoice",
   "DCMEKA",
@@ -384,6 +395,7 @@ export const KNOWN_VENDORS = [
   "GK",
   "Google",
   "Grado",
+  "Grell",
   "GuideRay",
   "Graphene",
   "HAKUGEI",
@@ -431,6 +443,7 @@ export const KNOWN_VENDORS = [
   "JBL",
   "JCally",
   "Jialai",
+  "JLab",
   "Joyodio",
   "JQ",
   "Juzear",
