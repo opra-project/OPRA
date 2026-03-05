@@ -25,8 +25,8 @@
     },
     "type": {
       "type": "string",
-      "description": "The type of the EQ.",
-      "enum": ["parametric_eq", "graphic_eq"],
+      "description": "The type of the EQ. Currently, only 'parametric_eq' is supported. Additional types (e.g. 'graphic_eq') may be added in the future.",
+      "enum": ["parametric_eq"],
       "default": "parametric_eq"
     },
     "parameters": {
