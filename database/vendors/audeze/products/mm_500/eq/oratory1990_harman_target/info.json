@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/pgeovbx06fnglbn/Audeze%20MM-500.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -6.1,

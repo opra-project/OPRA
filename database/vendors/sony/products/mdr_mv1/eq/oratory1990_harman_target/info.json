@@ -1,14 +1,15 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/1j2oaslmax53wkcnzhip4/Sony-MDR-MV1.pdf?rlkey=18wolm564dx8k33f3l182fkk0&dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -4.5,
+    "gain_db": -4.6,
     "bands": [
       {
         "type": "peak_dip",
-        "frequency": 54,
-        "gain_db": -6.4,
+        "frequency": 50,
+        "gain_db": -5.3,
         "q": 0.45
       },
       {
@@ -19,50 +20,50 @@
       },
       {
         "type": "peak_dip",
-        "frequency": 230,
-        "gain_db": -1.5,
-        "q": 1
+        "frequency": 220,
+        "gain_db": -1.6,
+        "q": 1.2
       },
       {
         "type": "peak_dip",
-        "frequency": 450,
-        "gain_db": -0.5,
-        "q": 1
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 1950,
+        "frequency": 1900,
         "gain_db": 2.5,
-        "q": 2.2
+        "q": 1.6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 3,
+        "q": 0.35
       },
       {
         "type": "peak_dip",
-        "frequency": 3100,
-        "gain_db": -2.6,
-        "q": 2.2
+        "frequency": 3000,
+        "gain_db": -2,
+        "q": 2.5
       },
       {
         "type": "peak_dip",
-        "frequency": 4500,
-        "gain_db": 6.5,
-        "q": 1.5
+        "frequency": 4700,
+        "gain_db": 3,
+        "q": 2
       },
       {
         "type": "peak_dip",
         "frequency": 6000,
-        "gain_db": -8.6,
-        "q": 2.3
+        "gain_db": -5.3,
+        "q": 3.5
       },
       {
         "type": "peak_dip",
-        "frequency": 8100,
-        "gain_db": -4,
+        "frequency": 7500,
+        "gain_db": -7.1,
         "q": 2.5
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": -0.5,
+        "gain_db": -1,
         "q": 0.71
       }
     ]

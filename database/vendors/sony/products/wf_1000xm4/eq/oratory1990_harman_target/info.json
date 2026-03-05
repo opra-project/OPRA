@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/6s6jyqkyggvsen5/Sony%20WF-1000XM4.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -7.5,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/joxvavn8bv4evjg58e1qa/Yamaha-HPH-200.pdf?rlkey=t6num8dh68o0a9mhys0qena6f&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -7.6,

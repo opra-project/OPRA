@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Velours Earpads",
+  "details": "Harman Target • velours earpads",
+  "link": "https://www.dropbox.com/s/dl9es4f1kty38ly/Superlux%20HD-681B%20%28velours%20earpads%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.5,

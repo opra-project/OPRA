@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/cmcw77vps15eibu4f1rj3/Audio-Technica-ATH-M70x.pdf?rlkey=fuylk02bpzogimncrxkx6r2j7&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.6,

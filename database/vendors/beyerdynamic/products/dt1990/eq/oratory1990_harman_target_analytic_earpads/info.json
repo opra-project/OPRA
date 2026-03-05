@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target • Analytic Earpads",
+  "link": "https://www.dropbox.com/scl/fi/et4v9fw4c2xmu0r0t0dzz/Beyerdynamic-DT1990-Analytic-Earpads.pdf?rlkey=c6q4z6l4g73ju7lt4ficb4cqe&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.5,
@@ -13,56 +14,44 @@
       },
       {
         "type": "peak_dip",
-        "frequency": 210,
-        "gain_db": -3.3,
-        "q": 0.4
+        "frequency": 200,
+        "gain_db": -2.8,
+        "q": 0.3
       },
       {
         "type": "peak_dip",
-        "frequency": 780,
+        "frequency": 650,
         "gain_db": 1.5,
-        "q": 0.5
+        "q": 0.9
       },
       {
         "type": "peak_dip",
-        "frequency": 1250,
-        "gain_db": -0.8,
-        "q": 1.4
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 2900,
-        "gain_db": -1.1,
+        "frequency": 2100,
+        "gain_db": 0.8,
         "q": 2
       },
       {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 0,
+        "q": 0.35
+      },
+      {
         "type": "peak_dip",
-        "frequency": 4300,
-        "gain_db": 3,
+        "frequency": 4700,
+        "gain_db": 3.5,
         "q": 1.4
       },
       {
         "type": "peak_dip",
-        "frequency": 5400,
-        "gain_db": -1.8,
-        "q": 4
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 7300,
-        "gain_db": -5.8,
-        "q": 4
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 8100,
-        "gain_db": -4.3,
-        "q": 4
+        "frequency": 9000,
+        "gain_db": -9,
+        "q": 1
       },
       {
         "type": "high_shelf",
-        "frequency": 11000,
-        "gain_db": -6,
+        "frequency": 10000,
+        "gain_db": -1,
         "q": 0.71
       }
     ]

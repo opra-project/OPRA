@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/0v6rlfutftphugk/Tin%20Audio%20P1.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8.6,
@@ -36,10 +37,9 @@
         "q": 2
       },
       {
-        "type": "peak_dip",
+        "type": "low_pass",
         "frequency": 11000,
-        "gain_db": 0,
-        "q": 0.7
+        "slope": 12
       }
     ]
   }

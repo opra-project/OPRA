@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/tusjjn88d0b2q842k1cm6/Fiio-FH7S-USound-Target.pdf?rlkey=vmfab4754bd1xtkd31p70pdiz&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -1.1,

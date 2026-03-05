@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/94h55cwozhyet6m/Hifiman%20HE1000%20V2.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3.5,

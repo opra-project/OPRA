@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Worn Earpads",
+  "details": "Harman Target • worn earpads",
+  "link": "https://www.dropbox.com/s/afcv3lfncnl9mwk/Beyerdynamic%20DT990%20%28worn%20earpads%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.7,

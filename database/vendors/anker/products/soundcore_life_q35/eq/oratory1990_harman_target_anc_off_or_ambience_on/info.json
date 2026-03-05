@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Anc Off Or Ambience On",
+  "details": "Harman Target • ANC off or Ambience on",
+  "link": "https://www.dropbox.com/s/z2nt1c61vdtsdjt/Anker%20Soundcore%20Life%20Q35%20%28ANC%20off%20or%20Ambience%20on%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3.8,

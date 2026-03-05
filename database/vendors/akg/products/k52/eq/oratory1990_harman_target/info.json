@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/miuxemg6mcs2way/AKG%20K52.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -13.2,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/033kxyf8a0o3iv6/AKG%20K702.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.5,

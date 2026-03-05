@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/kt0po02yu2yt6o8/Dan%20Clark%20Audio%20Ether%202.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8.7,

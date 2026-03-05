@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/1bwmux2xu8dy6alb6olp1/Shure-SRH1840.pdf?rlkey=g0mkgb5sqnlaz98cr40la8r7c&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -11,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Velours Earpads",
+  "details": "Harman Target • velours earpads",
+  "link": "https://www.dropbox.com/scl/fi/m7ie464i66kz1mp0dsw2u/Monoprice-M1570C-velours-earpads.pdf?rlkey=x54bofa5ye4sf6law4wmwulq2&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -7.6,

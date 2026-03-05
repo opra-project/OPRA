@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/bfxv4qebn4dok2r1ldlbp/Sennheiser-Accentum-Plus.pdf?rlkey=rvzutvp6tlz7ufjno9qla9l8q&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.2,

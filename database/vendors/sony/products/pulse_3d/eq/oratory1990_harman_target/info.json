@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/mrg0cw9itqlwru1zojrkz/Sony-Pulse-3D.pdf?rlkey=fjtv18mpcmnpx3bhopolsymet&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -10.4,

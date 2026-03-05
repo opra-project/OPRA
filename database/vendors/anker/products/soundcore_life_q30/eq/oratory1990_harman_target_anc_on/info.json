@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Anc On",
+  "details": "Harman Target • ANC on",
+  "link": "https://www.dropbox.com/s/2nyrpb571q8lsq2/Anker%20Soundcore%20Life%20Q30%20%28ANC%20on%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3.5,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Velours Earpads",
+  "details": "Harman Target • velours earpads",
+  "link": "https://www.dropbox.com/scl/fi/d1q8i8d3dgtbqdamrsovq/Fiio-FT3-velours-earpads.pdf?rlkey=18a2378kkorn9n6j2nxlen7ry&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.5,

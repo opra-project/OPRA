@@ -1,51 +1,52 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Mdr-7550",
+  "details": "Harman Target • MDR-7550",
+  "link": "https://www.dropbox.com/scl/fi/pufe6ud7dwsqh07en1u9n/Sony-MDR-EX800-oratory1990.pdf?rlkey=7crur0irqwc7me4gm89lzrtvj&dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -11.2,
+    "gain_db": -9,
     "bands": [
       {
         "type": "peak_dip",
-        "frequency": 78,
-        "gain_db": -3,
-        "q": 0.7
+        "frequency": 30,
+        "gain_db": 2,
+        "q": 1
       },
       {
         "type": "low_shelf",
-        "frequency": 110,
-        "gain_db": 10,
+        "frequency": 145,
+        "gain_db": 7,
         "q": 0.71
       },
       {
         "type": "peak_dip",
-        "frequency": 280,
-        "gain_db": -1.2,
+        "frequency": 380,
+        "gain_db": -0.7,
         "q": 1
       },
       {
         "type": "peak_dip",
         "frequency": 950,
-        "gain_db": 2.4,
+        "gain_db": 2.8,
         "q": 1.2
       },
       {
         "type": "peak_dip",
-        "frequency": 1680,
-        "gain_db": -3.1,
-        "q": 1.3
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 3600,
-        "gain_db": 12,
+        "frequency": 1600,
+        "gain_db": -4.9,
         "q": 1
       },
       {
         "type": "peak_dip",
+        "frequency": 3700,
+        "gain_db": 10.5,
+        "q": 0.9
+      },
+      {
+        "type": "peak_dip",
         "frequency": 5400,
-        "gain_db": -5.9,
-        "q": 4.5
+        "gain_db": -7.5,
+        "q": 4
       },
       {
         "type": "peak_dip",

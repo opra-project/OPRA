@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Leather Earpads",
+  "details": "Harman Target • leather earpads",
+  "link": "https://www.dropbox.com/scl/fi/9bv06tweai39cih0l2yz9/Monoprice-M1570C-leather-earpads.pdf?rlkey=y2vkalvjsqzer1ukgh5611uxp&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.5,

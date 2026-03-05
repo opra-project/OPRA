@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/txsgqilavlt2iyr/Periodic%20Audio%20Be.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8.4,

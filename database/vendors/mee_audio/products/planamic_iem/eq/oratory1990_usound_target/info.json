@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "USound Target",
+  "link": "https://www.dropbox.com/s/lae398jsneaau09/Mee%20Audio%20Planamic%20IEM%20%28USound%20Target%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -13.3,

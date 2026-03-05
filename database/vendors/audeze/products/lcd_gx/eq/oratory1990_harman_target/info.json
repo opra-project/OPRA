@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/34snspl7yv12dx4ni81eu/Audeze-LCD-GX.pdf?rlkey=l1ptn6rzs8qxwbytcco5yf1e0&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -10,

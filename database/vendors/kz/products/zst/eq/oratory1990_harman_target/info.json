@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/51bnxytrj80m8gb/KZ%20ZST.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.1,
@@ -56,7 +57,7 @@
       {
         "type": "high_shelf",
         "frequency": 5000,
-        "gain_db": 0,
+        "gain_db": 4,
         "q": 0.7
       },
       {

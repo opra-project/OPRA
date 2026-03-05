@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "USound Target",
+  "link": "https://www.dropbox.com/s/5c2d05o5uyolb05/Tin%20Audio%20P1%20%28USound%20Target%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8,
@@ -48,10 +49,9 @@
         "q": 2
       },
       {
-        "type": "low_shelf",
+        "type": "low_pass",
         "frequency": 12000,
-        "gain_db": -15,
-        "q": 0.7
+        "slope": 12
       }
     ]
   }

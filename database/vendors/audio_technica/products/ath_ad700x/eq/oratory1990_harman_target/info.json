@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/ly10d021k84ly5m/Audio%20Technica%20ATH-AD700X.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -6.4,

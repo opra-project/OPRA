@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/43ij3m6kqrf4j6qdxxb1a/Noble-XM-1.pdf?rlkey=f75omwyovyspnvhwjrg0e5hm5&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.5,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/13bijezqk5bp2l0/VSonic%20VS7.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -9.9,

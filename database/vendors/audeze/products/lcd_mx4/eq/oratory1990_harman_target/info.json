@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/vqkqgd872axl8ir/Audeze%20LCD-MX4.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -6.7,

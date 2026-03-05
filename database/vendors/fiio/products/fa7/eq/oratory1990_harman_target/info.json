@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/13jx6v9c9k4drfn/Fiio%20FA7.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -7.6,
@@ -56,7 +57,7 @@
       {
         "type": "peak_dip",
         "frequency": 6650,
-        "gain_db": -3.6,
+        "gain_db": -3.1,
         "q": 5
       },
       {

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/edy1xdddmc259n3roru03/Dan-Clark-Audio-E3.pdf?rlkey=mbgnwieany9q3p60jlvhqjxxa&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": 0.1,

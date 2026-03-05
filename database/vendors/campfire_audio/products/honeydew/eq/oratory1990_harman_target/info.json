@@ -1,45 +1,52 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/xd569frymz9tllv/Campfire%20Audio%20Honeydew.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -10,
+    "gain_db": -13.5,
     "bands": [
       {
-        "type": "peak_dip",
-        "frequency": 24,
-        "gain_db": -2.2,
-        "q": 0.4
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 10,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 130,
+        "gain_db": -11.5,
+        "q": 0.71
       },
       {
         "type": "peak_dip",
         "frequency": 220,
-        "gain_db": -1.8,
+        "gain_db": -2.6,
         "q": 0.71
       },
       {
         "type": "high_shelf",
-        "frequency": 600,
-        "gain_db": 3,
+        "frequency": 550,
+        "gain_db": 4,
         "q": 0.71
       },
       {
         "type": "peak_dip",
-        "frequency": 1360,
-        "gain_db": -4.3,
-        "q": 1.3
+        "frequency": 1350,
+        "gain_db": -4.2,
+        "q": 1
       },
       {
         "type": "peak_dip",
         "frequency": 2600,
-        "gain_db": 8,
+        "gain_db": 11,
         "q": 0.8
       },
       {
         "type": "peak_dip",
         "frequency": 5300,
-        "gain_db": -4.6,
-        "q": 4.5
+        "gain_db": -5,
+        "q": 4
       },
       {
         "type": "peak_dip",
@@ -50,7 +57,7 @@
       {
         "type": "high_shelf",
         "frequency": 12000,
-        "gain_db": 5,
+        "gain_db": 3,
         "q": 0.71
       }
     ]

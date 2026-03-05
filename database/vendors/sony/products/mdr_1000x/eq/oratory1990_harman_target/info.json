@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/ovnvdamvf7t6a0b/Sony%20MDR-1000X.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3.4,

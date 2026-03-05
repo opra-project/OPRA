@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • With Ep0 Energizer",
+  "details": "Harman Target • with EP0 Energizer",
+  "link": "https://www.dropbox.com/scl/fi/xvpiloaodfp49fzy53dcx/Soranik-MEMS-2-with-EP0-Energizer.pdf?rlkey=94yh2yjci9ixlg84au5ofqdhq&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -9.6,

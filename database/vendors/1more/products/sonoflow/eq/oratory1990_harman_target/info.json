@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/hk5cxhf5smrzhh4d757x4/1More-SonoFlow.pdf?rlkey=lx43ujeyo1olb74cnu9aqh4rf&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -1.4,

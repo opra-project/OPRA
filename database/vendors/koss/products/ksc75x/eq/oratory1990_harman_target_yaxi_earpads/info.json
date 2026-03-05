@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Yaxi Earpads",
+  "details": "Harman Target • Yaxi earpads",
+  "link": "https://www.dropbox.com/s/3yu1k656cjkwdyq/Koss%20KSC75X%20%28Yaxi%20earpads%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.5,

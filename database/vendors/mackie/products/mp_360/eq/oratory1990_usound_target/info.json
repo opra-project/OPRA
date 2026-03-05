@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "USound target",
+  "details": "USound Target",
+  "link": "https://www.dropbox.com/s/zs7ht98u3v9m0js/Mackie%20MP-360%20%28USound%20target%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.9,

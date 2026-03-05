@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/csuop4ynf2d1lw2n2ix4m/Truthear-Nova.pdf?rlkey=84q0gmk6ylpfgxlscoa7v54z6&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": 0.1,

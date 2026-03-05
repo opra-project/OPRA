@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/oy5su7v473dkx4n361r4f/Warwick-Audio-Sonoma-Model-One.pdf?rlkey=siucodf24uajjwotchlfif9nu&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.5,

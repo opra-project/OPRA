@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/x6id98l1lg86x5m4zum27/Audio-Technica-ATH-AD500X.pdf?rlkey=tutp4lyjx3x12dy1gh4i3m747&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -11.5,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/9nwi5xyovbs7cqymmaxm6/Yamaha-YH-5000SE.pdf?rlkey=6xzebfnysec8ixjkmwb0zjdgy&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/r4h7bz30pqxaxs2c55oyf/Sennheiser-Momentum-True-Wireless-4.pdf?rlkey=c1tvabbwud1ewmirefcfp0e5a&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -6.6,

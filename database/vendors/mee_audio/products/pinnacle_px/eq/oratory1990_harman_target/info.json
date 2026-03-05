@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/dpy8zmm2nh6sugu/Mee%20Audio%20Pinnacle%20PX.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.4,

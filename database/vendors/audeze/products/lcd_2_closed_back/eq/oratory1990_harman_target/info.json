@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/1lqe376tkubmm7j/Audeze%20LCD-2%20Closed%20Back.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.1,

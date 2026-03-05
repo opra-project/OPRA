@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/cnxksudw2paet3k5w3rff/Grado-SR60x.pdf?rlkey=okz0bcvm7x5vptwjd8xz5c21e&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.4,

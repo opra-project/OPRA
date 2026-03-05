@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/07j6lsjzs58ldq5/Dan%20Clark%20Audio%20Aeon%202%20Open.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -2.1,

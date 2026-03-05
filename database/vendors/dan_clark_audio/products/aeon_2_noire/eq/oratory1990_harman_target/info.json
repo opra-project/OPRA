@@ -1,14 +1,15 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/s5c1q0wjku9gy1bwr8p90/Dan-Clark-Audio-Aeon-2-Noire.pdf?rlkey=5rj5zcbbxbdzt3ghv6tjxpj9j&dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -4.2,
+    "gain_db": -3.6,
     "bands": [
       {
         "type": "peak_dip",
-        "frequency": 100,
-        "gain_db": -1.4,
+        "frequency": 104,
+        "gain_db": -1.8,
         "q": 1.5
       },
       {
@@ -20,7 +21,7 @@
       {
         "type": "low_shelf",
         "frequency": 180,
-        "gain_db": -5,
+        "gain_db": -4.5,
         "q": 0.71
       },
       {
@@ -32,38 +33,38 @@
       {
         "type": "peak_dip",
         "frequency": 1200,
-        "gain_db": -1.4,
+        "gain_db": -2.1,
         "q": 2
       },
       {
-        "type": "peak_dip",
-        "frequency": 2850,
-        "gain_db": -1.8,
-        "q": 4
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 5,
+        "q": 0.35
       },
       {
         "type": "peak_dip",
-        "frequency": 4000,
-        "gain_db": 6,
-        "q": 0.7
+        "frequency": 2900,
+        "gain_db": -3,
+        "q": 3
       },
       {
         "type": "peak_dip",
-        "frequency": 4500,
-        "gain_db": -2,
-        "q": 5
+        "frequency": 3300,
+        "gain_db": 3,
+        "q": 1.4
       },
       {
         "type": "peak_dip",
         "frequency": 5500,
-        "gain_db": -7.6,
-        "q": 3
+        "gain_db": -7.3,
+        "q": 2.5
       },
       {
         "type": "high_shelf",
-        "frequency": 14000,
-        "gain_db": -5,
-        "q": 0.71
+        "frequency": 12000,
+        "gain_db": -8,
+        "q": 0.8
       }
     ]
   }

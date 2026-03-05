@@ -1,21 +1,16 @@
 {
   "author": "oratory1990",
   "details": "Harman Target • Balanced Earpads",
+  "link": "https://www.dropbox.com/scl/fi/i9phb0uj57mtthswagm1u/Beyerdynamic-DT1990-Balanced-Earpads.pdf?rlkey=sgxd99ol0ff8g5c3wwbhcp3wg&dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -4.3,
+    "gain_db": -1,
     "bands": [
       {
-        "type": "peak_dip",
-        "frequency": 20,
-        "gain_db": -2,
-        "q": 0.8
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 55,
-        "gain_db": -4.2,
-        "q": 0.6
+        "type": "low_shelf",
+        "frequency": 50,
+        "gain_db": 1,
+        "q": 0.71
       },
       {
         "type": "low_shelf",
@@ -24,39 +19,51 @@
         "q": 0.71
       },
       {
-        "type": "peak_dip",
-        "frequency": 210,
-        "gain_db": -4.9,
-        "q": 0.6
+        "type": "low_shelf",
+        "frequency": 410,
+        "gain_db": -6,
+        "q": 0.7
       },
       {
         "type": "peak_dip",
         "frequency": 800,
-        "gain_db": 1.1,
+        "gain_db": 0.6,
         "q": 1.5
       },
       {
         "type": "peak_dip",
-        "frequency": 2050,
-        "gain_db": 1.3,
-        "q": 3
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 7400,
-        "gain_db": -5.6,
-        "q": 4
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 8200,
-        "gain_db": -3.7,
-        "q": 5
+        "frequency": 2100,
+        "gain_db": 1.2,
+        "q": 2
       },
       {
         "type": "high_shelf",
-        "frequency": 11000,
-        "gain_db": -5,
+        "frequency": 3000,
+        "gain_db": 0,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3300,
+        "gain_db": -0.7,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5000,
+        "gain_db": 3.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9000,
+        "gain_db": -10,
+        "q": 1
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 0,
         "q": 0.71
       }
     ]

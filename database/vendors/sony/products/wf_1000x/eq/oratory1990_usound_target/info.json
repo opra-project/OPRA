@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "USound Target",
+  "link": "https://www.dropbox.com/s/1ewca74r5a9piqv/Sony%20WF-1000X%20%28USound%20Target%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": 0.1,

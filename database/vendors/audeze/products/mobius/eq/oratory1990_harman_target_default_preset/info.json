@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target • Default Preset",
+  "link": "https://www.dropbox.com/s/4yqy73f9hrdcmm1/Audeze%20Mobius%20%28Default%20Preset%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.3,

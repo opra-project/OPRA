@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/ufeff2a0gafqx99/JBL%20T200A.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8.9,

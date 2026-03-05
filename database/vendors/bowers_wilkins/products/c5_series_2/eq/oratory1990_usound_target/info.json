@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "USound Target",
+  "link": "https://www.dropbox.com/s/ww72sn9tuow5t55/Bowers%20Wilkins%20C5%20Series%202%20%28USound%20Target%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3,

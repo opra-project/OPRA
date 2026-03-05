@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/i5wyqbgywx3kytu/Samsung%20SM-R177%20Galaxy%20Buds%202.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.7,

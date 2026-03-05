@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/9sbaxx8tupefeinixecrh/Hifiman-Sundara-Closed-back.pdf?rlkey=w5bhof29y7kbqte7qjfysuzes&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.9,

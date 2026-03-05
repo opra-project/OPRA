@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Anc Off",
+  "details": "Harman Target • ANC Off",
+  "link": "https://www.dropbox.com/s/0vb6lqmmlyve9no/JBL%20Duet%20NC%20%28ANC%20Off%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.3,

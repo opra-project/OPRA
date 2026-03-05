@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/nx0zaac3vftc0ceqynbvu/Sony-MDR-Z7.pdf?rlkey=w1tjkh9p7brsgidujtduk8p35&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.8,

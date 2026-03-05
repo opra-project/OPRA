@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/tlfote7hrlca425/Shure%20SE112.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -14.5,
@@ -50,7 +51,7 @@
       {
         "type": "peak_dip",
         "frequency": 6200,
-        "gain_db": 10,
+        "gain_db": 1,
         "q": 5
       },
       {

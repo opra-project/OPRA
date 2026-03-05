@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/w42mvf6cz88ue8c/Moondrop%20Quarks.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/pwk4jbhtwezaww4/Sendy%20Audio%20Peacock.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -9.5,

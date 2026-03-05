@@ -1,44 +1,45 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/qn4g94iqw8gm9j2/Beyerdynamic%20Xelento%20%28Harman%20Target%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -2.9,
+    "gain_db": -5.7,
     "bands": [
       {
-        "type": "peak_dip",
-        "frequency": 35,
-        "gain_db": -2.3,
-        "q": 0.8
+        "type": "low_shelf",
+        "frequency": 110,
+        "gain_db": 1,
+        "q": 0.71
       },
       {
         "type": "peak_dip",
-        "frequency": 210,
-        "gain_db": -3.2,
+        "frequency": 145,
+        "gain_db": -5.6,
+        "q": 0.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 810,
+        "gain_db": 4,
         "q": 0.6
       },
       {
         "type": "peak_dip",
-        "frequency": 830,
-        "gain_db": 2.9,
-        "q": 0.9
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 1380,
-        "gain_db": -2.3,
-        "q": 1.7
+        "frequency": 1340,
+        "gain_db": -1.6,
+        "q": 1.8
       },
       {
         "type": "peak_dip",
         "frequency": 3450,
-        "gain_db": 3,
+        "gain_db": 5.4,
         "q": 1
       },
       {
         "type": "peak_dip",
         "frequency": 5150,
-        "gain_db": -4.4,
+        "gain_db": -3.8,
         "q": 5
       },
       {

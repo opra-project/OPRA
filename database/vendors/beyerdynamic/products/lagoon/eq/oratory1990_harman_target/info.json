@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/y202e0m36b9h2rx/Beyerdynamic%20Lagoon.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -4.1,

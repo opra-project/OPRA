@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Small Rounded Earpads",
+  "details": "Harman Target • small rounded earpads",
+  "link": "https://www.dropbox.com/s/so1hb4e3ngkz8hc/Andover%20PM-50%20%28small%20rounded%20earpads%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -10.9,

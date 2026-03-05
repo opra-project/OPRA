@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "USound Target",
+  "link": "https://www.dropbox.com/scl/fi/7k8i3lnwrwy56dh2nf318/Arpegear-Hane-USound-Target.pdf?rlkey=4bytyobc88pk7zqfai0btrs3l&dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -3.1,

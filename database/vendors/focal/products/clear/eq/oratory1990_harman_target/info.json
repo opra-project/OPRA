@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/hqb9zjsvc2nu5zc/Focal%20Clear.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -8.6,

@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
+  "link": "https://www.dropbox.com/s/07jyr91buozvvct/Audeze%20CRBN.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -7.5,

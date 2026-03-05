@@ -1,6 +1,7 @@
 {
   "author": "oratory1990",
-  "details": "Harman Target • Grado Gs1000 Earpads",
+  "details": "Harman Target • Grado GS1000 earpads",
+  "link": "https://www.dropbox.com/s/bejoy494ezv2tzx/Koss%20KPH30i%20%28Grado%20GS1000%20earpads%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -5.4,
