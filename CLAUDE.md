@@ -61,5 +61,4 @@ database/vendors/<vendor_slug>/
 
 - `tools/dist.ts` - Main build script (generates dist/ from database/)
 - `tools/import_autoeq.ts` - Imports data from AutoEQ project
-- `tools/merge.ts` - Merges database entries
-- `tools/preprocess_oratory.ts` - Preprocesses oratory1990 data
+- `tools/oratory/import.ts` - CSV-driven oratory1990 import with PDF parsing
