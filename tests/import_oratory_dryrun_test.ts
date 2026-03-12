@@ -27,6 +27,7 @@ BadRow;NoLink;0;1;
 
     const result = await importOratory(tmpDir, {
       csvPath,
+      cacheDir: join(tmpDir, "pdf_cache"),
       dryRun: true,
     });
 

@@ -201,7 +201,16 @@ export async function importAutoEQ(
     const newJson = JSON.stringify(eqInfo, null, 2);
 
     if (await exists(eqInfoPath)) {
-      const existingJson = await Deno.readTextFile(eqInfoPath);
+      let existingJson: string;
+      try {
+        existingJson = await Deno.readTextFile(eqInfoPath);
+      } catch (error) {
+        const message = `Failed to read existing EQ info.json: ${error}`;
+        log(`    ${message}`);
+        errors.push({ file: eqInfoPath, message });
+        stats.errors++;
+        continue;
+      }
       if (existingJson === newJson) {
         stats.unchangedEqs++;
         log(`    Unchanged: ${eqInfoPath}`);

@@ -60,5 +60,6 @@ database/vendors/<vendor_slug>/
 ## Key Tools
 
 - `tools/dist.ts` - Main build script (generates dist/ from database/)
-- `tools/import_autoeq.ts` - Imports data from AutoEQ project
+- `tools/import.ts` - Unified import entry point for external data sources
+- `tools/autoeq/import.ts` - Imports data from the AutoEQ project
 - `tools/oratory/import.ts` - CSV-driven oratory1990 import with PDF parsing

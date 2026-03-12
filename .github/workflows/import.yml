@@ -92,7 +92,7 @@ jobs:
       - name: Run import
         id: import
         env:
-          OPRA_CACHE_DIR: ${{ github.workspace }}
+          OPRA_CACHE_DIR: ${{ runner.temp }}/opra-cache
         run: |
           set +e  # Don't exit on error
           deno run --allow-all tools/import.ts ${{ steps.flags.outputs.flags }} --output-json > import-summary.json 2>&1
