@@ -197,24 +197,39 @@ export async function importAutoEQ(
       },
     };
 
-    // Check if EQ already exists
-    const eqExists = await exists(eqInfoPath);
+    // Check if EQ already exists and compare content
+    const newJson = JSON.stringify(eqInfo, null, 2);
 
-    // Write EQ info.json
-    try {
-      await Deno.writeTextFile(eqInfoPath, JSON.stringify(eqInfo, null, 2));
-      if (eqExists) {
-        stats.updatedEqs++;
+    if (await exists(eqInfoPath)) {
+      const existingJson = await Deno.readTextFile(eqInfoPath);
+      if (existingJson === newJson) {
+        stats.unchangedEqs++;
+        log(`    Unchanged: ${eqInfoPath}`);
       } else {
-        stats.newEqs++;
+        try {
+          await Deno.writeTextFile(eqInfoPath, newJson);
+          stats.updatedEqs++;
+          log(`    Updated EQ info.json at "${eqInfoPath}"`);
+        } catch (error) {
+          const message = `Failed to write EQ info.json: ${error}`;
+          log(`    ${message}`);
+          errors.push({ file: eqInfoPath, message });
+          stats.errors++;
+          continue;
+        }
       }
-      log(`    Wrote EQ info.json at "${eqInfoPath}"`);
-    } catch (error) {
-      const message = `Failed to write EQ info.json: ${error}`;
-      log(`    ${message}`);
-      errors.push({ file: eqInfoPath, message });
-      stats.errors++;
-      continue;
+    } else {
+      try {
+        await Deno.writeTextFile(eqInfoPath, newJson);
+        stats.newEqs++;
+        log(`    Wrote EQ info.json at "${eqInfoPath}"`);
+      } catch (error) {
+        const message = `Failed to write EQ info.json: ${error}`;
+        log(`    ${message}`);
+        errors.push({ file: eqInfoPath, message });
+        stats.errors++;
+        continue;
+      }
     }
 
     // Write Product info.json if it doesn't exist
