@@ -57,11 +57,11 @@ interface CsvRow {
 // =============================================================================
 
 const DEFAULT_CACHE_DIR = join(
-  Deno.env.get("HOME") || Deno.env.get("USERPROFILE") || ".",
-  "Downloads",
+  Deno.env.get("OPRA_CACHE_DIR") || Deno.env.get("HOME") || Deno.env.get("USERPROFILE") || ".",
+  ".cache",
+  "opra",
   "oratory_pdfs"
 );
-const RATE_LIMIT_MS = 100;
 
 // =============================================================================
 // Helpers
@@ -393,12 +393,6 @@ export async function importOratory(
   await ensureDir(cacheDir);
   log(`PDF cache directory: ${cacheDir}`);
 
-  if (dryRun) {
-    log(`[DRY-RUN] Would process ${rows.length} CSV entries`);
-    stats.newEqs = rows.length;
-    return { stats, unknownTypes, errors };
-  }
-
   // Phase 1: Collect all valid rows and their URLs
   interface ParsedRow {
     index: number;
@@ -430,6 +424,12 @@ export async function importOratory(
   }
 
   log(`${validRows.length} valid entries, ${urlsToDownload.size} unique URLs to download`);
+
+  if (dryRun) {
+    log(`[DRY-RUN] Would process ${validRows.length} valid entries`);
+    stats.newEqs = validRows.length;
+    return { stats, unknownTypes, errors };
+  }
 
   // Phase 2: Download all PDFs in parallel (cached files resolve instantly)
   const downloadedPdfs = await downloadAllPdfs(

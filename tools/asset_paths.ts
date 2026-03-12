@@ -5,7 +5,7 @@
  * Extracted for testability and reuse.
  */
 
-import { join, extname } from "https://deno.land/std@0.203.0/path/mod.ts";
+import { join, extname } from "https://deno.land/std@0.224.0/path/mod.ts";
 
 /**
  * Computes the full filesystem path for a content-addressed asset.

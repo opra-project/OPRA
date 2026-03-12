@@ -20,10 +20,10 @@
  *   --help                  Show this help message
  */
 
-import { parse } from "https://deno.land/std@0.203.0/flags/mod.ts";
-import { join, dirname, fromFileUrl } from "https://deno.land/std@0.203.0/path/mod.ts";
-import { ensureDir, exists } from "https://deno.land/std@0.203.0/fs/mod.ts";
-import { gray, brightGreen, yellow, red, cyan } from "https://deno.land/std@0.203.0/fmt/colors.ts";
+import { parse } from "https://deno.land/std@0.224.0/flags/mod.ts";
+import { join, dirname, fromFileUrl } from "https://deno.land/std@0.224.0/path/mod.ts";
+import { ensureDir, exists } from "https://deno.land/std@0.224.0/fs/mod.ts";
+import { gray, brightGreen, yellow, red, cyan } from "https://deno.land/std@0.224.0/fmt/colors.ts";
 
 // Import the actual import modules
 import { importAutoEQ } from "./autoeq/import.ts";

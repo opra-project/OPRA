@@ -4,7 +4,7 @@
  * Tests for parse_pdf.ts - Oratory1990 PDF parsing
  */
 
-import { assertEquals } from "https://deno.land/std@0.203.0/assert/mod.ts";
+import { assertEquals } from "https://deno.land/std@0.224.0/assert/mod.ts";
 import { parseOratoryPdfText, extractTargetFromPdfText } from "./parse_pdf.ts";
 
 // =============================================================================

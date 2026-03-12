@@ -5,9 +5,9 @@
  * Can be used as a module or run standalone.
  */
 
-import { join, basename } from "https://deno.land/std@0.203.0/path/mod.ts";
-import { walk } from "https://deno.land/std@0.203.0/fs/walk.ts";
-import { exists } from "https://deno.land/std@0.203.0/fs/mod.ts";
+import { join, basename } from "https://deno.land/std@0.224.0/path/mod.ts";
+import { walk } from "https://deno.land/std@0.224.0/fs/walk.ts";
+import { exists } from "https://deno.land/std@0.224.0/fs/mod.ts";
 
 import { VendorInfo, ProductInfo, EQInfo } from "../types.ts";
 import { parseParametricEQ, mapTypeToSubtype } from "./parse_eq.ts";
@@ -197,24 +197,48 @@ export async function importAutoEQ(
       },
     };
 
-    // Check if EQ already exists
-    const eqExists = await exists(eqInfoPath);
+    // Check if EQ already exists and compare content
+    const newJson = JSON.stringify(eqInfo, null, 2);
 
-    // Write EQ info.json
-    try {
-      await Deno.writeTextFile(eqInfoPath, JSON.stringify(eqInfo, null, 2));
-      if (eqExists) {
-        stats.updatedEqs++;
-      } else {
-        stats.newEqs++;
+    if (await exists(eqInfoPath)) {
+      let existingJson: string;
+      try {
+        existingJson = await Deno.readTextFile(eqInfoPath);
+      } catch (error) {
+        const message = `Failed to read existing EQ info.json: ${error}`;
+        log(`    ${message}`);
+        errors.push({ file: eqInfoPath, message });
+        stats.errors++;
+        continue;
       }
-      log(`    Wrote EQ info.json at "${eqInfoPath}"`);
-    } catch (error) {
-      const message = `Failed to write EQ info.json: ${error}`;
-      log(`    ${message}`);
-      errors.push({ file: eqInfoPath, message });
-      stats.errors++;
-      continue;
+      if (existingJson === newJson) {
+        stats.unchangedEqs++;
+        log(`    Unchanged: ${eqInfoPath}`);
+      } else {
+        try {
+          await Deno.writeTextFile(eqInfoPath, newJson);
+          stats.updatedEqs++;
+          log(`    Updated EQ info.json at "${eqInfoPath}"`);
+        } catch (error) {
+          const message = `Failed to write EQ info.json: ${error}`;
+          log(`    ${message}`);
+          errors.push({ file: eqInfoPath, message });
+          stats.errors++;
+          continue;
+        }
+      }
+    } else {
+      try {
+        await Deno.writeTextFile(eqInfoPath, newJson);
+        stats.newEqs++;
+        log(`    Wrote EQ info.json at "${eqInfoPath}"`);
+      } catch (error) {
+        const message = `Failed to write EQ info.json: ${error}`;
+        log(`    ${message}`);
+        errors.push({ file: eqInfoPath, message });
+        stats.errors++;
+        continue;
+      }
     }
 
     // Write Product info.json if it doesn't exist
