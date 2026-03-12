@@ -5,9 +5,9 @@
  * Can be used as a module or run standalone.
  */
 
-import { join, basename } from "https://deno.land/std@0.203.0/path/mod.ts";
-import { walk } from "https://deno.land/std@0.203.0/fs/walk.ts";
-import { exists } from "https://deno.land/std@0.203.0/fs/mod.ts";
+import { join, basename } from "https://deno.land/std@0.224.0/path/mod.ts";
+import { walk } from "https://deno.land/std@0.224.0/fs/walk.ts";
+import { exists } from "https://deno.land/std@0.224.0/fs/mod.ts";
 
 import { VendorInfo, ProductInfo, EQInfo } from "../types.ts";
 import { parseParametricEQ, mapTypeToSubtype } from "./parse_eq.ts";

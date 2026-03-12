@@ -8,7 +8,7 @@ import {
   assertEquals,
   assertAlmostEquals,
   assertThrows,
-} from "https://deno.land/std@0.203.0/assert/mod.ts";
+} from "https://deno.land/std@0.224.0/assert/mod.ts";
 
 // Import from shared modules - no more code duplication!
 import { parseParametricEQ, mapTypeToSubtype } from "../tools/autoeq/parse_eq.ts";
