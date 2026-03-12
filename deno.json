@@ -3,8 +3,8 @@
   "tasks": {
     "test": "deno test --allow-read --allow-write --allow-env --allow-net tests/",
     "test:utils": "deno test --allow-read tests/utils_test.ts",
-    "test:oratory": "deno test --allow-read --allow-write tests/oratory_*.ts",
-    "test:autoeq": "deno test --allow-read tests/import_autoeq_test.ts",
+    "test:oratory": "deno test --allow-read --allow-write --allow-env tests/oratory_*.ts tests/import_oratory_*.ts",
+    "test:autoeq": "deno test --allow-read --allow-write --allow-env tests/import_autoeq_*.ts",
     "test:coverage": "deno test --allow-read --allow-write --allow-env --allow-net --coverage=coverage tests/",
     "build": "deno run --allow-read --allow-write --allow-run tools/dist.ts",
     "build:validate": "deno run --allow-read --allow-write --allow-run tools/dist.ts --validate-only",
