@@ -57,11 +57,11 @@ interface CsvRow {
 // =============================================================================
 
 const DEFAULT_CACHE_DIR = join(
-  Deno.env.get("HOME") || Deno.env.get("USERPROFILE") || ".",
-  "Downloads",
+  Deno.env.get("OPRA_CACHE_DIR") || Deno.env.get("HOME") || Deno.env.get("USERPROFILE") || ".",
+  ".cache",
+  "opra",
   "oratory_pdfs"
 );
-const RATE_LIMIT_MS = 100;
 
 // =============================================================================
 // Helpers
