@@ -41,18 +41,45 @@ jobs:
         with:
           deno-version: v1.x
 
+      - name: Download Oratory CSV
+        id: oratory_csv
+        if: github.event.inputs.source != 'autoeq'
+        env:
+          ORATORY_CSV_URL: ${{ secrets.ORATORY_CSV_URL }}
+        run: |
+          if [ -z "$ORATORY_CSV_URL" ]; then
+            echo "::warning::ORATORY_CSV_URL secret not set, skipping oratory import"
+            echo "oratory_csv_available=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          # Convert Dropbox share link to direct download (dl=0 -> dl=1)
+          DIRECT_URL="${ORATORY_CSV_URL/dl=0/dl=1}"
+          curl -fsSL -o /tmp/oratory.csv "$DIRECT_URL"
+          echo "oratory_csv_available=true" >> $GITHUB_OUTPUT
+          echo "Downloaded oratory CSV ($(wc -l < /tmp/oratory.csv) lines)"
+
       - name: Determine import flags
         id: flags
+        env:
+          SOURCE: ${{ github.event.inputs.source }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          ORATORY_CSV_AVAILABLE: ${{ steps.oratory_csv.outputs.oratory_csv_available }}
         run: |
           FLAGS=""
-          # Handle both manual trigger (workflow_dispatch) and scheduled runs
-          SOURCE="${{ github.event.inputs.source }}"
-          DRY_RUN="${{ github.event.inputs.dry_run }}"
 
           if [ "$SOURCE" = "autoeq" ]; then
             FLAGS="--autoeq-only"
           elif [ "$SOURCE" = "oratory" ]; then
             FLAGS="--oratory-only"
+          fi
+
+          # Add oratory CSV path if available
+          if [ "$ORATORY_CSV_AVAILABLE" = "true" ]; then
+            FLAGS="$FLAGS --oratory-csv /tmp/oratory.csv"
+          elif [ "$SOURCE" != "autoeq" ]; then
+            # Oratory CSV not available and not autoeq-only: fall back to autoeq-only
+            echo "::warning::Oratory CSV not available, falling back to autoeq-only"
+            FLAGS="--autoeq-only"
           fi
 
           if [ "$DRY_RUN" = "true" ]; then
@@ -64,6 +91,8 @@ jobs:
 
       - name: Run import
         id: import
+        env:
+          OPRA_CACHE_DIR: ${{ github.workspace }}
         run: |
           set +e  # Don't exit on error
           deno run --allow-all tools/import.ts ${{ steps.flags.outputs.flags }} --output-json > import-summary.json 2>&1
@@ -85,7 +114,9 @@ jobs:
 
       - name: Check for changes
         id: changes
-        if: steps.flags.outputs.is_dry_run != 'true'
+        env:
+          IS_DRY_RUN: ${{ steps.flags.outputs.is_dry_run }}
+        if: env.IS_DRY_RUN != 'true'
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
