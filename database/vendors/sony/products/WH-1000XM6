@@ -1,0 +1,25 @@
+{
+  "id": "sony-wh-1000xm6",
+  "manufacturer": "Sony",
+  "name": "WH-1000XM6",
+  "eqProfiles": [
+    {
+      "id": "xm6-10band-neutral-anc-on",
+      "name": "XM6 – 10-band neutral (ANC on)",
+      "author": "Your Name",
+      "description": "10-band PEQ tuned for Sony WH-1000XM6 with ANC on, targeting a neutral response.",
+      "filters": [
+        { "type": "peaking", "frequency": 31,   "gainDb": -2.0, "q": 1.0 },
+        { "type": "peaking", "frequency": 62,   "gainDb": -1.5, "q": 1.0 },
+        { "type": "peaking", "frequency": 125,  "gainDb": -2.0, "q": 1.0 },
+        { "type": "peaking", "frequency": 250,  "gainDb": -1.5, "q": 1.0 },
+        { "type": "peaking", "frequency": 500,  "gainDb":  1.0, "q": 1.0 },
+        { "type": "peaking", "frequency": 1000, "gainDb":  1.5, "q": 1.0 },
+        { "type": "peaking", "frequency": 2000, "gainDb":  2.5, "q": 1.0 },
+        { "type": "peaking", "frequency": 4000, "gainDb":  3.0, "q": 1.0 },
+        { "type": "peaking", "frequency": 8000, "gainDb":  2.0, "q": 1.0 },
+        { "type": "peaking", "frequency": 16000,"gainDb": -1.0, "q": 1.0 }
+      ]
+    }
+  ]
+}
