@@ -3,67 +3,67 @@
   "details": "Measured by oratory1990",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -6.2,
+    "gain_db": -5.8,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
-        "gain_db": -2.7,
+        "gain_db": -2.3,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 4225,
-        "gain_db": 7,
-        "q": 1.49
+        "frequency": 149,
+        "gain_db": -3.3,
+        "q": 1.47
       },
       {
         "type": "peak_dip",
-        "frequency": 1916,
-        "gain_db": -2.5,
-        "q": 0.6
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 156,
-        "gain_db": -2,
-        "q": 1.76
+        "frequency": 4019,
+        "gain_db": 5.9,
+        "q": 2.87
       },
       {
         "type": "peak_dip",
         "frequency": 75,
-        "gain_db": 2.1,
-        "q": 1.97
+        "gain_db": 1.3,
+        "q": 2.02
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 42,
+        "gain_db": -1.4,
+        "q": 1.64
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": -2.7,
+        "gain_db": -1.2,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 7437,
-        "gain_db": 2.2,
-        "q": 1.11
+        "frequency": 2560,
+        "gain_db": -1,
+        "q": 2.54
       },
       {
         "type": "peak_dip",
-        "frequency": 6110,
-        "gain_db": -3.6,
-        "q": 6
+        "frequency": 378,
+        "gain_db": 0.7,
+        "q": 1.79
       },
       {
         "type": "peak_dip",
-        "frequency": 2907,
-        "gain_db": -1.1,
-        "q": 4.54
+        "frequency": 7330,
+        "gain_db": 2.4,
+        "q": 5.94
       },
       {
         "type": "peak_dip",
-        "frequency": 350,
-        "gain_db": 0.5,
-        "q": 2.35
+        "frequency": 1338,
+        "gain_db": -1,
+        "q": 2.72
       }
     ]
   }

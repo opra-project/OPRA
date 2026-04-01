@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Kuulokenurkka (ANC off, double foam)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -3.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 111,
+        "gain_db": -5.8,
+        "q": 1.01
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1990,
+        "gain_db": 4.9,
+        "q": 1.98
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7471,
+        "gain_db": 3.9,
+        "q": 3.89
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 71,
+        "gain_db": 2.3,
+        "q": 2.45
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 441,
+        "gain_db": -1.7,
+        "q": 2.86
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 355,
+        "gain_db": 2.2,
+        "q": 5.81
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3582,
+        "gain_db": -1.4,
+        "q": 4.57
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9032,
+        "gain_db": 1,
+        "q": 3.52
+      }
+    ]
+  }
+}

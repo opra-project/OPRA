@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Hi End Portable (red nozzle)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.1,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -4.8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 186,
+        "gain_db": -4.9,
+        "q": 0.86
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2277,
+        "gain_db": 6,
+        "q": 0.98
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3566,
+        "gain_db": 2.9,
+        "q": 2.67
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1707,
+        "gain_db": -2.2,
+        "q": 2.31
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -2.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 746,
+        "gain_db": 0.8,
+        "q": 2.05
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 67,
+        "gain_db": 0.7,
+        "q": 1.68
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 373,
+        "gain_db": -0.4,
+        "q": 1.81
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 114,
+        "gain_db": -0.6,
+        "q": 2.4
+      }
+    ]
+  }
+}

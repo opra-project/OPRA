@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Super Review (lambskin earpads, red mesh)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 3.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 125,
+        "gain_db": -3.4,
+        "q": 0.79
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3850,
+        "gain_db": 6.9,
+        "q": 1.61
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 855,
+        "gain_db": -3.7,
+        "q": 0.38
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 421,
+        "gain_db": 5.9,
+        "q": 1.38
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -8.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9812,
+        "gain_db": 5,
+        "q": 1.86
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4748,
+        "gain_db": 2.6,
+        "q": 5.87
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5445,
+        "gain_db": -2,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4099,
+        "gain_db": -1.7,
+        "q": 6
+      }
+    ]
+  }
+}

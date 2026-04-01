@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Kuulokenurkka (Duo earpads)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 6.8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 102,
+        "gain_db": -5.4,
+        "q": 0.36
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1607,
+        "gain_db": 5.3,
+        "q": 2.01
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 434,
+        "gain_db": 3.1,
+        "q": 1.72
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 266,
+        "gain_db": -1.9,
+        "q": 1.66
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7967,
+        "gain_db": 3.9,
+        "q": 0.88
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5538,
+        "gain_db": -4.6,
+        "q": 4.06
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3292,
+        "gain_db": -2.8,
+        "q": 3.48
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2092,
+        "gain_db": 1.1,
+        "q": 5.35
+      }
+    ]
+  }
+}

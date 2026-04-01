@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Fahryst (gold)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5572,
+        "gain_db": 6.1,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 181,
+        "gain_db": -2.7,
+        "q": 0.69
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 69,
+        "gain_db": 1.5,
+        "q": 1.25
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3231,
+        "gain_db": -1.5,
+        "q": 3.85
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -3.2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1380,
+        "gain_db": -0.8,
+        "q": 2.27
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 768,
+        "gain_db": 0.4,
+        "q": 1.89
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8092,
+        "gain_db": 1.2,
+        "q": 3.63
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2154,
+        "gain_db": 0.5,
+        "q": 3.63
+      }
+    ]
+  }
+}

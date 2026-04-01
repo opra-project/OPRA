@@ -3,67 +3,67 @@
   "details": "Measured by Rtings",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -4.3,
+    "gain_db": -4.4,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
-        "gain_db": -5.5,
+        "gain_db": -5.8,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 2193,
-        "gain_db": 2.7,
-        "q": 5
+        "frequency": 599,
+        "gain_db": 3.8,
+        "q": 0.9
       },
       {
         "type": "peak_dip",
-        "frequency": 2544,
-        "gain_db": 7.7,
-        "q": 0.23
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 153,
-        "gain_db": -2.4,
-        "q": 1.28
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 6810,
-        "gain_db": -8.3,
-        "q": 0.18
-      },
-      {
-        "type": "high_shelf",
-        "frequency": 10000,
-        "gain_db": -6.5,
-        "q": 0.7
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 5826,
-        "gain_db": 3.5,
+        "frequency": 2050,
+        "gain_db": 4.3,
         "q": 2.64
       },
       {
         "type": "peak_dip",
-        "frequency": 3965,
-        "gain_db": -2.2,
-        "q": 3.31
+        "frequency": 9818,
+        "gain_db": -6.7,
+        "q": 0.98
       },
       {
         "type": "peak_dip",
-        "frequency": 1237,
-        "gain_db": -1,
-        "q": 3.06
+        "frequency": 147,
+        "gain_db": -2,
+        "q": 1.85
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -9.1,
+        "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 1832,
-        "gain_db": 1.1,
-        "q": 4.21
+        "frequency": 9630,
+        "gain_db": 4.3,
+        "q": 3.48
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4027,
+        "gain_db": -3.2,
+        "q": 3.62
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5923,
+        "gain_db": 3.2,
+        "q": 3.05
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 63,
+        "gain_db": 0.6,
+        "q": 2.08
       }
     ]
   }

@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Jaytiss (black nozzle)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 2.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 149,
+        "gain_db": -7.5,
+        "q": 0.48
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2550,
+        "gain_db": 5,
+        "q": 1.21
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6484,
+        "gain_db": 5.2,
+        "q": 2.09
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 842,
+        "gain_db": 2.2,
+        "q": 0.94
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -3.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 45,
+        "gain_db": -0.6,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8295,
+        "gain_db": 2.3,
+        "q": 5.18
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 82,
+        "gain_db": 1.4,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4443,
+        "gain_db": -1,
+        "q": 6
+      }
+    ]
+  }
+}

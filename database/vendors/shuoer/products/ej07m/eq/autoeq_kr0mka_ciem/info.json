@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by kr0mka (CIEM)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.3,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -4.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6507,
+        "gain_db": 5.5,
+        "q": 2.18
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1651,
+        "gain_db": -1.9,
+        "q": 0.84
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 63,
+        "gain_db": 3.6,
+        "q": 0.95
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3518,
+        "gain_db": 0.9,
+        "q": 4.05
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9049,
+        "gain_db": 2.5,
+        "q": 2.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 166,
+        "gain_db": -0.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 100,
+        "gain_db": 0.6,
+        "q": 1.86
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4827,
+        "gain_db": -0.7,
+        "q": 6
+      }
+    ]
+  }
+}

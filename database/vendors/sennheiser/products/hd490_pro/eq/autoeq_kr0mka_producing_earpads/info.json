@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by kr0mka (producing earpads)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 2.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 91,
+        "gain_db": -3.5,
+        "q": 0.22
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2014,
+        "gain_db": 5.4,
+        "q": 1.54
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9187,
+        "gain_db": 3.4,
+        "q": 0.98
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3961,
+        "gain_db": -2.3,
+        "q": 1.42
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -3.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 47,
+        "gain_db": -0.5,
+        "q": 1.89
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 94,
+        "gain_db": 0.4,
+        "q": 1.61
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 992,
+        "gain_db": -0.5,
+        "q": 2.98
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1317,
+        "gain_db": 0.6,
+        "q": 3.55
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Auriculares Argentina (post-2020 earpads)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 6.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 266,
+        "gain_db": -1.5,
+        "q": 0.64
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1943,
+        "gain_db": 3,
+        "q": 2.15
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 73,
+        "gain_db": -1.4,
+        "q": 1.31
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 987,
+        "gain_db": -2.5,
+        "q": 3.99
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -8.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8430,
+        "gain_db": 3.5,
+        "q": 1.34
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6337,
+        "gain_db": -2.6,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 593,
+        "gain_db": 1.7,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 499,
+        "gain_db": -1,
+        "q": 4.28
+      }
+    ]
+  }
+}

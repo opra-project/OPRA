@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Filk (fabric earpads)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 220,
+        "gain_db": 5.6,
+        "q": 0.45
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1173,
+        "gain_db": -4.7,
+        "q": 0.66
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 61,
+        "gain_db": -6.3,
+        "q": 0.79
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 637,
+        "gain_db": -2.9,
+        "q": 2.48
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -4.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4471,
+        "gain_db": 5.7,
+        "q": 1.69
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3121,
+        "gain_db": -5.9,
+        "q": 2.57
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2048,
+        "gain_db": 2.2,
+        "q": 4.86
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6345,
+        "gain_db": -3.9,
+        "q": 6
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Super Review (hybrid earpads, red mesh)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.1,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 2.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3974,
+        "gain_db": 7,
+        "q": 1.47
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 125,
+        "gain_db": -3.7,
+        "q": 1.43
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2591,
+        "gain_db": -3.8,
+        "q": 2.17
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1211,
+        "gain_db": -3.2,
+        "q": 1.82
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -7.8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 379,
+        "gain_db": 3.5,
+        "q": 1.43
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9482,
+        "gain_db": 4,
+        "q": 2.75
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 207,
+        "gain_db": -1.9,
+        "q": 2.26
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 724,
+        "gain_db": -1.8,
+        "q": 3.06
+      }
+    ]
+  }
+}

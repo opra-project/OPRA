@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Kuulokenurkka (weak seal)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -7.1,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1426,
+        "gain_db": -5.8,
+        "q": 1.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 63,
+        "gain_db": -9.7,
+        "q": 1.18
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6978,
+        "gain_db": 6.1,
+        "q": 2.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4098,
+        "gain_db": 4.8,
+        "q": 3.79
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -6.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9177,
+        "gain_db": 3.2,
+        "q": 2.29
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 532,
+        "gain_db": 1,
+        "q": 1.18
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 198,
+        "gain_db": -0.6,
+        "q": 1.19
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 890,
+        "gain_db": -1.2,
+        "q": 2.42
+      }
+    ]
+  }
+}

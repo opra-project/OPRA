@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by DHRME (Harman DSP)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -1.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -2.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 144,
+        "gain_db": 0.9,
+        "q": 0.24
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5066,
+        "gain_db": -2.3,
+        "q": 2.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 69,
+        "gain_db": 1.9,
+        "q": 0.88
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 134,
+        "gain_db": -1.2,
+        "q": 3.34
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -5.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9497,
+        "gain_db": 3.6,
+        "q": 2.46
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1743,
+        "gain_db": 1.2,
+        "q": 2.34
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3069,
+        "gain_db": -0.9,
+        "q": 2.96
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1119,
+        "gain_db": -0.8,
+        "q": 2.75
+      }
+    ]
+  }
+}

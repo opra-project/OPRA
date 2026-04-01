@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Jaytiss (m15 Apex module)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.4,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 3.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 91,
+        "gain_db": -4.6,
+        "q": 0.27
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6717,
+        "gain_db": 5.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3325,
+        "gain_db": 3.2,
+        "q": 2.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1367,
+        "gain_db": 0.8,
+        "q": 1.25
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -5.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9609,
+        "gain_db": 3.6,
+        "q": 2.74
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 44,
+        "gain_db": -0.5,
+        "q": 1.75
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 133,
+        "gain_db": 0.3,
+        "q": 1.13
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4743,
+        "gain_db": -1.2,
+        "q": 6
+      }
+    ]
+  }
+}

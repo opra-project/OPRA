@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by DHRME (foam eartips)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 0,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7080,
+        "gain_db": 4.4,
+        "q": 0.94
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 140,
+        "gain_db": -1.9,
+        "q": 0.98
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1975,
+        "gain_db": 2.3,
+        "q": 2.73
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4791,
+        "gain_db": -5.4,
+        "q": 2.28
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -7.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9297,
+        "gain_db": 3.5,
+        "q": 2.32
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 890,
+        "gain_db": 1.1,
+        "q": 3.13
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 584,
+        "gain_db": -0.7,
+        "q": 2.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3194,
+        "gain_db": -0.5,
+        "q": 3.64
+      }
+    ]
+  }
+}

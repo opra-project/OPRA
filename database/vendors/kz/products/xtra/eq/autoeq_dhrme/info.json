@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by DHRME",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.3,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -10.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1785,
+        "gain_db": 5.7,
+        "q": 0.94
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 132,
+        "gain_db": -1.8,
+        "q": 0.42
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 40,
+        "gain_db": 12.4,
+        "q": 0.68
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5953,
+        "gain_db": -2.5,
+        "q": 0.29
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 2.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 768,
+        "gain_db": 1,
+        "q": 2.28
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 382,
+        "gain_db": -1,
+        "q": 1.95
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": 1.2,
+        "q": 2.54
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 126,
+        "gain_db": -0.6,
+        "q": 1.83
+      }
+    ]
+  }
+}

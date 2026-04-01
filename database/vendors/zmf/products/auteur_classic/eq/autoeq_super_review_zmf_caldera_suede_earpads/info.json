@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Super Review (ZMF Caldera suede earpads)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -7,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -1.1,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 188,
+        "gain_db": -12.7,
+        "q": 0.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8431,
+        "gain_db": 6.9,
+        "q": 1.84
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 541,
+        "gain_db": 6.6,
+        "q": 0.77
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2277,
+        "gain_db": 5.5,
+        "q": 1.48
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -0.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5521,
+        "gain_db": -5.1,
+        "q": 5.67
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4132,
+        "gain_db": 3.1,
+        "q": 5.65
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6659,
+        "gain_db": 2.9,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1518,
+        "gain_db": -1.6,
+        "q": 5.7
+      }
+    ]
+  }
+}
