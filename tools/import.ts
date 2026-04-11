@@ -77,6 +77,7 @@ const AUTOEQ_SPARSE_PATH = "results";
 // =============================================================================
 
 let verboseEnabled = false;
+let jsonOutputEnabled = false;
 
 const LOG_PREFIX = {
   INFO: brightGreen("[INFO]    "),
@@ -90,7 +91,11 @@ const LOG_PREFIX = {
 
 function log(level: keyof typeof LOG_PREFIX, message: string) {
   if (level === "DEBUG" && !verboseEnabled) return;
-  console.log(`${LOG_PREFIX[level]}${message}`);
+  if (jsonOutputEnabled) {
+    console.error(`${LOG_PREFIX[level]}${message}`);
+  } else {
+    console.log(`${LOG_PREFIX[level]}${message}`);
+  }
 }
 
 // =============================================================================
@@ -433,6 +438,7 @@ async function main() {
   }
 
   verboseEnabled = options.verbose;
+  jsonOutputEnabled = options.outputJson;
 
   log("INFO", "OPRA Import Pipeline");
   log("DEBUG", `Options: ${JSON.stringify(options)}`);

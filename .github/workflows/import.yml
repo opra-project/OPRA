@@ -34,7 +34,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y p7zip-full
+          sudo apt-get install -y p7zip-full librsvg2-bin imagemagick
 
       - name: Set up Deno
         uses: denoland/setup-deno@v1
@@ -95,11 +95,17 @@ jobs:
           OPRA_CACHE_DIR: ${{ runner.temp }}/opra-cache
         run: |
           set +e  # Don't exit on error
-          deno run --allow-all tools/import.ts ${{ steps.flags.outputs.flags }} --output-json > import-summary.json 2>&1
+          deno run --allow-all tools/import.ts ${{ steps.flags.outputs.flags }} --output-json > import-summary.json 2>import-errors.log
           EXIT_CODE=$?
           set -e
 
           echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+
+          if [ -f import-errors.log ] && [ -s import-errors.log ]; then
+            echo "::group::Import stderr"
+            cat import-errors.log
+            echo "::endgroup::"
+          fi
 
           if [ -f import-summary.json ]; then
             cat import-summary.json
@@ -118,7 +124,7 @@ jobs:
           IS_DRY_RUN: ${{ steps.flags.outputs.is_dry_run }}
         if: env.IS_DRY_RUN != 'true'
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
+          if [ -n "$(git status --porcelain database/)" ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
           else
             echo "has_changes=false" >> $GITHUB_OUTPUT
@@ -139,7 +145,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           git checkout -b "$BRANCH"
-          git add .
+          git add database/
           git commit -m "Import EQ sources ${DATE}"
           git push origin "$BRANCH"
 
