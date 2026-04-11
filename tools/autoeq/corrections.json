@@ -1,0 +1,9 @@
+{
+  "name_corrections": {
+    "Alpha Omega Omega on-off-off)": "Alpha Omega Omega (on-off-off)"
+  },
+  "slug_remaps": {
+    "7hz::timless_ii": "7hz::timeless_ii",
+    "abyss::ab1_266_phi_tc": "abyss::ab_1266_phi_tc"
+  }
+}

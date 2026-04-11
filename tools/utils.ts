@@ -92,3 +92,54 @@ export function splitVendorProductOrUnknown(fullName: string): VendorProductSpli
   };
 }
 
+// =============================================================================
+// Import Corrections
+// =============================================================================
+
+export interface Corrections {
+  name_corrections: Record<string, string>;
+  slug_remaps: Record<string, string>;
+}
+
+/**
+ * Load a corrections.json file. Returns empty corrections if the file doesn't exist.
+ */
+export async function loadCorrections(correctionsPath: string): Promise<Corrections> {
+  try {
+    const text = await Deno.readTextFile(correctionsPath);
+    const data = JSON.parse(text);
+    return {
+      name_corrections: data.name_corrections || {},
+      slug_remaps: data.slug_remaps || {},
+    };
+  } catch (error) {
+    if (error instanceof Deno.errors.NotFound) {
+      return { name_corrections: {}, slug_remaps: {} };
+    }
+    throw error;
+  }
+}
+
+/**
+ * Apply a slug remap if one exists. Returns the remapped vendor and product slugs,
+ * or the originals if no remap is found.
+ */
+export function applySlugRemap(
+  vendorSlug: string,
+  productSlug: string,
+  remaps: Record<string, string>,
+): { vendorSlug: string; productSlug: string } {
+  const key = `${vendorSlug}::${productSlug}`;
+  const remap = remaps[key];
+  if (!remap) return { vendorSlug, productSlug };
+
+  const parts = remap.split("::");
+  if (parts.length !== 2) return { vendorSlug, productSlug };
+
+  const remappedVendorSlug = parts[0].trim();
+  const remappedProductSlug = parts[1].trim();
+  if (!remappedVendorSlug || !remappedProductSlug) return { vendorSlug, productSlug };
+
+  return { vendorSlug: remappedVendorSlug, productSlug: remappedProductSlug };
+}
+

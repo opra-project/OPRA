@@ -5,13 +5,13 @@
  * Can be used as a module or run standalone.
  */
 
-import { join, basename } from "https://deno.land/std@0.224.0/path/mod.ts";
+import { join, basename, dirname, fromFileUrl } from "https://deno.land/std@0.224.0/path/mod.ts";
 import { walk } from "https://deno.land/std@0.224.0/fs/walk.ts";
 import { exists } from "https://deno.land/std@0.224.0/fs/mod.ts";
 
 import { VendorInfo, ProductInfo, EQInfo } from "../types.ts";
 import { parseParametricEQ, mapTypeToSubtype } from "./parse_eq.ts";
-import { generateSlug, splitVendorProductOrUnknown } from "../utils.ts";
+import { generateSlug, splitVendorProductOrUnknown, loadCorrections, applySlugRemap } from "../utils.ts";
 
 // =============================================================================
 // Types
@@ -70,6 +70,9 @@ export async function importAutoEQ(
   options: ImportOptions = {}
 ): Promise<ImportResult> {
   const { dryRun = false, verbose = false, onProgress } = options;
+
+  const correctionsPath = join(dirname(fromFileUrl(import.meta.url)), "corrections.json");
+  const corrections = await loadCorrections(correctionsPath);
 
   const log = (message: string) => {
     if (verbose) {
@@ -133,7 +136,14 @@ export async function importAutoEQ(
       }
     }
 
-    const productNameWithoutSuffix = fileName.replace(" ParametricEQ.txt", "");
+    let productNameWithoutSuffix = fileName.replace(" ParametricEQ.txt", "");
+
+    // Apply name corrections before variant extraction (exact match)
+    if (corrections.name_corrections[productNameWithoutSuffix]) {
+      const corrected = corrections.name_corrections[productNameWithoutSuffix];
+      log(`    Name correction: "${productNameWithoutSuffix}" -> "${corrected}"`);
+      productNameWithoutSuffix = corrected;
+    }
 
     // Extract variant info from parentheses
     const variantMatch = productNameWithoutSuffix.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
@@ -142,8 +152,16 @@ export async function importAutoEQ(
 
     // Infer vendor/product split
     const { vendorName, productName } = splitVendorProductOrUnknown(fullProductName);
-    const vendorSlug = generateSlug(vendorName);
-    const productSlug = generateSlug(productName);
+    let vendorSlug = generateSlug(vendorName);
+    let productSlug = generateSlug(productName);
+
+    // Apply slug remaps
+    const remapped = applySlugRemap(vendorSlug, productSlug, corrections.slug_remaps);
+    if (remapped.vendorSlug !== vendorSlug || remapped.productSlug !== productSlug) {
+      log(`    Slug remap: ${vendorSlug}::${productSlug} -> ${remapped.vendorSlug}::${remapped.productSlug}`);
+      vendorSlug = remapped.vendorSlug;
+      productSlug = remapped.productSlug;
+    }
 
     // Define target paths
     const vendorPath = join(targetDir, "vendors", vendorSlug);
