@@ -5,14 +5,14 @@
  * Downloads PDFs from Dropbox links, parses EQ data, and writes to database.
  */
 
-import { join } from "https://deno.land/std@0.224.0/path/mod.ts";
+import { join, dirname, fromFileUrl } from "https://deno.land/std@0.224.0/path/mod.ts";
 import { exists } from "https://deno.land/std@0.224.0/fs/mod.ts";
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/mod.ts";
 import { parse as parseCsv } from "https://deno.land/std@0.224.0/csv/mod.ts";
 
 import { extractTextFromPdf } from "./extract_text.ts";
 import { parseOratoryPdfText, extractTargetFromPdfText } from "./parse_pdf.ts";
-import { generateSlug } from "../utils.ts";
+import { generateSlug, loadCorrections, applySlugRemap } from "../utils.ts";
 import { VendorInfo, ProductInfo, ProductSubtype, EQInfo } from "../types.ts";
 import { VENDOR_ALIASES } from "../known_vendors.ts";
 
@@ -386,6 +386,9 @@ export async function importOratory(
     onProgress,
   } = options;
 
+  const correctionsPath = join(dirname(fromFileUrl(import.meta.url)), "corrections.json");
+  const corrections = await loadCorrections(correctionsPath);
+
   const log = (message: string) => {
     if (verbose) console.log(`[${new Date().toISOString()}] ${message}`);
     onProgress?.(message);
@@ -499,15 +502,30 @@ export async function importOratory(
         }
       }
 
+      // Apply name corrections
+      let correctedModel = model;
+      if (corrections.name_corrections[model]) {
+        correctedModel = corrections.name_corrections[model];
+        log(`  Name correction: "${model}" -> "${correctedModel}"`);
+      }
+
       // Resolve vendor alias to canonical name
       const canonicalBrand = VENDOR_ALIASES[brand] || brand;
-      const vendorSlug = generateSlug(canonicalBrand);
-      const productSlug = generateSlug(model);
+      let vendorSlug = generateSlug(canonicalBrand);
+      let productSlug = generateSlug(correctedModel);
       const variantSlug = comment && comment !== "0" ? `_${generateSlug(comment)}` : "";
       const eqSlug = `oratory1990_${targetCurve}_target${variantSlug}`;
 
       if (canonicalBrand !== brand) {
         log(`  Vendor alias: "${brand}" → "${canonicalBrand}"`);
+      }
+
+      // Apply slug remaps
+      const remapped = applySlugRemap(vendorSlug, productSlug, corrections.slug_remaps);
+      if (remapped.vendorSlug !== vendorSlug || remapped.productSlug !== productSlug) {
+        log(`  Slug remap: ${vendorSlug}::${productSlug} -> ${remapped.vendorSlug}::${remapped.productSlug}`);
+        vendorSlug = remapped.vendorSlug;
+        productSlug = remapped.productSlug;
       }
 
       const vendorPath = join(targetDir, "vendors", vendorSlug);
