@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Super Review (fabric earpads)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 3.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5049,
+        "gain_db": 5.3,
+        "q": 3.39
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 198,
+        "gain_db": -1.9,
+        "q": 1.47
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 837,
+        "gain_db": -1.9,
+        "q": 1.27
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1933,
+        "gain_db": 2.3,
+        "q": 2.67
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -4.2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 63,
+        "gain_db": -0.2,
+        "q": 1.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2877,
+        "gain_db": -0.6,
+        "q": 5.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5348,
+        "gain_db": 1,
+        "q": 5.53
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 237,
+        "gain_db": 0.1,
+        "q": 6
+      }
+    ]
+  }
+}

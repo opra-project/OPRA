@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by crinacle (m20 Apex module)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -4.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 534,
+        "gain_db": 2,
+        "q": 1.14
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 177,
+        "gain_db": -2.6,
+        "q": 2.04
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9422,
+        "gain_db": 2,
+        "q": 4.19
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3235,
+        "gain_db": 3.7,
+        "q": 5.04
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 1.1,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1683,
+        "gain_db": -1.6,
+        "q": 2.36
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4968,
+        "gain_db": -4.2,
+        "q": 5.87
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 69,
+        "gain_db": 0.6,
+        "q": 1.69
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 904,
+        "gain_db": 0.7,
+        "q": 2.13
+      }
+    ]
+  }
+}

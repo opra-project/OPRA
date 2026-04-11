@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Kuulokenurkka (ANC off)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -6.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 108,
+        "gain_db": -9.1,
+        "q": 1.39
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1757,
+        "gain_db": 4.8,
+        "q": 1.45
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 297,
+        "gain_db": 3.3,
+        "q": 1.89
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6030,
+        "gain_db": -6.7,
+        "q": 4.99
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -2.2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3304,
+        "gain_db": -5,
+        "q": 4.24
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2572,
+        "gain_db": 2.7,
+        "q": 4.39
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 59,
+        "gain_db": 1.6,
+        "q": 4.34
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4372,
+        "gain_db": 3.2,
+        "q": 5.92
+      }
+    ]
+  }
+}

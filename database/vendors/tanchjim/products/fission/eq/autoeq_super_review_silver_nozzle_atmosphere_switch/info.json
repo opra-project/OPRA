@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Super Review (silver nozzle, atmosphere switch)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 2.8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 165,
+        "gain_db": -3.4,
+        "q": 0.55
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 777,
+        "gain_db": 2.3,
+        "q": 0.96
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6097,
+        "gain_db": 2.5,
+        "q": 2.96
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2329,
+        "gain_db": 1.1,
+        "q": 1.9
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -2.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8648,
+        "gain_db": 1.3,
+        "q": 4.67
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3588,
+        "gain_db": -0.4,
+        "q": 3.65
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 38,
+        "gain_db": -0.1,
+        "q": 1.88
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2898,
+        "gain_db": 0.4,
+        "q": 5.6
+      }
+    ]
+  }
+}

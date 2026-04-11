@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Jaytiss (on-on-off)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -3.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 155,
+        "gain_db": -3.8,
+        "q": 0.65
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 494,
+        "gain_db": 2.7,
+        "q": 0.84
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4280,
+        "gain_db": 3.8,
+        "q": 3.67
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9311,
+        "gain_db": 1.9,
+        "q": 3.12
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2152,
+        "gain_db": 1.6,
+        "q": 3.57
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6434,
+        "gain_db": -1.9,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1302,
+        "gain_db": -0.7,
+        "q": 2.63
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2883,
+        "gain_db": -1.2,
+        "q": 5.52
+      }
+    ]
+  }
+}

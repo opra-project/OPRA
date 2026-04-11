@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Fahryst (rosegold nozzle)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -0.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 165,
+        "gain_db": -2.4,
+        "q": 1.07
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6118,
+        "gain_db": 3.8,
+        "q": 3.57
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 637,
+        "gain_db": 1.4,
+        "q": 1.91
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3519,
+        "gain_db": 2.1,
+        "q": 2.7
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -7.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1651,
+        "gain_db": -1.3,
+        "q": 2.84
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8670,
+        "gain_db": 2.2,
+        "q": 1.69
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 873,
+        "gain_db": 0.4,
+        "q": 2.93
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 62,
+        "gain_db": 0.3,
+        "q": 2.16
+      }
+    ]
+  }
+}

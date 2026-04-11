@@ -1,10 +1,10 @@
 {
   "author": "oratory1990",
   "details": "Harman Target",
-  "link": "https://www.dropbox.com/s/u362h1ox53emcw1/Austrian%20Audio%20Hi-X65.pdf?dl=0",
+  "link": "https://www.dropbox.com/scl/fi/xld7zqkjammrhuh9916w7/Austrian-Audio-Hi-X65.pdf?rlkey=4a2vbjg1tr9a3gibcdcdgfxzd&dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -5.5,
+    "gain_db": -6.5,
     "bands": [
       {
         "type": "low_shelf",
@@ -15,55 +15,55 @@
       {
         "type": "peak_dip",
         "frequency": 250,
-        "gain_db": -2.6,
+        "gain_db": -2.7,
         "q": 0.5
       },
       {
-        "type": "peak_dip",
-        "frequency": 1000,
-        "gain_db": -3,
-        "q": 0.7
+        "type": "low_shelf",
+        "frequency": 500,
+        "gain_db": 0,
+        "q": 0.71
       },
       {
         "type": "peak_dip",
-        "frequency": 1720,
-        "gain_db": 7.8,
-        "q": 1
+        "frequency": 600,
+        "gain_db": -0.7,
+        "q": 1.2
       },
       {
         "type": "peak_dip",
-        "frequency": 2200,
-        "gain_db": -1.2,
-        "q": 5
+        "frequency": 1700,
+        "gain_db": 7,
+        "q": 1.4
       },
       {
         "type": "peak_dip",
         "frequency": 2800,
-        "gain_db": -3.6,
+        "gain_db": -2.4,
         "q": 3
       },
       {
         "type": "peak_dip",
-        "frequency": 4250,
-        "gain_db": -2.1,
-        "q": 5
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 5700,
-        "gain_db": -2.4,
-        "q": 4.5
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 6400,
-        "gain_db": -2.7,
+        "frequency": 4200,
+        "gain_db": -1,
         "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5800,
+        "gain_db": -2,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6900,
+        "gain_db": -2.3,
+        "q": 5
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": -2,
+        "gain_db": 0,
         "q": 0.71
       }
     ]
