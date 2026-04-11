@@ -198,7 +198,7 @@ export async function importAutoEQ(
     };
 
     // Check if EQ already exists and compare content
-    const newJson = JSON.stringify(eqInfo, null, 2);
+    const newJson = JSON.stringify(eqInfo, null, 2) + "\n";
 
     if (await exists(eqInfoPath)) {
       let existingJson: string;
@@ -211,7 +211,7 @@ export async function importAutoEQ(
         stats.errors++;
         continue;
       }
-      if (existingJson === newJson) {
+      if (existingJson.trimEnd() === newJson.trimEnd()) {
         stats.unchangedEqs++;
         log(`    Unchanged: ${eqInfoPath}`);
       } else {
@@ -256,7 +256,7 @@ export async function importAutoEQ(
 
         try {
           await Deno.mkdir(productPath, { recursive: true });
-          await Deno.writeTextFile(productInfoPath, JSON.stringify(productInfo, null, 2));
+          await Deno.writeTextFile(productInfoPath, JSON.stringify(productInfo, null, 2) + "\n");
           stats.newProducts++;
           log(`    Wrote Product info.json at "${productInfoPath}"`);
         } catch (error) {
@@ -279,7 +279,7 @@ export async function importAutoEQ(
         };
 
         try {
-          await Deno.writeTextFile(vendorInfoPath, JSON.stringify(vendorInfo, null, 2));
+          await Deno.writeTextFile(vendorInfoPath, JSON.stringify(vendorInfo, null, 2) + "\n");
           stats.newVendors++;
           log(`    Wrote Vendor info.json at "${vendorInfoPath}"`);
         } catch (error) {
