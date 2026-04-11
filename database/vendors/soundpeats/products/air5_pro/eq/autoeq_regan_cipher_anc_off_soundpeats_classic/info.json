@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Regan Cipher (ANC off, SoundPEATS Classic)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.3,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -2.2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1688,
+        "gain_db": -6,
+        "q": 1.08
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5234,
+        "gain_db": 5.2,
+        "q": 2.58
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 158,
+        "gain_db": 4.8,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2710,
+        "gain_db": 5.3,
+        "q": 1.92
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -7.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9111,
+        "gain_db": 2.2,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 315,
+        "gain_db": -1.1,
+        "q": 2.98
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 41,
+        "gain_db": 0.7,
+        "q": 2.09
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 65,
+        "gain_db": -1.1,
+        "q": 3.19
+      }
+    ]
+  }
+}

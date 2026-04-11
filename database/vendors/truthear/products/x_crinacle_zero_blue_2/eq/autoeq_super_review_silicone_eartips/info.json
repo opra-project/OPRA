@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Super Review (silicone eartips)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2.4,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -4.8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2571,
+        "gain_db": 2.9,
+        "q": 1.9
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4421,
+        "gain_db": -1.7,
+        "q": 1.16
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 101,
+        "gain_db": 1.9,
+        "q": 0.36
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 127,
+        "gain_db": -1.9,
+        "q": 1.56
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -9.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9196,
+        "gain_db": 4.2,
+        "q": 1.96
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1377,
+        "gain_db": -0.5,
+        "q": 2.19
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 843,
+        "gain_db": 0.6,
+        "q": 2.38
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 453,
+        "gain_db": -0.2,
+        "q": 2.08
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by ToneDeafMonk (USB cable)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -1.4,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -0.8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 209,
+        "gain_db": -2.9,
+        "q": 0.87
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 481,
+        "gain_db": 2,
+        "q": 0.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6721,
+        "gain_db": 2.4,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3961,
+        "gain_db": -4.3,
+        "q": 1.66
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -4.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 71,
+        "gain_db": 0.7,
+        "q": 1.58
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 123,
+        "gain_db": -0.5,
+        "q": 2.22
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1263,
+        "gain_db": -0.4,
+        "q": 2.72
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2096,
+        "gain_db": 0.5,
+        "q": 3.16
+      }
+    ]
+  }
+}

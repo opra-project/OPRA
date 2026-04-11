@@ -3,67 +3,67 @@
   "details": "Measured by Rtings",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -6.4,
+    "gain_db": -6.5,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
-        "gain_db": 8,
+        "gain_db": 6.7,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 88,
-        "gain_db": -8.4,
-        "q": 0.25
+        "frequency": 235,
+        "gain_db": -4.9,
+        "q": 0.39
       },
       {
         "type": "peak_dip",
-        "frequency": 587,
-        "gain_db": 5.5,
-        "q": 0.7
+        "frequency": 597,
+        "gain_db": 5.8,
+        "q": 1
       },
       {
         "type": "peak_dip",
-        "frequency": 8769,
-        "gain_db": -9.6,
-        "q": 1.44
+        "frequency": 5303,
+        "gain_db": 7.3,
+        "q": 1.74
       },
       {
         "type": "peak_dip",
-        "frequency": 5146,
-        "gain_db": 8.4,
-        "q": 1.47
+        "frequency": 8484,
+        "gain_db": -6,
+        "q": 1.2
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": 2,
+        "gain_db": 4.5,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 128,
-        "gain_db": 1.1,
-        "q": 1.62
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 243,
-        "gain_db": -1,
-        "q": 2.26
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 64,
-        "gain_db": -0.7,
-        "q": 1.56
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 1716,
-        "gain_db": 0.4,
+        "frequency": 56,
+        "gain_db": 0.8,
         "q": 2.17
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 91,
+        "gain_db": -1.1,
+        "q": 2.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 176,
+        "gain_db": 0.8,
+        "q": 2.47
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 279,
+        "gain_db": -0.6,
+        "q": 2.16
       }
     ]
   }

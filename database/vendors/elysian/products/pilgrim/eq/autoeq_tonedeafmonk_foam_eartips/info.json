@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by ToneDeafMonk (foam eartips)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -2.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 267,
+        "gain_db": -1.7,
+        "q": 0.59
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6342,
+        "gain_db": 3.6,
+        "q": 3.48
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 70,
+        "gain_db": 2.9,
+        "q": 0.73
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3271,
+        "gain_db": 2.2,
+        "q": 3.34
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1436,
+        "gain_db": -1.4,
+        "q": 2.43
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 885,
+        "gain_db": 0.9,
+        "q": 2.19
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8463,
+        "gain_db": 1.7,
+        "q": 4.51
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4716,
+        "gain_db": -1.2,
+        "q": 6
+      }
+    ]
+  }
+}

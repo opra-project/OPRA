@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Super Review (ZMF Caldera Ultra-Perf earpads)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.9,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 7.8,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 59,
+        "gain_db": -4.4,
+        "q": 0.44
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4612,
+        "gain_db": 5.3,
+        "q": 3.68
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1993,
+        "gain_db": 3.2,
+        "q": 3.97
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1178,
+        "gain_db": -1.8,
+        "q": 1.81
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -5.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3007,
+        "gain_db": -2.8,
+        "q": 3.32
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3993,
+        "gain_db": 2.1,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2252,
+        "gain_db": 1.5,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 632,
+        "gain_db": 0.4,
+        "q": 1.72
+      }
+    ]
+  }
+}

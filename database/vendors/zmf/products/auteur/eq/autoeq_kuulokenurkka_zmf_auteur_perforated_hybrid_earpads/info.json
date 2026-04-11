@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Kuulokenurkka (ZMF Auteur perforated hybrid earpads)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 7.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 111,
+        "gain_db": -5.7,
+        "q": 0.26
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6761,
+        "gain_db": 8.7,
+        "q": 0.68
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1726,
+        "gain_db": 4.3,
+        "q": 2.86
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5535,
+        "gain_db": -14.4,
+        "q": 3.87
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -1.3,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 592,
+        "gain_db": 0.7,
+        "q": 3.81
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 53,
+        "gain_db": -0.3,
+        "q": 1.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2967,
+        "gain_db": -1.3,
+        "q": 5.75
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2333,
+        "gain_db": 0.9,
+        "q": 4.09
+      }
+    ]
+  }
+}

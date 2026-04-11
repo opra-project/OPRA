@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Kazi (red circle nozzle)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.7,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -3.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2989,
+        "gain_db": 5.6,
+        "q": 1.32
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1779,
+        "gain_db": -6.5,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 184,
+        "gain_db": -2.7,
+        "q": 1.22
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5622,
+        "gain_db": 4,
+        "q": 0.84
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -6.2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9559,
+        "gain_db": 3.5,
+        "q": 2.59
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 68,
+        "gain_db": 1,
+        "q": 1.87
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 685,
+        "gain_db": 0.9,
+        "q": 2.12
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 123,
+        "gain_db": -0.7,
+        "q": 2.4
+      }
+    ]
+  }
+}

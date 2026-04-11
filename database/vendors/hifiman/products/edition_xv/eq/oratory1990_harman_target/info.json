@@ -4,7 +4,7 @@
   "link": "https://www.dropbox.com/scl/fi/juamfwbmztosf3samuz44/Hifiman-Edition-XV.pdf?rlkey=frqjms1sflvirkbiueahiniiw&dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -5.5,
+    "gain_db": -5.6,
     "bands": [
       {
         "type": "low_shelf",
@@ -14,57 +14,39 @@
       },
       {
         "type": "peak_dip",
-        "frequency": 220,
-        "gain_db": -2.3,
-        "q": 1.6
+        "frequency": 900,
+        "gain_db": -1.3,
+        "q": 1.4
       },
       {
         "type": "peak_dip",
-        "frequency": 280,
-        "gain_db": 2,
-        "q": 3
+        "frequency": 2000,
+        "gain_db": 4.7,
+        "q": 1.2
       },
       {
         "type": "peak_dip",
-        "frequency": 450,
-        "gain_db": -2.2,
-        "q": 4
+        "frequency": 2850,
+        "gain_db": -4.7,
+        "q": 1.9
       },
       {
-        "type": "peak_dip",
-        "frequency": 520,
-        "gain_db": 1.5,
-        "q": 2.5
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 690,
-        "gain_db": -2.5,
-        "q": 4.5
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 970,
-        "gain_db": -2.5,
-        "q": 4
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 1900,
-        "gain_db": 4.3,
-        "q": 1
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 2950,
-        "gain_db": -4,
-        "q": 2.3
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 5,
+        "q": 0.35
       },
       {
         "type": "peak_dip",
         "frequency": 5000,
-        "gain_db": 2.5,
-        "q": 2
+        "gain_db": 2,
+        "q": 1.4
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -5,
+        "q": 0.71
       }
     ]
   }

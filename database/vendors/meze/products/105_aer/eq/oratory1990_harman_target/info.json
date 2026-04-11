@@ -4,13 +4,13 @@
   "link": "https://www.dropbox.com/scl/fi/xa9qoixuxgna0zq0ihq9y/Meze-105-Aer.pdf?rlkey=8acm180d4uzn5jokzox9cbwra&dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -4.2,
+    "gain_db": -4.3,
     "bands": [
       {
         "type": "peak_dip",
-        "frequency": 80,
+        "frequency": 85,
         "gain_db": -3.7,
-        "q": 0.4
+        "q": 0.45
       },
       {
         "type": "low_shelf",
@@ -33,25 +33,25 @@
       {
         "type": "peak_dip",
         "frequency": 3000,
-        "gain_db": -2,
+        "gain_db": -2.6,
         "q": 4
       },
       {
         "type": "high_shelf",
         "frequency": 3000,
-        "gain_db": -2,
+        "gain_db": 0,
         "q": 0.35
       },
       {
         "type": "peak_dip",
         "frequency": 4000,
-        "gain_db": -2.5,
+        "gain_db": -3.7,
         "q": 5.5
       },
       {
         "type": "peak_dip",
         "frequency": 5750,
-        "gain_db": -2.5,
+        "gain_db": -4.6,
         "q": 4
       },
       {

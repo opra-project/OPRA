@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by crinacle (Harman DSP)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -7.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 387,
+        "gain_db": 3.3,
+        "q": 1.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5441,
+        "gain_db": -3.9,
+        "q": 1.68
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 66,
+        "gain_db": 5.7,
+        "q": 0.63
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1153,
+        "gain_db": -0.6,
+        "q": 0.18
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -3.1,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9831,
+        "gain_db": 1.8,
+        "q": 2.52
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2667,
+        "gain_db": -1.1,
+        "q": 3.85
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1612,
+        "gain_db": 0.9,
+        "q": 2.36
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1110,
+        "gain_db": -0.5,
+        "q": 2.89
+      }
+    ]
+  }
+}

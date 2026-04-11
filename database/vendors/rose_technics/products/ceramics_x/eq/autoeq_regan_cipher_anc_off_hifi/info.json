@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Regan Cipher (ANC off, Hifi)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -1.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6146,
+        "gain_db": 5.9,
+        "q": 3.27
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2241,
+        "gain_db": -3.8,
+        "q": 1.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 134,
+        "gain_db": -3,
+        "q": 1.44
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4216,
+        "gain_db": 6.7,
+        "q": 2.33
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -8.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 659,
+        "gain_db": 2.1,
+        "q": 1.14
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1267,
+        "gain_db": -1.6,
+        "q": 2.53
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7241,
+        "gain_db": 2.9,
+        "q": 4.79
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 259,
+        "gain_db": -0.8,
+        "q": 3.71
+      }
+    ]
+  }
+}
