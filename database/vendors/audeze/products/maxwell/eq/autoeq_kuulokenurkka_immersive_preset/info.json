@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Kuulokenurkka (immersive preset)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -1.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 35,
+        "gain_db": -4.4,
+        "q": 1.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 629,
+        "gain_db": 1.9,
+        "q": 1.74
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 141,
+        "gain_db": -1.6,
+        "q": 0.67
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8073,
+        "gain_db": 3.1,
+        "q": 3.81
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -4.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3025,
+        "gain_db": -3.2,
+        "q": 4.73
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 58,
+        "gain_db": 1.9,
+        "q": 5.31
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 76,
+        "gain_db": -0.8,
+        "q": 3.78
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 45,
+        "gain_db": -0.9,
+        "q": 4.69
+      }
+    ]
+  }
+}

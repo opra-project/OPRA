@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Super Review (silver nozzle, natural switch)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -6.1,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 6.2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 198,
+        "gain_db": -2.9,
+        "q": 0.58
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 776,
+        "gain_db": 1.8,
+        "q": 0.78
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 69,
+        "gain_db": 1.7,
+        "q": 2.38
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6039,
+        "gain_db": 2,
+        "q": 3.56
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -3.2,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2487,
+        "gain_db": 0.8,
+        "q": 2.25
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3605,
+        "gain_db": -0.7,
+        "q": 3.37
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1373,
+        "gain_db": -0.4,
+        "q": 2.83
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8589,
+        "gain_db": 1.1,
+        "q": 5.33
+      }
+    ]
+  }
+}

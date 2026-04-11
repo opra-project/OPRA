@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Hi End Portable (HiFi)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.9,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 0,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4923,
+        "gain_db": 5.6,
+        "q": 0.95
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 147,
+        "gain_db": -3.1,
+        "q": 0.93
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1776,
+        "gain_db": -3.6,
+        "q": 1.1
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 688,
+        "gain_db": 2.1,
+        "q": 1.36
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -7.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6493,
+        "gain_db": 2.7,
+        "q": 2.46
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4680,
+        "gain_db": -2.4,
+        "q": 4.97
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3440,
+        "gain_db": 1.6,
+        "q": 3.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2510,
+        "gain_db": -0.9,
+        "q": 3.85
+      }
+    ]
+  }
+}

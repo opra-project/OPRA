@@ -8,7 +8,7 @@
     "bands": [
       {
         "type": "low_shelf",
-        "frequency": 33,
+        "frequency": 35,
         "gain_db": 4,
         "q": 0.8
       },
@@ -21,36 +21,48 @@
       {
         "type": "peak_dip",
         "frequency": 750,
-        "gain_db": 1.4,
+        "gain_db": 1.6,
         "q": 0.5
       },
       {
         "type": "peak_dip",
         "frequency": 1300,
-        "gain_db": -2.5,
+        "gain_db": -2.7,
         "q": 1.3
       },
       {
         "type": "peak_dip",
         "frequency": 1950,
-        "gain_db": 2.3,
+        "gain_db": 2.7,
         "q": 1.4
       },
       {
         "type": "high_shelf",
         "frequency": 3000,
-        "gain_db": 3.5,
+        "gain_db": 4,
         "q": 0.35
       },
       {
         "type": "peak_dip",
+        "frequency": 3400,
+        "gain_db": -1.1,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
         "frequency": 5000,
-        "gain_db": -1.5,
+        "gain_db": -1.7,
+        "q": 4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6000,
+        "gain_db": -1,
         "q": 4
       },
       {
         "type": "high_shelf",
-        "frequency": 8000,
+        "frequency": 10000,
         "gain_db": -1.7,
         "q": 0.71
       }

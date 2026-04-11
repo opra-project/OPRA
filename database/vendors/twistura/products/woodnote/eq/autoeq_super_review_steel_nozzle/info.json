@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Super Review (steel nozzle)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.7,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 1.5,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 162,
+        "gain_db": -3.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 900,
+        "gain_db": 2.6,
+        "q": 0.65
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6737,
+        "gain_db": 3.6,
+        "q": 2.62
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 320,
+        "gain_db": -1,
+        "q": 0.95
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -3.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9144,
+        "gain_db": 2.2,
+        "q": 2.62
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3349,
+        "gain_db": -1.7,
+        "q": 2.93
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2149,
+        "gain_db": 1.3,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1316,
+        "gain_db": -0.5,
+        "q": 2.9
+      }
+    ]
+  }
+}

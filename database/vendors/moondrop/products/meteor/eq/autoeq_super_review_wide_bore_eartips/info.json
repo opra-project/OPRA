@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Super Review (wide bore eartips)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -3.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -2.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 185,
+        "gain_db": -1.9,
+        "q": 0.63
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7175,
+        "gain_db": 3.4,
+        "q": 0.64
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 66,
+        "gain_db": 3.1,
+        "q": 0.73
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1388,
+        "gain_db": -2.2,
+        "q": 2.06
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 1.6,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3035,
+        "gain_db": -0.9,
+        "q": 3.61
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5020,
+        "gain_db": 0.7,
+        "q": 2.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7027,
+        "gain_db": -1.6,
+        "q": 5.95
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 807,
+        "gain_db": 0.4,
+        "q": 2.98
+      }
+    ]
+  }
+}

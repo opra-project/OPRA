@@ -1,0 +1,70 @@
+{
+  "author": "AutoEQ",
+  "details": "Measured by Kuulokenurkka (treble boost preset)",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.8,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": -1.9,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8405,
+        "gain_db": 4.2,
+        "q": 3.54
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3137,
+        "gain_db": -2.8,
+        "q": 2.44
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 170,
+        "gain_db": -1.7,
+        "q": 1.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 644,
+        "gain_db": 1.4,
+        "q": 1.72
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -5.4,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 57,
+        "gain_db": 3.5,
+        "q": 4.14
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 41,
+        "gain_db": -2.4,
+        "q": 2.95
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6025,
+        "gain_db": -2,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7785,
+        "gain_db": 3.1,
+        "q": 5.47
+      }
+    ]
+  }
+}

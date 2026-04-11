@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • batch IM12xxx",
+  "link": "https://www.dropbox.com/scl/fi/p5gbpwm6o118d6tlh2bu9/Slate-Audio-VSX-Immersion-One-batch-12.pdf?rlkey=wuqjcx1twzpyc0suvtvik6zmj&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -2,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 40,
+        "gain_db": 3,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 435,
+        "gain_db": 2.5,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1150,
+        "gain_db": -7,
+        "q": 3.5
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 1300,
+        "gain_db": -9,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1700,
+        "gain_db": 6,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2760,
+        "gain_db": -3.8,
+        "q": 2.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3770,
+        "gain_db": -6.4,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6000,
+        "gain_db": 2,
+        "q": 2
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 9000,
+        "gain_db": -10,
+        "q": 0.71
+      }
+    ]
+  }
+}

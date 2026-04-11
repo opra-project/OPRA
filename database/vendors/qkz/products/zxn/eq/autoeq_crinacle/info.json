@@ -3,67 +3,67 @@
   "details": "Measured by crinacle",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -3.9,
+    "gain_db": -3.1,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
-        "gain_db": 0.2,
+        "gain_db": -3.8,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 161,
-        "gain_db": -4.9,
-        "q": 0.58
+        "frequency": 739,
+        "gain_db": 3.4,
+        "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 877,
-        "gain_db": 4.3,
-        "q": 1.17
+        "frequency": 183,
+        "gain_db": -4.4,
+        "q": 1.24
       },
       {
         "type": "peak_dip",
-        "frequency": 7042,
-        "gain_db": 3.5,
-        "q": 0.65
+        "frequency": 5063,
+        "gain_db": -6.2,
+        "q": 3.58
       },
       {
         "type": "peak_dip",
-        "frequency": 5081,
-        "gain_db": -5.5,
-        "q": 4.99
+        "frequency": 3627,
+        "gain_db": 3,
+        "q": 3.64
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": -4.6,
+        "gain_db": -0.4,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 2568,
-        "gain_db": -1.5,
-        "q": 3.65
+        "frequency": 2037,
+        "gain_db": -0.7,
+        "q": 1.87
       },
       {
         "type": "peak_dip",
-        "frequency": 3577,
+        "frequency": 1178,
+        "gain_db": 0.8,
+        "q": 3.02
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 500,
+        "gain_db": -0.7,
+        "q": 2.16
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 394,
         "gain_db": 1.4,
-        "q": 3.62
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 6405,
-        "gain_db": 1.5,
-        "q": 6
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 40,
-        "gain_db": -0.3,
-        "q": 2.41
+        "q": 4.81
       }
     ]
   }

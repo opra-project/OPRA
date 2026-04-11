@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/h4cpfnlkbtdo8jha6tlv3/Austrian-Audio-The-Arranger.pdf?rlkey=qi4jqr0npp4i29dr30prmig5f&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 380,
+        "gain_db": -6,
+        "q": 0.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": -1,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1625,
+        "gain_db": 4.5,
+        "q": 1.3
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": 0,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2800,
+        "gain_db": -2.3,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3500,
+        "gain_db": 1.5,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": -1,
+        "q": 5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5370,
+        "gain_db": -3.7,
+        "q": 6
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 1,
+        "q": 0.71
+      }
+    ]
+  }
+}
