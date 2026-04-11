@@ -38,7 +38,7 @@ export interface ImportResult {
 export interface ImportOptions {
   csvPath: string;
   cacheDir?: string;
-  concurrency?: number; // Max parallel downloads (default: 8)
+  concurrency?: number; // Max parallel downloads (default: 3)
   dryRun?: boolean;
   verbose?: boolean;
   onProgress?: (message: string) => void;
@@ -62,6 +62,8 @@ const DEFAULT_CACHE_DIR = join(
   "opra",
   "oratory_pdfs"
 );
+
+const PDF_MAGIC = new Uint8Array([0x25, 0x50, 0x44, 0x46, 0x2D]); // %PDF-
 
 // =============================================================================
 // Helpers
@@ -164,11 +166,21 @@ async function downloadPdf(
 
   const localPath = join(cacheDir, filename);
 
-  // Check cache
+  // Check cache — validate it's actually a PDF (previous runs may have cached HTML)
   try {
-    await Deno.stat(localPath);
-    log(`  Cached: ${filename}`);
-    return localPath;
+    const file = await Deno.open(localPath, { read: true });
+    try {
+      const header = new Uint8Array(5);
+      const bytesRead = await file.read(header);
+      if (bytesRead === 5 && PDF_MAGIC.every((b, i) => header[i] === b)) {
+        log(`  Cached: ${filename}`);
+        return localPath;
+      }
+    } finally {
+      file.close();
+    }
+    log(`  Stale cache (not a valid PDF), re-downloading: ${filename}`);
+    await Deno.remove(localPath);
   } catch {
     // Not cached, download
   }
@@ -194,8 +206,22 @@ async function downloadPdf(
       }
 
       const data = new Uint8Array(await response.arrayBuffer());
+
+      // Validate the response is actually a PDF (Dropbox returns HTML on rate limit)
+      const isPdf = data.length >= 5 && PDF_MAGIC.every((b, i) => data[i] === b);
+      if (!isPdf) {
+        if (attempt === 3) {
+          log(`  Not a valid PDF (likely rate-limited): ${filename}`);
+          return null;
+        }
+        await new Promise((r) => setTimeout(r, 2000 * attempt));
+        continue;
+      }
+
       await Deno.writeFile(localPath, data);
       log(`  Downloaded: ${filename} (${(data.length / 1024).toFixed(1)}KB)`);
+      // Delay after successful download to avoid Dropbox rate limiting
+      await new Promise((r) => setTimeout(r, 300));
       return localPath;
     } catch (err) {
       if (attempt === 3) {
@@ -354,7 +380,7 @@ export async function importOratory(
   const {
     csvPath,
     cacheDir = DEFAULT_CACHE_DIR,
-    concurrency = 8,
+    concurrency = 3,
     dryRun = false,
     verbose = false,
     onProgress,
@@ -500,12 +526,12 @@ export async function importOratory(
 
       // Build the new EQ info
       const eqInfo = convertToEQInfo(eqData, targetCurve, comment, link);
-      const newJson = JSON.stringify(eqInfo, null, 2);
+      const newJson = JSON.stringify(eqInfo, null, 2) + "\n";
 
       // Check if EQ already exists and compare
       if (await exists(eqInfoPath)) {
         const existingJson = await Deno.readTextFile(eqInfoPath);
-        if (existingJson === newJson) {
+        if (existingJson.trimEnd() === newJson.trimEnd()) {
           log(`  Unchanged: ${eqSlug}`);
           stats.unchangedEqs++;
           continue;
@@ -525,7 +551,7 @@ export async function importOratory(
         const vendorInfoPath = join(vendorPath, "info.json");
         if (!(await exists(vendorInfoPath))) {
           const vendorInfo: VendorInfo = { name: canonicalBrand };
-          await Deno.writeTextFile(vendorInfoPath, JSON.stringify(vendorInfo, null, 2));
+          await Deno.writeTextFile(vendorInfoPath, JSON.stringify(vendorInfo, null, 2) + "\n");
           stats.newVendors++;
           log(`  Created vendor: ${canonicalBrand}`);
         }
@@ -548,7 +574,7 @@ export async function importOratory(
             type: "headphones",
             subtype: finalSubtype,
           };
-          await Deno.writeTextFile(productInfoPath, JSON.stringify(productInfo, null, 2));
+          await Deno.writeTextFile(productInfoPath, JSON.stringify(productInfo, null, 2) + "\n");
           stats.newProducts++;
           if (finalSubtype === "unknown") {
             unknownTypes.push(productKey);
