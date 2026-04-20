@@ -1,6 +1,6 @@
 {
   "author": "AS PEQ",
-  "details": "Converted from a Roon PEQ preset for Fir Xenon 6.",
+  "details": "Subjective listening-based PEQ for Fir Xenon 6, intended to preserve its core character while smoothing treble and lightly balancing bass.",
   "type": "parametric_eq",
   "parameters": {
     "gain_db": -6.0,
