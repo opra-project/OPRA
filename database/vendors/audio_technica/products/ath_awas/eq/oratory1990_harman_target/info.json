@@ -1,0 +1,65 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/cwy8x0ud8ytcsoi0yx1bq/Audio-Technica-ATH-AWAS.pdf?rlkey=v2htyr3l4t8e30gl9tnqio721&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -8.6,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 47,
+        "gain_db": 3,
+        "q": 0.9
+      },
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 107,
+        "gain_db": -3.3,
+        "q": 1.2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 240,
+        "gain_db": 4,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 330,
+        "gain_db": -2.1,
+        "q": 1.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1760,
+        "gain_db": -1.7,
+        "q": 1.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2000,
+        "gain_db": 4,
+        "q": 0.6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4250,
+        "gain_db": -5,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": -3,
+        "q": 0.71
+      }
+    ]
+  }
+}
