@@ -65,6 +65,39 @@ const DEFAULT_CACHE_DIR = join(
 
 const PDF_MAGIC = new Uint8Array([0x25, 0x50, 0x44, 0x46, 0x2D]); // %PDF-
 
+const MAX_DOWNLOAD_ATTEMPTS = 5;
+// Backoff schedule (ms) applied between failed attempts:
+//   attempt 1 fails -> wait 4s, attempt 2 fails -> wait 8s, etc.
+//   With 5 max attempts, longest possible backoff is between attempts 4 and 5 (16s).
+const BACKOFF_MS = (attempt: number) => 4_000 * attempt;
+
+// HTTP statuses that indicate transient throttling/server issues worth a global cooldown.
+// Permanent errors (404, 403, etc.) shouldn't pause other workers.
+function isTransientStatus(status: number): boolean {
+  return status === 408 || status === 429 || status >= 500;
+}
+
+// Global cooldown: when one worker hits throttling, all workers pause until this timestamp.
+// Uses performance.now() to avoid wall-clock jumps from NTP adjustments.
+// Monotonic — only extended, never shortened.
+let globalPauseUntilMs = 0;
+
+function triggerGlobalCooldown(durationMs: number, reason: string, statusLog: (msg: string) => void): void {
+  const newPauseUntil = performance.now() + durationMs;
+  if (newPauseUntil > globalPauseUntilMs) {
+    globalPauseUntilMs = newPauseUntil;
+    statusLog(`  Global cooldown: ${(durationMs / 1000).toFixed(0)}s (${reason})`);
+  }
+}
+
+async function waitForGlobalCooldown(): Promise<void> {
+  while (true) {
+    const remaining = globalPauseUntilMs - performance.now();
+    if (remaining <= 0) return;
+    await new Promise((r) => setTimeout(r, remaining));
+  }
+}
+
 // =============================================================================
 // Helpers
 // =============================================================================
@@ -152,15 +185,19 @@ function buildDetails(targetCurve: string, comment: string): string {
 
 /**
  * Download a PDF from Dropbox with retry and caching.
+ *
+ * @param progressLog per-URL progress messages (Cached, Downloading, Downloaded, etc.)
+ * @param statusLog out-of-band status (cooldowns, etc.) — does not contribute to progress counts
  */
 async function downloadPdf(
   url: string,
   cacheDir: string,
-  log: (msg: string) => void
+  progressLog: (msg: string) => void,
+  statusLog: (msg: string) => void,
 ): Promise<string | null> {
   const filename = extractFilenameFromUrl(url);
   if (!filename) {
-    log(`  Could not extract filename from URL: ${url}`);
+    progressLog(`  Could not extract filename from URL: ${url}`);
     return null;
   }
 
@@ -173,22 +210,25 @@ async function downloadPdf(
       const header = new Uint8Array(5);
       const bytesRead = await file.read(header);
       if (bytesRead === 5 && PDF_MAGIC.every((b, i) => header[i] === b)) {
-        log(`  Cached: ${filename}`);
+        progressLog(`  Cached: ${filename}`);
         return localPath;
       }
     } finally {
       file.close();
     }
-    log(`  Stale cache (not a valid PDF), re-downloading: ${filename}`);
+    progressLog(`  Stale cache (not a valid PDF), re-downloading: ${filename}`);
     await Deno.remove(localPath);
   } catch {
     // Not cached, download
   }
 
   const directUrl = toDirectDownloadUrl(url);
-  log(`  Downloading: ${filename}`);
+  progressLog(`  Downloading: ${filename}`);
 
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  for (let attempt = 1; attempt <= MAX_DOWNLOAD_ATTEMPTS; attempt++) {
+    // Honor any active global cooldown before attempting
+    await waitForGlobalCooldown();
+
     try {
       const response = await fetch(directUrl, {
         headers: {
@@ -197,11 +237,14 @@ async function downloadPdf(
       });
 
       if (!response.ok) {
-        if (attempt === 3) {
-          log(`  HTTP ${response.status}: ${response.statusText}`);
+        if (attempt === MAX_DOWNLOAD_ATTEMPTS) {
+          progressLog(`  HTTP ${response.status}: ${response.statusText}`);
           return null;
         }
-        await new Promise((r) => setTimeout(r, 1000 * attempt));
+        // Only pause all workers for transient errors — permanent ones (404, etc.) shouldn't.
+        if (isTransientStatus(response.status)) {
+          triggerGlobalCooldown(BACKOFF_MS(attempt), `HTTP ${response.status} for ${filename}`, statusLog);
+        }
         continue;
       }
 
@@ -210,25 +253,25 @@ async function downloadPdf(
       // Validate the response is actually a PDF (Dropbox returns HTML on rate limit)
       const isPdf = data.length >= 5 && PDF_MAGIC.every((b, i) => data[i] === b);
       if (!isPdf) {
-        if (attempt === 3) {
-          log(`  Not a valid PDF (likely rate-limited): ${filename}`);
+        if (attempt === MAX_DOWNLOAD_ATTEMPTS) {
+          progressLog(`  Not a valid PDF (likely rate-limited): ${filename}`);
           return null;
         }
-        await new Promise((r) => setTimeout(r, 2000 * attempt));
+        triggerGlobalCooldown(BACKOFF_MS(attempt), `non-PDF response for ${filename}`, statusLog);
         continue;
       }
 
       await Deno.writeFile(localPath, data);
-      log(`  Downloaded: ${filename} (${(data.length / 1024).toFixed(1)}KB)`);
+      progressLog(`  Downloaded: ${filename} (${(data.length / 1024).toFixed(1)}KB)`);
       // Delay after successful download to avoid Dropbox rate limiting
       await new Promise((r) => setTimeout(r, 300));
       return localPath;
     } catch (err) {
-      if (attempt === 3) {
-        log(`  Network error: ${err instanceof Error ? err.message : String(err)}`);
+      if (attempt === MAX_DOWNLOAD_ATTEMPTS) {
+        progressLog(`  Network error: ${err instanceof Error ? err.message : String(err)}`);
         return null;
       }
-      await new Promise((r) => setTimeout(r, 1000 * attempt));
+      triggerGlobalCooldown(BACKOFF_MS(attempt), `network error for ${filename}`, statusLog);
     }
   }
 
@@ -257,9 +300,14 @@ async function downloadAllPdfs(
       const url = queue.shift();
       if (!url) return;
       try {
-        const path = await downloadPdf(url, cacheDir, (msg) => {
-          log(`  [${++completed}/${total}] ${msg.trimStart()}`);
-        });
+        const path = await downloadPdf(
+          url,
+          cacheDir,
+          // progressLog: prefixed with running count
+          (msg) => log(`  [${++completed}/${total}] ${msg.trimStart()}`),
+          // statusLog: out-of-band (cooldowns) — does not advance the progress counter
+          (msg) => log(msg),
+        );
         results.set(url, path);
       } catch {
         results.set(url, null);
