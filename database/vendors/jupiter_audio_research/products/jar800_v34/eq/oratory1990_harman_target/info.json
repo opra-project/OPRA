@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target",
+  "link": "https://www.dropbox.com/scl/fi/x4cn1q4exkx565lewgu4k/Jupiter-Audio-Research-JAR800-v3.4.pdf?rlkey=9kl2qq0smj80dgkpzv76rw47s&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -5.5,
+    "bands": [
+      {
+        "type": "low_shelf",
+        "frequency": 105,
+        "gain_db": 5.5,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 200,
+        "gain_db": -2.7,
+        "q": 0.7
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 950,
+        "gain_db": -1.6,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1800,
+        "gain_db": 5.9,
+        "q": 0.8
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2800,
+        "gain_db": -1,
+        "q": 2.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 3000,
+        "gain_db": 0,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3800,
+        "gain_db": 3.4,
+        "q": 3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5500,
+        "gain_db": -6.7,
+        "q": 3.5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 10000,
+        "gain_db": 2,
+        "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 10480,
+        "gain_db": -6.5,
+        "q": 7
+      }
+    ]
+  }
+}

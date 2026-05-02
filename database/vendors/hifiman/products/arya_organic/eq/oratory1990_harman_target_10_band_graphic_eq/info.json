@@ -1,0 +1,71 @@
+{
+  "author": "oratory1990",
+  "details": "Harman Target • 10 band graphic EQ",
+  "link": "https://www.dropbox.com/scl/fi/s1h22zoox6i7g82sgr2r2/Hifiman-Arya-Organic-octave-band-EQ.pdf?rlkey=695dioubft6s8rn5g90f48sty&dl=0",
+  "type": "parametric_eq",
+  "parameters": {
+    "gain_db": -4.6,
+    "bands": [
+      {
+        "type": "peak_dip",
+        "frequency": 31.5,
+        "gain_db": 4,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 63,
+        "gain_db": 1.7,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 125,
+        "gain_db": -0.4,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 250,
+        "gain_db": -0.1,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 500,
+        "gain_db": -0.1,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1000,
+        "gain_db": -0.5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2000,
+        "gain_db": 5,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4000,
+        "gain_db": -1.6,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 8000,
+        "gain_db": -2.9,
+        "q": 1.41
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 16000,
+        "gain_db": -5.9,
+        "q": 1.41
+      }
+    ]
+  }
+}
