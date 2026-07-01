@@ -3,67 +3,67 @@
   "details": "Measured by Auriculares Argentina",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -4.6,
+    "gain_db": -5.5,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
-        "gain_db": -5.4,
+        "gain_db": -3.2,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 164,
-        "gain_db": -1.9,
-        "q": 0.76
+        "frequency": 158,
+        "gain_db": -1.3,
+        "q": 0.41
       },
       {
         "type": "peak_dip",
-        "frequency": 2043,
-        "gain_db": 2.3,
-        "q": 2.1
+        "frequency": 6256,
+        "gain_db": 5.2,
+        "q": 3.61
       },
       {
         "type": "peak_dip",
-        "frequency": 6300,
-        "gain_db": 4.2,
-        "q": 4.24
+        "frequency": 1981,
+        "gain_db": 1.7,
+        "q": 2.48
       },
       {
         "type": "peak_dip",
-        "frequency": 756,
-        "gain_db": 1,
-        "q": 1.87
+        "frequency": 64,
+        "gain_db": 1.2,
+        "q": 1.36
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": -8.1,
+        "gain_db": -7.8,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 6957,
-        "gain_db": 1.9,
-        "q": 3.5
+        "frequency": 7803,
+        "gain_db": 1.6,
+        "q": 1.31
       },
       {
         "type": "peak_dip",
-        "frequency": 10000,
-        "gain_db": 1.3,
-        "q": 5.96
+        "frequency": 834,
+        "gain_db": 0.5,
+        "q": 2.95
       },
       {
         "type": "peak_dip",
-        "frequency": 7019,
-        "gain_db": 0,
-        "q": 5.24
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 1235,
+        "frequency": 450,
         "gain_db": -0.3,
-        "q": 5.45
+        "q": 2.16
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3010,
+        "gain_db": -1,
+        "q": 5.32
       }
     ]
   }

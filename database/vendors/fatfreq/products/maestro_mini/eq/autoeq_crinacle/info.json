@@ -3,67 +3,67 @@
   "details": "Measured by crinacle",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -3.3,
+    "gain_db": -3.4,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
-        "gain_db": -11.6,
+        "gain_db": -10.8,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 8911,
-        "gain_db": -3.4,
-        "q": 0.42
+        "frequency": 5556,
+        "gain_db": 3.7,
+        "q": 3.86
       },
       {
         "type": "peak_dip",
-        "frequency": 204,
-        "gain_db": 2.3,
-        "q": 0.18
+        "frequency": 158,
+        "gain_db": -2.7,
+        "q": 0.96
       },
       {
         "type": "peak_dip",
-        "frequency": 53,
-        "gain_db": 5.3,
-        "q": 0.62
+        "frequency": 909,
+        "gain_db": 1.2,
+        "q": 0.88
       },
       {
         "type": "peak_dip",
-        "frequency": 191,
-        "gain_db": -3.2,
-        "q": 2.92
+        "frequency": 62,
+        "gain_db": 5.9,
+        "q": 0.6
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": 0.8,
+        "gain_db": -5.5,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 593,
-        "gain_db": -0.6,
-        "q": 0.65
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 2085,
+        "frequency": 2055,
         "gain_db": 1.4,
-        "q": 2.59
+        "q": 3.08
       },
       {
         "type": "peak_dip",
-        "frequency": 375,
-        "gain_db": 1.6,
-        "q": 3.71
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 3692,
-        "gain_db": -1.8,
+        "frequency": 3609,
+        "gain_db": -1.9,
         "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1376,
+        "gain_db": -0.8,
+        "q": 3.31
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9169,
+        "gain_db": 2.2,
+        "q": 5.67
       }
     ]
   }

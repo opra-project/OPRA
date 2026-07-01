@@ -4,12 +4,12 @@
   "link": "https://www.dropbox.com/s/vwxupe4gxczewff/Audeze%20LCD-X%20%28pre%202021%29.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -9.7,
+    "gain_db": -11.2,
     "bands": [
       {
         "type": "low_shelf",
-        "frequency": 25,
-        "gain_db": 2.8,
+        "frequency": 30,
+        "gain_db": 2.5,
         "q": 0.71
       },
       {
@@ -20,50 +20,50 @@
       },
       {
         "type": "peak_dip",
-        "frequency": 240,
-        "gain_db": -1,
+        "frequency": 220,
+        "gain_db": -0.8,
         "q": 1.4
       },
       {
         "type": "peak_dip",
-        "frequency": 750,
-        "gain_db": -1.6,
-        "q": 2
+        "frequency": 700,
+        "gain_db": -0.6,
+        "q": 3
       },
       {
         "type": "peak_dip",
-        "frequency": 1100,
+        "frequency": 1020,
         "gain_db": -1.9,
-        "q": 2.5
+        "q": 2
       },
       {
         "type": "high_shelf",
-        "frequency": 1350,
+        "frequency": 1450,
         "gain_db": 7,
         "q": 0.71
       },
       {
         "type": "peak_dip",
-        "frequency": 2380,
-        "gain_db": -1,
-        "q": 3
+        "frequency": 2480,
+        "gain_db": -0.9,
+        "q": 2.5
       },
       {
         "type": "peak_dip",
         "frequency": 3800,
-        "gain_db": 4,
-        "q": 1.4
+        "gain_db": 6,
+        "q": 1.8
       },
       {
         "type": "peak_dip",
-        "frequency": 5450,
-        "gain_db": -8,
-        "q": 3.3
+        "frequency": 5500,
+        "gain_db": -7,
+        "q": 2.5
       },
       {
         "type": "high_shelf",
-        "frequency": 11000,
-        "gain_db": -12,
+        "frequency": 10000,
+        "gain_db": -8,
         "q": 0.71
       }
     ]

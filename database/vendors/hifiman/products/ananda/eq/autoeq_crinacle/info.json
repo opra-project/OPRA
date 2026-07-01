@@ -3,67 +3,67 @@
   "details": "Measured by crinacle",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -6.3,
+    "gain_db": -5.4,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
-        "gain_db": 6.8,
+        "gain_db": 4,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 94,
-        "gain_db": -2.8,
-        "q": 0.31
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 1940,
-        "gain_db": 5.9,
-        "q": 1.58
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 3195,
-        "gain_db": -3.8,
-        "q": 1.35
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 39,
-        "gain_db": 1.7,
+        "frequency": 1678,
+        "gain_db": 5.5,
         "q": 2.3
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 485,
+        "gain_db": -1.6,
+        "q": 3.07
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 137,
+        "gain_db": -2.1,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 9934,
+        "gain_db": 1.9,
+        "q": 4.37
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": -4.2,
+        "gain_db": -3.1,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 132,
-        "gain_db": 0.6,
-        "q": 1.9
+        "frequency": 2880,
+        "gain_db": -2,
+        "q": 3.3
       },
       {
         "type": "peak_dip",
-        "frequency": 76,
-        "gain_db": -1,
-        "q": 3.7
+        "frequency": 2212,
+        "gain_db": 1.4,
+        "q": 4.33
       },
       {
         "type": "peak_dip",
-        "frequency": 6180,
-        "gain_db": -2.2,
+        "frequency": 4064,
+        "gain_db": 2,
+        "q": 5.86
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6343,
+        "gain_db": -1.8,
         "q": 6
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 5307,
-        "gain_db": 2.3,
-        "q": 5.99
       }
     ]
   }
