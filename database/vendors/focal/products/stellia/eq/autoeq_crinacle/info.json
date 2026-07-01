@@ -3,67 +3,67 @@
   "details": "Measured by crinacle",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -5.5,
+    "gain_db": -6.1,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
-        "gain_db": 1.4,
+        "gain_db": 5.7,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 9368,
-        "gain_db": 5.7,
-        "q": 1.69
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 98,
-        "gain_db": -4.8,
+        "frequency": 244,
+        "gain_db": -4.6,
         "q": 1.08
       },
       {
         "type": "peak_dip",
-        "frequency": 1314,
-        "gain_db": -2.9,
-        "q": 1.05
+        "frequency": 157,
+        "gain_db": 2.4,
+        "q": 0.44
       },
       {
         "type": "peak_dip",
-        "frequency": 4384,
-        "gain_db": 4.4,
-        "q": 3.78
+        "frequency": 5109,
+        "gain_db": 3.9,
+        "q": 0.36
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1482,
+        "gain_db": -3.6,
+        "q": 0.4
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": -0.5,
+        "gain_db": -1.4,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 257,
-        "gain_db": 1.7,
-        "q": 2
+        "frequency": 3908,
+        "gain_db": 3.3,
+        "q": 5.9
       },
       {
         "type": "peak_dip",
-        "frequency": 151,
+        "frequency": 3526,
+        "gain_db": -3.6,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4076,
+        "gain_db": 2.2,
+        "q": 5.55
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2764,
         "gain_db": -1.3,
-        "q": 2.95
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 1805,
-        "gain_db": -1.2,
-        "q": 6
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 5978,
-        "gain_db": -1.5,
-        "q": 6
+        "q": 5.29
       }
     ]
   }

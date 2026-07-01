@@ -3,67 +3,67 @@
   "details": "Measured by crinacle (V DSP)",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -1.7,
+    "gain_db": -2.1,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
-        "gain_db": -9.9,
+        "gain_db": -4,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 393,
-        "gain_db": 1.4,
-        "q": 2.11
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 66,
-        "gain_db": 5.2,
-        "q": 0.59
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 1274,
-        "gain_db": 0.7,
-        "q": 1.59
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 175,
+        "frequency": 169,
         "gain_db": -1.7,
-        "q": 2.17
+        "q": 0.33
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 5822,
+        "gain_db": 2.1,
+        "q": 1.11
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 969,
+        "gain_db": 1.7,
+        "q": 1.12
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 70,
+        "gain_db": 2,
+        "q": 1.1
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": -5.9,
+        "gain_db": -10.8,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 5650,
-        "gain_db": -1.5,
-        "q": 2.32
+        "frequency": 10000,
+        "gain_db": 5.5,
+        "q": 1.72
       },
       {
         "type": "peak_dip",
-        "frequency": 2109,
-        "gain_db": 0.5,
-        "q": 3.76
+        "frequency": 1942,
+        "gain_db": 0.4,
+        "q": 3.16
       },
       {
         "type": "peak_dip",
-        "frequency": 2671,
+        "frequency": 1369,
         "gain_db": -0.5,
-        "q": 4.13
+        "q": 3.79
       },
       {
         "type": "peak_dip",
-        "frequency": 7886,
-        "gain_db": 0.6,
-        "q": 4.65
+        "frequency": 2165,
+        "gain_db": 0.1,
+        "q": 6
       }
     ]
   }

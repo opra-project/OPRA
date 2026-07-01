@@ -3,67 +3,67 @@
   "details": "Measured by crinacle (green filter)",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -2.5,
+    "gain_db": -6,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
-        "gain_db": -0.1,
+        "gain_db": 3.3,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 488,
-        "gain_db": 3.4,
-        "q": 0.69
+        "frequency": 183,
+        "gain_db": -3.8,
+        "q": 0.53
       },
       {
         "type": "peak_dip",
-        "frequency": 180,
-        "gain_db": -4.1,
-        "q": 0.71
+        "frequency": 6704,
+        "gain_db": 5.6,
+        "q": 1.62
       },
       {
         "type": "peak_dip",
-        "frequency": 2837,
-        "gain_db": -3.1,
-        "q": 4.05
+        "frequency": 846,
+        "gain_db": 2,
+        "q": 1.03
       },
       {
         "type": "peak_dip",
-        "frequency": 1886,
-        "gain_db": 1.4,
-        "q": 2.31
+        "frequency": 2816,
+        "gain_db": -2.4,
+        "q": 4.58
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": 0.3,
+        "gain_db": -1.8,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 4431,
-        "gain_db": -3.6,
-        "q": 5.95
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 9903,
-        "gain_db": -0.6,
-        "q": 2.74
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 5971,
-        "gain_db": 1.4,
+        "frequency": 4426,
+        "gain_db": -2.4,
         "q": 6
       },
       {
         "type": "peak_dip",
-        "frequency": 3618,
-        "gain_db": 1,
-        "q": 5.46
+        "frequency": 3794,
+        "gain_db": 1.4,
+        "q": 4.78
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 6037,
+        "gain_db": 1.2,
+        "q": 6
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2002,
+        "gain_db": 0.6,
+        "q": 4.11
       }
     ]
   }

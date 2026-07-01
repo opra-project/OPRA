@@ -13,57 +13,57 @@
       },
       {
         "type": "peak_dip",
-        "frequency": 144,
-        "gain_db": -4.4,
-        "q": 0.5
+        "frequency": 128,
+        "gain_db": -3.8,
+        "q": 0.59
       },
       {
         "type": "peak_dip",
-        "frequency": 9037,
-        "gain_db": 7,
-        "q": 1.48
+        "frequency": 2002,
+        "gain_db": 4,
+        "q": 0.48
       },
       {
         "type": "peak_dip",
-        "frequency": 1848,
-        "gain_db": 4.6,
-        "q": 1.24
+        "frequency": 4066,
+        "gain_db": -6.3,
+        "q": 0.96
       },
       {
         "type": "peak_dip",
-        "frequency": 4095,
-        "gain_db": -2.5,
-        "q": 0.66
+        "frequency": 9277,
+        "gain_db": 2.5,
+        "q": 0.95
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": -0.7,
+        "gain_db": -2.3,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 3022,
-        "gain_db": -2.6,
-        "q": 5.8
+        "frequency": 1078,
+        "gain_db": -0.8,
+        "q": 4.48
       },
       {
         "type": "peak_dip",
-        "frequency": 3772,
-        "gain_db": 1.8,
+        "frequency": 3257,
+        "gain_db": -1.3,
+        "q": 5.99
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3764,
+        "gain_db": 1.4,
         "q": 6
       },
       {
         "type": "peak_dip",
-        "frequency": 2485,
-        "gain_db": 1.5,
+        "frequency": 1565,
+        "gain_db": 0.8,
         "q": 6
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 709,
-        "gain_db": 1,
-        "q": 5
       }
     ]
   }
