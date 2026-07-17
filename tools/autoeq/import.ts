@@ -5,13 +5,24 @@
  * Can be used as a module or run standalone.
  */
 
-import { join, basename, dirname, fromFileUrl } from "https://deno.land/std@0.224.0/path/mod.ts";
+import { basename, dirname, fromFileUrl, join } from "https://deno.land/std@0.224.0/path/mod.ts";
 import { walk } from "https://deno.land/std@0.224.0/fs/walk.ts";
 import { exists } from "https://deno.land/std@0.224.0/fs/mod.ts";
 
-import { VendorInfo, ProductInfo, EQInfo } from "../types.ts";
-import { parseParametricEQ, mapTypeToSubtype } from "./parse_eq.ts";
-import { generateSlug, splitVendorProductOrUnknown, loadCorrections, applySlugRemap } from "../utils.ts";
+import { EQInfo, ProductInfo, VendorInfo } from "../types.ts";
+import { mapTypeToSubtype, parseParametricEQ } from "./parse_eq.ts";
+import {
+  applySlugRemap,
+  generateSlug,
+  loadCorrections,
+  normalizeTextForComparison,
+  splitVendorProductOrUnknown,
+} from "../utils.ts";
+import {
+  loadProductCatalog,
+  resolveCatalogProduct,
+  splitCatalogVendorProduct,
+} from "../product_catalog.ts";
 
 // =============================================================================
 // Types
@@ -67,12 +78,13 @@ function createEmptyStats(): ImportStats {
 export async function importAutoEQ(
   srcDir: string,
   targetDir: string,
-  options: ImportOptions = {}
+  options: ImportOptions = {},
 ): Promise<ImportResult> {
   const { dryRun = false, verbose = false, onProgress } = options;
 
   const correctionsPath = join(dirname(fromFileUrl(import.meta.url)), "corrections.json");
   const corrections = await loadCorrections(correctionsPath);
+  const slugRemaps = corrections.slug_remaps;
 
   const log = (message: string) => {
     if (verbose) {
@@ -84,22 +96,32 @@ export async function importAutoEQ(
   const stats = createEmptyStats();
   const unknownTypes: string[] = [];
   const errors: { file: string; message: string }[] = [];
+  const catalog = await loadProductCatalog(targetDir, slugRemaps);
 
   log(`Starting AutoEQ import from "${srcDir}" to "${targetDir}"`);
+  log(
+    `Loaded ${catalog.vendors.length} vendors and ${catalog.products.length} products from the target catalog`,
+  );
 
   // Track seen vendors/products to count new vs existing
   const seenVendors = new Set<string>();
   const seenProducts = new Set<string>();
+  const seenSourceProfiles = new Map<string, Array<{ signature: string; eqSlug: string }>>();
 
-  // Iterate through all .txt files that end with 'ParametricEQ.txt'
+  const eqFiles: string[] = [];
   for await (const entry of walk(srcDir, { exts: [".txt"], includeFiles: true })) {
-    const fileName = basename(entry.path);
-    if (!fileName.endsWith("ParametricEQ.txt")) continue;
+    if (basename(entry.path).endsWith("ParametricEQ.txt")) eqFiles.push(entry.path);
+  }
+  eqFiles.sort((a, b) => a < b ? -1 : a > b ? 1 : 0);
 
-    log(`Processing EQ file: "${entry.path}"`);
+  // Process sources deterministically so colliding source profiles get stable IDs.
+  for (const entryPath of eqFiles) {
+    const fileName = basename(entryPath);
+
+    log(`Processing EQ file: "${entryPath}"`);
 
     // Extract paths
-    const relativePath = entry.path
+    const relativePath = entryPath
       .replace(srcDir, "")
       .replace(/^\/+/, "")
       .split(Deno.build.os === "windows" ? "\\" : "/");
@@ -110,7 +132,7 @@ export async function importAutoEQ(
     }
 
     if (relativePath.length < 3) {
-      log(`    Skipping invalid path: "${entry.path}" (insufficient path depth)`);
+      log(`    Skipping invalid path: "${entryPath}" (insufficient path depth)`);
       continue;
     }
 
@@ -130,8 +152,8 @@ export async function importAutoEQ(
         type = typeMatch[1].toLowerCase();
         log(`    Extracted type "${type}" from equipment folder "${relativePath[1]}".`);
       } else {
-        log(`    Unable to determine type from path: "${entry.path}"`);
-        unknownTypes.push(entry.path);
+        log(`    Unable to determine type from path: "${entryPath}"`);
+        unknownTypes.push(entryPath);
         continue;
       }
     }
@@ -150,15 +172,36 @@ export async function importAutoEQ(
     const fullProductName = variantMatch ? variantMatch[1].trim() : productNameWithoutSuffix;
     const variantInfo = variantMatch ? variantMatch[2].trim() : null;
 
-    // Infer vendor/product split
-    const { vendorName, productName } = splitVendorProductOrUnknown(fullProductName);
-    let vendorSlug = generateSlug(vendorName);
-    let productSlug = generateSlug(productName);
+    // Reuse canonical catalog identities before falling back to name splitting.
+    const catalogProduct = resolveCatalogProduct(catalog, fullProductName);
+    const catalogVendor = catalogProduct
+      ? null
+      : splitCatalogVendorProduct(catalog, fullProductName);
+    const fallback = catalogProduct || catalogVendor
+      ? null
+      : splitVendorProductOrUnknown(fullProductName);
+    const vendorName = catalogProduct?.vendorName ?? catalogVendor?.vendorName ??
+      fallback!.vendorName;
+    const productName = catalogProduct?.productName ?? catalogVendor?.productName ??
+      fallback!.productName;
+    let vendorSlug = catalogProduct?.vendorSlug ?? catalogVendor?.vendorSlug ??
+      generateSlug(vendorName);
+    let productSlug = catalogProduct?.productSlug ?? generateSlug(productName);
+
+    if (catalogProduct) {
+      log(
+        `    Catalog ${catalogProduct.match} match: ${catalogProduct.vendorSlug}::${catalogProduct.productSlug}`,
+      );
+    } else if (catalogVendor) {
+      log(`    Catalog vendor match: ${catalogVendor.vendorSlug}`);
+    }
 
     // Apply slug remaps
-    const remapped = applySlugRemap(vendorSlug, productSlug, corrections.slug_remaps);
+    const remapped = applySlugRemap(vendorSlug, productSlug, slugRemaps);
     if (remapped.vendorSlug !== vendorSlug || remapped.productSlug !== productSlug) {
-      log(`    Slug remap: ${vendorSlug}::${productSlug} -> ${remapped.vendorSlug}::${remapped.productSlug}`);
+      log(
+        `    Slug remap: ${vendorSlug}::${productSlug} -> ${remapped.vendorSlug}::${remapped.productSlug}`,
+      );
       vendorSlug = remapped.vendorSlug;
       productSlug = remapped.productSlug;
     }
@@ -170,9 +213,49 @@ export async function importAutoEQ(
     const productPath = join(productsPath, productSlug);
     const productInfoPath = join(productPath, "info.json");
     const eqPath = join(productPath, "eq");
-    const eqSlug = variantInfo
+    const baseEqSlug = variantInfo
       ? `autoeq_${generateSlug(measurer)}_${generateSlug(variantInfo)}`
       : `autoeq_${generateSlug(measurer)}`;
+
+    // Read and parse ParametricEQ.txt
+    let eqContent: string;
+    try {
+      eqContent = await Deno.readTextFile(entryPath);
+    } catch (error) {
+      const message = `Failed to read EQ file: ${error}`;
+      log(`    ${message}`);
+      errors.push({ file: entryPath, message });
+      stats.errors++;
+      continue;
+    }
+
+    const parsedEQ = parseParametricEQ(eqContent);
+    const profileKey = `${vendorSlug}::${productSlug}::${baseEqSlug}`;
+    const profiles = seenSourceProfiles.get(profileKey) ?? [];
+    const signature = JSON.stringify({
+      gain_db: parsedEQ.preamp,
+      bands: parsedEQ.filters,
+    });
+    const duplicate = profiles.find((profile) => profile.signature === signature);
+    if (duplicate) {
+      stats.unchangedEqs++;
+      log(`    Duplicate source EQ matches "${duplicate.eqSlug}"; skipping ${entryPath}`);
+      continue;
+    }
+
+    let eqSlug = baseEqSlug;
+    if (profiles.length > 0) {
+      const sourceSuffix = generateSlug(relativePath[1]) || `source_${profiles.length + 1}`;
+      eqSlug = `${baseEqSlug}_${sourceSuffix}`;
+      let suffixIndex = 2;
+      while (profiles.some((profile) => profile.eqSlug === eqSlug)) {
+        eqSlug = `${baseEqSlug}_${sourceSuffix}_${suffixIndex}`;
+        suffixIndex++;
+      }
+    }
+    profiles.push({ signature, eqSlug });
+    seenSourceProfiles.set(profileKey, profiles);
+
     const eqInfoPath = join(eqPath, eqSlug, "info.json");
 
     log(`    Vendor: "${vendorName}" (${vendorSlug})`);
@@ -188,26 +271,13 @@ export async function importAutoEQ(
     // Ensure directories exist
     await Deno.mkdir(join(eqPath, eqSlug), { recursive: true });
 
-    // Read and parse ParametricEQ.txt
-    let eqContent: string;
-    try {
-      eqContent = await Deno.readTextFile(entry.path);
-    } catch (error) {
-      const message = `Failed to read EQ file: ${error}`;
-      log(`    ${message}`);
-      errors.push({ file: entry.path, message });
-      stats.errors++;
-      continue;
-    }
-
-    const parsedEQ = parseParametricEQ(eqContent);
-
     // Construct EQInfo
+    const sourceContext = eqSlug === baseEqSlug ? "" : ` using ${relativePath[1]}`;
     const eqInfo: EQInfo = {
       author: "AutoEQ",
       details: variantInfo
-        ? `Measured by ${measurer} (${variantInfo})`
-        : `Measured by ${measurer}`,
+        ? `Measured by ${measurer}${sourceContext} (${variantInfo})`
+        : `Measured by ${measurer}${sourceContext}`,
       type: "parametric_eq",
       parameters: {
         gain_db: parsedEQ.preamp,
@@ -229,7 +299,9 @@ export async function importAutoEQ(
         stats.errors++;
         continue;
       }
-      if (existingJson.trimEnd() === newJson.trimEnd()) {
+      if (
+        normalizeTextForComparison(existingJson) === normalizeTextForComparison(newJson)
+      ) {
         stats.unchangedEqs++;
         log(`    Unchanged: ${eqInfoPath}`);
       } else {
@@ -321,8 +393,12 @@ export async function importAutoEQ(
 if (import.meta.main) {
   const args = Deno.args;
   if (args.length < 2) {
-    console.error("Usage: deno run --allow-read --allow-write tools/autoeq/import.ts <source_dir> <target_dir>");
-    console.error("Example: deno run --allow-read --allow-write tools/autoeq/import.ts sources/autoeq/results database");
+    console.error(
+      "Usage: deno run --allow-read --allow-write tools/autoeq/import.ts <source_dir> <target_dir>",
+    );
+    console.error(
+      "Example: deno run --allow-read --allow-write tools/autoeq/import.ts sources/autoeq/results database",
+    );
     Deno.exit(1);
   }
 
