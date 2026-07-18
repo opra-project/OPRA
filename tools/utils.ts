@@ -10,9 +10,14 @@ import { KNOWN_VENDORS, VENDOR_ALIASES } from "./known_vendors.ts";
 export function toTitleCase(str: string): string {
   return str
     .toLowerCase()
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+/** Normalize platform line endings and trailing whitespace for content checks. */
+export function normalizeTextForComparison(value: string): string {
+  return value.replace(/\r\n?/g, "\n").trimEnd();
 }
 
 /**
@@ -57,6 +62,9 @@ export function splitVendorProduct(fullName: string): VendorProductSplit | null 
   for (const vendor of KNOWN_VENDORS) {
     // Case-insensitive prefix match
     if (normalizedName.toLowerCase().startsWith(vendor.toLowerCase())) {
+      const boundary = normalizedName.slice(vendor.length, vendor.length + 1);
+      if (boundary && /[\p{L}\p{N}]/u.test(boundary)) continue;
+
       const remainder = normalizedName.slice(vendor.length).trim();
 
       // If there's no product name after the vendor, skip this match
@@ -142,4 +150,3 @@ export function applySlugRemap(
 
   return { vendorSlug: remappedVendorSlug, productSlug: remappedProductSlug };
 }
-

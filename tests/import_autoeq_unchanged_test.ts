@@ -4,9 +4,7 @@
  * Run with: deno test --allow-read --allow-write --allow-env tests/import_autoeq_unchanged_test.ts
  */
 
-import {
-  assertEquals,
-} from "https://deno.land/std@0.224.0/assert/mod.ts";
+import { assertEquals } from "https://deno.land/std@0.224.0/assert/mod.ts";
 import { join } from "https://deno.land/std@0.224.0/path/mod.ts";
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/mod.ts";
 
@@ -99,6 +97,65 @@ Deno.test("importAutoEQ - detects updated EQ when content changes", async () => 
     assertEquals(result2.stats.newEqs, 0);
     assertEquals(result2.stats.updatedEqs, 1);
     assertEquals(result2.stats.unchangedEqs, 0);
+  } finally {
+    await Deno.remove(tmpDir, { recursive: true });
+  }
+});
+
+Deno.test("importAutoEQ - preserves distinct rig profiles and collapses exact duplicates", async () => {
+  const tmpDir = await Deno.makeTempDir({ prefix: "opra_test_" });
+  const srcDir = join(tmpDir, "source");
+  const targetDir = join(tmpDir, "database");
+
+  try {
+    await createTestSource(
+      srcDir,
+      "TestMeasurer",
+      "A rig over-ear",
+      "Sony Test Product",
+      SAMPLE_EQ,
+    );
+    await createTestSource(
+      srcDir,
+      "TestMeasurer",
+      "B rig over-ear",
+      "Sony Test Product",
+      MODIFIED_EQ,
+    );
+    await createTestSource(
+      srcDir,
+      "TestMeasurer",
+      "C rig over-ear",
+      "Sony Test Product",
+      SAMPLE_EQ,
+    );
+
+    const first = await importAutoEQ(srcDir, targetDir);
+    assertEquals(first.stats.newEqs, 2);
+    assertEquals(first.stats.unchangedEqs, 1);
+
+    const eqDir = join(
+      targetDir,
+      "vendors",
+      "sony",
+      "products",
+      "test_product",
+      "eq",
+    );
+    const eqSlugs: string[] = [];
+    for await (const entry of Deno.readDir(eqDir)) {
+      if (entry.isDirectory) eqSlugs.push(entry.name);
+    }
+    eqSlugs.sort();
+    assertEquals(eqSlugs, [
+      "autoeq_testmeasurer",
+      "autoeq_testmeasurer_b_rig_over_ear",
+    ]);
+
+    const second = await importAutoEQ(srcDir, targetDir);
+    assertEquals(second.stats.newEqs, 0);
+    assertEquals(second.stats.updatedEqs, 0);
+    assertEquals(second.stats.unchangedEqs, 3);
   } finally {
     await Deno.remove(tmpDir, { recursive: true });
   }

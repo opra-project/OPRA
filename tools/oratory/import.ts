@@ -5,16 +5,26 @@
  * Downloads PDFs from Dropbox links, parses EQ data, and writes to database.
  */
 
-import { join, dirname, fromFileUrl } from "https://deno.land/std@0.224.0/path/mod.ts";
+import { dirname, fromFileUrl, join } from "https://deno.land/std@0.224.0/path/mod.ts";
 import { exists } from "https://deno.land/std@0.224.0/fs/mod.ts";
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/mod.ts";
 import { parse as parseCsv } from "https://deno.land/std@0.224.0/csv/mod.ts";
 
 import { extractTextFromPdf } from "./extract_text.ts";
-import { parseOratoryPdfText, extractTargetFromPdfText } from "./parse_pdf.ts";
-import { generateSlug, loadCorrections, applySlugRemap } from "../utils.ts";
-import { VendorInfo, ProductInfo, ProductSubtype, EQInfo } from "../types.ts";
+import { extractTargetFromPdfText, parseOratoryPdfText } from "./parse_pdf.ts";
+import {
+  applySlugRemap,
+  generateSlug,
+  loadCorrections,
+  normalizeTextForComparison,
+} from "../utils.ts";
+import { EQInfo, ProductInfo, ProductSubtype, VendorInfo } from "../types.ts";
 import { VENDOR_ALIASES } from "../known_vendors.ts";
+import {
+  loadProductCatalog,
+  resolveCatalogProductParts,
+  resolveCatalogVendor,
+} from "../product_catalog.ts";
 
 // =============================================================================
 // Types
@@ -60,7 +70,7 @@ const DEFAULT_CACHE_DIR = join(
   Deno.env.get("OPRA_CACHE_DIR") || Deno.env.get("HOME") || Deno.env.get("USERPROFILE") || ".",
   ".cache",
   "opra",
-  "oratory_pdfs"
+  "oratory_pdfs",
 );
 
 const PDF_MAGIC = new Uint8Array([0x25, 0x50, 0x44, 0x46, 0x2D]); // %PDF-
@@ -82,7 +92,11 @@ function isTransientStatus(status: number): boolean {
 // Monotonic — only extended, never shortened.
 let globalPauseUntilMs = 0;
 
-function triggerGlobalCooldown(durationMs: number, reason: string, statusLog: (msg: string) => void): void {
+function triggerGlobalCooldown(
+  durationMs: number,
+  reason: string,
+  statusLog: (msg: string) => void,
+): void {
   const newPauseUntil = performance.now() + durationMs;
   if (newPauseUntil > globalPauseUntilMs) {
     globalPauseUntilMs = newPauseUntil;
@@ -140,7 +154,9 @@ function extractTargetFromUrl(url: string): string | null {
   // Don't match bare "oratory" — almost every PDF contains it as the author name.
   // For ambiguous filenames, return null to let extractTargetFromPdfText() resolve it.
   if (lower.includes("usound")) return "usound";
-  if (lower.includes("oratory1990 target") || lower.includes("oratory1990_target")) return "oratory1990";
+  if (lower.includes("oratory1990 target") || lower.includes("oratory1990_target")) {
+    return "oratory1990";
+  }
   return null;
 }
 
@@ -151,7 +167,7 @@ function extractTargetFromUrl(url: string): string | null {
  */
 function mapTarget(
   targetField: string,
-  link: string
+  link: string,
 ): { subtype: ProductSubtype; targetCurve: string | null } {
   switch (targetField) {
     case "1":
@@ -170,14 +186,13 @@ function mapTarget(
  * Format: "Harman Target" or "USound Target • ANC on"
  */
 function buildDetails(targetCurve: string, comment: string): string {
-  const targetLabel =
-    targetCurve === "harman"
-      ? "Harman Target"
-      : targetCurve === "usound"
-        ? "USound Target"
-        : targetCurve === "oratory1990"
-          ? "oratory1990 Target"
-          : `${targetCurve} Target`;
+  const targetLabel = targetCurve === "harman"
+    ? "Harman Target"
+    : targetCurve === "usound"
+    ? "USound Target"
+    : targetCurve === "oratory1990"
+    ? "oratory1990 Target"
+    : `${targetCurve} Target`;
 
   if (!comment || comment === "0") return targetLabel;
   return `${targetLabel} \u2022 ${comment}`;
@@ -243,7 +258,11 @@ async function downloadPdf(
         }
         // Only pause all workers for transient errors — permanent ones (404, etc.) shouldn't.
         if (isTransientStatus(response.status)) {
-          triggerGlobalCooldown(BACKOFF_MS(attempt), `HTTP ${response.status} for ${filename}`, statusLog);
+          triggerGlobalCooldown(
+            BACKOFF_MS(attempt),
+            `HTTP ${response.status} for ${filename}`,
+            statusLog,
+          );
         }
         continue;
       }
@@ -286,7 +305,7 @@ async function downloadAllPdfs(
   urls: string[],
   cacheDir: string,
   concurrency: number,
-  log: (msg: string) => void
+  log: (msg: string) => void,
 ): Promise<Map<string, string | null>> {
   const results = new Map<string, string | null>();
   const total = urls.length;
@@ -331,9 +350,12 @@ function convertToEQInfo(
   parsed: ReturnType<typeof parseOratoryPdfText>,
   targetCurve: string,
   comment: string,
-  link: string
+  link: string,
 ): EQInfo {
-  const typeMap: Record<string, "peak_dip" | "low_shelf" | "high_shelf" | "low_pass" | "high_pass"> = {
+  const typeMap: Record<
+    string,
+    "peak_dip" | "low_shelf" | "high_shelf" | "low_pass" | "high_pass"
+  > = {
     PEAK: "peak_dip",
     LOW_SHELF: "low_shelf",
     HIGH_SHELF: "high_shelf",
@@ -387,7 +409,7 @@ function extractBaseName(productName: string): string {
  */
 async function inferSubtypeFromSiblings(
   vendorProductsDir: string,
-  productName: string
+  productName: string,
 ): Promise<ProductSubtype | null> {
   const newBase = extractBaseName(productName);
   try {
@@ -423,7 +445,7 @@ async function inferSubtypeFromSiblings(
  */
 export async function importOratory(
   targetDir: string,
-  options: ImportOptions
+  options: ImportOptions,
 ): Promise<ImportResult> {
   const {
     csvPath,
@@ -436,6 +458,7 @@ export async function importOratory(
 
   const correctionsPath = join(dirname(fromFileUrl(import.meta.url)), "corrections.json");
   const corrections = await loadCorrections(correctionsPath);
+  const slugRemaps = corrections.slug_remaps;
 
   const log = (message: string) => {
     if (verbose) console.log(`[${new Date().toISOString()}] ${message}`);
@@ -513,15 +536,23 @@ export async function importOratory(
     [...urlsToDownload],
     cacheDir,
     concurrency,
-    log
+    log,
   );
 
   // Phase 3: Process rows sequentially (writing to database is order-sensitive)
   const seenVendors = new Set<string>();
   const seenProducts = new Set<string>();
+  const catalog = await loadProductCatalog(targetDir, slugRemaps);
+  log(
+    `Loaded ${catalog.vendors.length} vendors and ${catalog.products.length} products from the target catalog`,
+  );
 
   for (const { index, brand, model, comment, targetField, link } of validRows) {
-    log(`[${index + 1}/${rows.length}] ${brand} ${model}${comment && comment !== "0" ? ` (${comment})` : ""}`);
+    log(
+      `[${index + 1}/${rows.length}] ${brand} ${model}${
+        comment && comment !== "0" ? ` (${comment})` : ""
+      }`,
+    );
 
     try {
       const { subtype, targetCurve: urlTargetCurve } = mapTarget(targetField, link);
@@ -557,21 +588,34 @@ export async function importOratory(
         log(`  Name correction: "${model}" -> "${correctedModel}"`);
       }
 
-      // Resolve vendor alias to canonical name
-      const canonicalBrand = VENDOR_ALIASES[brand] || brand;
-      let vendorSlug = generateSlug(canonicalBrand);
-      let productSlug = generateSlug(correctedModel);
+      // Reuse canonical catalog identities before falling back to aliases and slugs.
+      const catalogProduct = resolveCatalogProductParts(catalog, brand, correctedModel);
+      const catalogVendor = catalogProduct ? null : resolveCatalogVendor(catalog, brand);
+      const canonicalBrand = catalogProduct?.vendorName ?? catalogVendor?.vendorName ??
+        VENDOR_ALIASES[brand] ?? brand;
+      const canonicalModel = catalogProduct?.productName ?? correctedModel;
+      let vendorSlug = catalogProduct?.vendorSlug ?? catalogVendor?.vendorSlug ??
+        generateSlug(canonicalBrand);
+      let productSlug = catalogProduct?.productSlug ?? generateSlug(canonicalModel);
       const variantSlug = comment && comment !== "0" ? `_${generateSlug(comment)}` : "";
       const eqSlug = `oratory1990_${targetCurve}_target${variantSlug}`;
 
-      if (canonicalBrand !== brand) {
+      if (catalogProduct) {
+        log(
+          `  Catalog ${catalogProduct.match} match: ${catalogProduct.vendorSlug}::${catalogProduct.productSlug}`,
+        );
+      } else if (catalogVendor) {
+        log(`  Catalog vendor match: "${brand}" -> "${canonicalBrand}"`);
+      } else if (canonicalBrand !== brand) {
         log(`  Vendor alias: "${brand}" → "${canonicalBrand}"`);
       }
 
       // Apply slug remaps
-      const remapped = applySlugRemap(vendorSlug, productSlug, corrections.slug_remaps);
+      const remapped = applySlugRemap(vendorSlug, productSlug, slugRemaps);
       if (remapped.vendorSlug !== vendorSlug || remapped.productSlug !== productSlug) {
-        log(`  Slug remap: ${vendorSlug}::${productSlug} -> ${remapped.vendorSlug}::${remapped.productSlug}`);
+        log(
+          `  Slug remap: ${vendorSlug}::${productSlug} -> ${remapped.vendorSlug}::${remapped.productSlug}`,
+        );
         vendorSlug = remapped.vendorSlug;
         productSlug = remapped.productSlug;
       }
@@ -597,7 +641,9 @@ export async function importOratory(
       // Check if EQ already exists and compare
       if (await exists(eqInfoPath)) {
         const existingJson = await Deno.readTextFile(eqInfoPath);
-        if (existingJson.trimEnd() === newJson.trimEnd()) {
+        if (
+          normalizeTextForComparison(existingJson) === normalizeTextForComparison(newJson)
+        ) {
           log(`  Unchanged: ${eqSlug}`);
           stats.unchangedEqs++;
           continue;
@@ -631,12 +677,12 @@ export async function importOratory(
         if (!(await exists(productInfoPath))) {
           const inferredSubtype = await inferSubtypeFromSiblings(
             join(vendorPath, "products"),
-            model
+            canonicalModel,
           );
           const finalSubtype = inferredSubtype || subtype;
 
           const productInfo: ProductInfo = {
-            name: model,
+            name: canonicalModel,
             type: "headphones",
             subtype: finalSubtype,
           };
@@ -644,9 +690,9 @@ export async function importOratory(
           stats.newProducts++;
           if (finalSubtype === "unknown") {
             unknownTypes.push(productKey);
-            log(`  Created product: ${model} (subtype unknown)`);
+            log(`  Created product: ${canonicalModel} (subtype unknown)`);
           } else {
-            log(`  Created product: ${model} (subtype: ${finalSubtype})`);
+            log(`  Created product: ${canonicalModel} (subtype: ${finalSubtype})`);
           }
         }
       }
@@ -677,7 +723,9 @@ if (import.meta.main) {
 
   if (!csvPath) {
     console.error("Usage: deno run --allow-all tools/oratory/import.ts <csv_path> [target_dir]");
-    console.error("Example: deno run --allow-all tools/oratory/import.ts ~/Downloads/Oratory_Feb25_2026.csv database");
+    console.error(
+      "Example: deno run --allow-all tools/oratory/import.ts ~/Downloads/Oratory_Feb25_2026.csv database",
+    );
     Deno.exit(1);
   }
 

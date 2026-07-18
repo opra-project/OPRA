@@ -4,15 +4,14 @@
  * Run with: deno test --allow-read tests/utils_test.ts
  */
 
-import {
-  assertEquals,
-} from "https://deno.land/std@0.224.0/assert/mod.ts";
+import { assertEquals } from "https://deno.land/std@0.224.0/assert/mod.ts";
 
 import {
   generateSlug,
-  toTitleCase,
+  normalizeTextForComparison,
   splitVendorProduct,
   splitVendorProductOrUnknown,
+  toTitleCase,
 } from "../tools/utils.ts";
 import { VENDOR_ALIASES } from "../tools/known_vendors.ts";
 
@@ -102,6 +101,13 @@ Deno.test("toTitleCase - with numbers", () => {
   assertEquals(toTitleCase("version 2"), "Version 2");
 });
 
+Deno.test("normalizeTextForComparison - ignores platform line endings and trailing space", () => {
+  assertEquals(
+    normalizeTextForComparison(`{\r\n  "value": 1\r\n}\r\n`),
+    normalizeTextForComparison(`{\n  "value": 1\n}   \n`),
+  );
+});
+
 // =============================================================================
 // splitVendorProduct Tests
 // =============================================================================
@@ -151,6 +157,11 @@ Deno.test("splitVendorProduct - greedy matching prefers longer vendor", () => {
   const result = splitVendorProduct("Dan Clark Audio Stealth");
   assertEquals(result?.vendorName, "Dan Clark Audio");
   assertEquals(result?.productName, "Stealth");
+});
+
+Deno.test("splitVendorProduct - does not split a vendor inside a longer word", () => {
+  const result = splitVendorProduct("Rhapsodio Clipper");
+  assertEquals(result, null);
 });
 
 // =============================================================================
