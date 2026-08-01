@@ -3,67 +3,67 @@
   "details": "Measured by crinacle",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -6.9,
+    "gain_db": -6.8,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
-        "gain_db": 1.1,
+        "gain_db": 1.7,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 159,
-        "gain_db": -5.6,
-        "q": 0.5
+        "frequency": 6869,
+        "gain_db": 9.1,
+        "q": 0.92
       },
       {
         "type": "peak_dip",
-        "frequency": 6558,
-        "gain_db": 9,
-        "q": 0.87
+        "frequency": 143,
+        "gain_db": -4.3,
+        "q": 0.28
       },
       {
         "type": "peak_dip",
-        "frequency": 870,
-        "gain_db": 4.2,
-        "q": 1.26
+        "frequency": 647,
+        "gain_db": 4.1,
+        "q": 0.71
       },
       {
         "type": "peak_dip",
-        "frequency": 4124,
-        "gain_db": -7.9,
-        "q": 1.56
+        "frequency": 4307,
+        "gain_db": -9.1,
+        "q": 1.48
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": -1.9,
+        "gain_db": 0.4,
         "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 5317,
-        "gain_db": 2.4,
-        "q": 6
+        "frequency": 2026,
+        "gain_db": -1.8,
+        "q": 1.72
       },
       {
         "type": "peak_dip",
-        "frequency": 4384,
-        "gain_db": -2.3,
-        "q": 6
+        "frequency": 1216,
+        "gain_db": 1.2,
+        "q": 1.97
       },
       {
         "type": "peak_dip",
-        "frequency": 3540,
-        "gain_db": 1.7,
-        "q": 4.92
+        "frequency": 3359,
+        "gain_db": 1.6,
+        "q": 4.56
       },
       {
         "type": "peak_dip",
-        "frequency": 2519,
-        "gain_db": -1.4,
-        "q": 3.55
+        "frequency": 220,
+        "gain_db": -1,
+        "q": 4.07
       }
     ]
   }
