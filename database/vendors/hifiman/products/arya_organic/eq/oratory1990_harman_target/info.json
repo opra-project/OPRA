@@ -4,13 +4,13 @@
   "link": "https://www.dropbox.com/scl/fi/kg0czm9qnjmfce9sw229m/Hifiman-Arya-Organic.pdf?rlkey=f0781us8vyzfr9hm45stlk55w&dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -5.4,
+    "gain_db": -5.3,
     "bands": [
       {
         "type": "peak_dip",
         "frequency": 90,
-        "gain_db": -2.8,
-        "q": 0.55
+        "gain_db": -3.1,
+        "q": 0.4
       },
       {
         "type": "low_shelf",
@@ -21,14 +21,20 @@
       {
         "type": "peak_dip",
         "frequency": 195,
-        "gain_db": 1.5,
+        "gain_db": 1.9,
         "q": 1.6
       },
       {
         "type": "peak_dip",
-        "frequency": 1050,
-        "gain_db": -1,
-        "q": 4
+        "frequency": 700,
+        "gain_db": 0.7,
+        "q": 2
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 1010,
+        "gain_db": -1.2,
+        "q": 3
       },
       {
         "type": "peak_dip",
@@ -38,8 +44,8 @@
       },
       {
         "type": "peak_dip",
-        "frequency": 2900,
-        "gain_db": -4,
+        "frequency": 2930,
+        "gain_db": -3.9,
         "q": 2.3
       },
       {
