@@ -4,13 +4,19 @@
   "link": "https://www.dropbox.com/scl/fi/juamfwbmztosf3samuz44/Hifiman-Edition-XV.pdf?rlkey=frqjms1sflvirkbiueahiniiw&dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -5.6,
+    "gain_db": -5.5,
     "bands": [
       {
         "type": "low_shelf",
         "frequency": 105,
         "gain_db": 5.5,
         "q": 0.71
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 150,
+        "gain_db": -0.9,
+        "q": 1.2
       },
       {
         "type": "peak_dip",
@@ -44,7 +50,7 @@
       },
       {
         "type": "high_shelf",
-        "frequency": 9000,
+        "frequency": 8000,
         "gain_db": -5,
         "q": 0.71
       }

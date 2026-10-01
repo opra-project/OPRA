@@ -4,19 +4,13 @@
   "link": "https://www.dropbox.com/s/h1ra0xwlbq9z3we/Audio%20Technica%20ATH-M20x.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -9.6,
+    "gain_db": -5.8,
     "bands": [
       {
         "type": "peak_dip",
-        "frequency": 20,
-        "gain_db": 5,
-        "q": 1
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 76,
-        "gain_db": -5.4,
-        "q": 0.6
+        "frequency": 80,
+        "gain_db": -5.7,
+        "q": 0.45
       },
       {
         "type": "low_shelf",
@@ -26,26 +20,32 @@
       },
       {
         "type": "peak_dip",
-        "frequency": 245,
-        "gain_db": 3.5,
-        "q": 2
+        "frequency": 250,
+        "gain_db": 4.5,
+        "q": 1.4
       },
       {
         "type": "peak_dip",
-        "frequency": 2000,
-        "gain_db": -3.8,
+        "frequency": 2150,
+        "gain_db": -3.1,
         "q": 0.7
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 2500,
+        "gain_db": -4,
+        "q": 0.4
       },
       {
         "type": "peak_dip",
         "frequency": 2800,
-        "gain_db": -2,
-        "q": 1.6
+        "gain_db": -2.2,
+        "q": 1.4
       },
       {
         "type": "peak_dip",
         "frequency": 5000,
-        "gain_db": 9,
+        "gain_db": 11,
         "q": 0.8
       },
       {
@@ -57,13 +57,13 @@
       {
         "type": "peak_dip",
         "frequency": 8000,
-        "gain_db": -4,
+        "gain_db": -5,
         "q": 5
       },
       {
         "type": "high_shelf",
         "frequency": 10000,
-        "gain_db": 2,
+        "gain_db": 5,
         "q": 0.71
       }
     ]

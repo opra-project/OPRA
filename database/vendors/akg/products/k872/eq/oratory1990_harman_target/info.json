@@ -4,19 +4,19 @@
   "link": "https://www.dropbox.com/s/cuzoyj93ymm0bmg/AKG%20K872.pdf?dl=0",
   "type": "parametric_eq",
   "parameters": {
-    "gain_db": -5.2,
+    "gain_db": -5.8,
     "bands": [
       {
-        "type": "peak_dip",
-        "frequency": 50,
-        "gain_db": 2.4,
-        "q": 1.4
+        "type": "low_shelf",
+        "frequency": 27,
+        "gain_db": -12.5,
+        "q": 0.7
       },
       {
         "type": "peak_dip",
-        "frequency": 80,
-        "gain_db": -9,
-        "q": 0.6
+        "frequency": 87,
+        "gain_db": -9.5,
+        "q": 0.7
       },
       {
         "type": "low_shelf",
@@ -26,39 +26,45 @@
       },
       {
         "type": "peak_dip",
-        "frequency": 1750,
-        "gain_db": -3,
-        "q": 3
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 2500,
-        "gain_db": 5,
-        "q": 1.4
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 3350,
-        "gain_db": -2.7,
-        "q": 4
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 3900,
-        "gain_db": -1.7,
-        "q": 4
-      },
-      {
-        "type": "peak_dip",
-        "frequency": 5150,
-        "gain_db": -3.6,
+        "frequency": 1780,
+        "gain_db": -3.2,
         "q": 3
       },
       {
         "type": "high_shelf",
-        "frequency": 10000,
-        "gain_db": 2,
-        "q": 0.71
+        "frequency": 2500,
+        "gain_db": 0,
+        "q": 0.35
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 2550,
+        "gain_db": 7,
+        "q": 1.4
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 3950,
+        "gain_db": -5.3,
+        "q": 3.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 4900,
+        "gain_db": -4.8,
+        "q": 3.5
+      },
+      {
+        "type": "peak_dip",
+        "frequency": 7000,
+        "gain_db": -2,
+        "q": 5
+      },
+      {
+        "type": "high_shelf",
+        "frequency": 11000,
+        "gain_db": 4,
+        "q": 0.9
       }
     ]
   }
